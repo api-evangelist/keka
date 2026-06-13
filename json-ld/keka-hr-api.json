@@ -1,0 +1,105 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "keka": "https://developers.keka.com/vocab#",
+    "api": "https://www.w3.org/ns/hydra/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://developers.keka.com/",
+  "name": "Keka HR API",
+  "description": "REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.",
+  "url": "https://developers.keka.com/",
+  "provider": {
+    "@type": "Organization",
+    "name": "Keka HR",
+    "url": "https://www.keka.com/",
+    "sameAs": [
+      "https://twitter.com/kekahr_official",
+      "https://www.linkedin.com/company/keka-hr"
+    ]
+  },
+  "documentation": "https://developers.keka.com/docs/getting-started-with-keka-apis",
+  "termsOfService": "https://www.keka.com/terms-of-service",
+  "license": "https://www.keka.com/terms-of-service",
+  "version": "v1",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://{tenant}.keka.com/api/v1"
+  },
+  "potentialAction": [
+    {
+      "@type": "Action",
+      "name": "Authentication",
+      "description": "OAuth 2.0 client credentials token acquisition"
+    },
+    {
+      "@type": "Action",
+      "name": "GetEmployees",
+      "description": "Retrieve all employee records"
+    },
+    {
+      "@type": "Action",
+      "name": "ManageLeave",
+      "description": "Create and manage employee leave requests"
+    },
+    {
+      "@type": "Action",
+      "name": "TrackAttendance",
+      "description": "Record and retrieve attendance data"
+    },
+    {
+      "@type": "Action",
+      "name": "ProcessPayroll",
+      "description": "Access payroll and salary information"
+    },
+    {
+      "@type": "Action",
+      "name": "ManageRecruitment",
+      "description": "Manage job openings and candidates via Hire module"
+    },
+    {
+      "@type": "Action",
+      "name": "PerformanceManagement",
+      "description": "Goals, appraisals, and feedback via PMS module"
+    },
+    {
+      "@type": "Action",
+      "name": "ExpenseManagement",
+      "description": "Submit and track employee expense claims"
+    },
+    {
+      "@type": "Action",
+      "name": "AssetManagement",
+      "description": "Track company assets assigned to employees"
+    },
+    {
+      "@type": "Action",
+      "name": "BackgroundVerification",
+      "description": "Initiate and track employee background verification"
+    }
+  ],
+  "featureList": [
+    "OAuth 2.0 authentication",
+    "Paginated responses",
+    "Rate limiting",
+    "Webhook support",
+    "Multi-tenant architecture",
+    "Employee management",
+    "Attendance tracking",
+    "Leave management",
+    "Payroll processing",
+    "Performance management",
+    "Recruitment (Hire)",
+    "Professional Services Automation",
+    "Expense management",
+    "Asset tracking",
+    "Background verification",
+    "Skills management"
+  ],
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Keka API Postman Collection",
+    "url": "https://apidocs.keka.com/"
+  }
+}

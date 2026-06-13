@@ -1,0 +1,117 @@
+{
+  "keka-hr-api-examples": {
+    "title": "Keka HR API Examples",
+    "description": "Example requests and responses for the Keka HR API",
+    "examples": [
+      {
+        "name": "Get All Employees",
+        "description": "List all employees with pagination",
+        "request": {
+          "method": "GET",
+          "url": "https://{tenant}.keka.com/api/v1/hris/employees?pageNumber=1&pageSize=100",
+          "headers": {
+            "Authorization": "Bearer {access_token}"
+          }
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "data": [
+              {
+                "id": "8d04399f-8057-4b12-abc1-1234567890ab",
+                "employeeNumber": "EMP001",
+                "firstName": "Rahul",
+                "lastName": "Sharma",
+                "email": "rahul.sharma@company.com",
+                "department": "Engineering",
+                "jobTitle": "Software Engineer",
+                "employmentStatus": "Active"
+              }
+            ],
+            "pageNumber": 1,
+            "pageSize": 100,
+            "totalPages": 1,
+            "totalRecords": 1,
+            "nextPage": null,
+            "previousPage": null
+          }
+        }
+      },
+      {
+        "name": "Fetch Access Token",
+        "description": "Obtain an OAuth 2.0 access token using client credentials",
+        "request": {
+          "method": "POST",
+          "url": "https://login.keka.com/connect/token",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          "body": {
+            "grant_type": "client_credentials",
+            "client_id": "{your_client_id}",
+            "client_secret": "{your_client_secret}",
+            "scope": "kekaapi"
+          }
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "access_token": "eyJhbGciOiJSUzI1NiIs...",
+            "token_type": "Bearer",
+            "expires_in": 3600
+          }
+        }
+      },
+      {
+        "name": "Create Leave Request",
+        "description": "Submit a new leave request for an employee",
+        "request": {
+          "method": "POST",
+          "url": "https://{tenant}.keka.com/api/v1/time/leaverequests",
+          "headers": {
+            "Authorization": "Bearer {access_token}",
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "employeeId": "8d04399f-8057-4b12-abc1-1234567890ab",
+            "leaveTypeId": "casual-leave-uuid",
+            "fromDate": "2026-07-01",
+            "toDate": "2026-07-03",
+            "reason": "Personal work"
+          }
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "id": "leave-request-uuid",
+            "status": "Pending"
+          }
+        }
+      },
+      {
+        "name": "Push Attendance Punch",
+        "description": "Push attendance punch data from biometric devices",
+        "request": {
+          "method": "POST",
+          "url": "https://cin01.a.keka.com/v1/logs",
+          "headers": {
+            "Authorization": "Bearer {access_token}",
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "employeeNumber": "EMP001",
+            "timestamp": "2026-06-13T09:00:00Z",
+            "punchType": "CheckIn"
+          }
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "success": true,
+            "message": "Punch recorded"
+          }
+        }
+      }
+    ]
+  }
+}

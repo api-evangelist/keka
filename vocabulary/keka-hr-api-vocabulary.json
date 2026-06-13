@@ -1,0 +1,151 @@
+{
+  "title": "Keka HR API Vocabulary",
+  "description": "Domain vocabulary and terminology for the Keka HR and payroll platform",
+  "terms": [
+    {
+      "term": "Employee",
+      "definition": "A person employed by an organization and managed within Keka HRMS",
+      "type": "entity"
+    },
+    {
+      "term": "Tenant",
+      "definition": "A Keka customer organization identified by a unique subdomain",
+      "type": "concept"
+    },
+    {
+      "term": "HRIS",
+      "definition": "Human Resource Information System - the core employee data module",
+      "type": "module"
+    },
+    {
+      "term": "Leave Request",
+      "definition": "A formal employee request for time off from work",
+      "type": "entity"
+    },
+    {
+      "term": "Leave Type",
+      "definition": "A category of leave (e.g., casual, sick, earned) defined by the organization",
+      "type": "entity"
+    },
+    {
+      "term": "Attendance Record",
+      "definition": "A time-stamped log of an employee's check-in and check-out events",
+      "type": "entity"
+    },
+    {
+      "term": "Pay Group",
+      "definition": "A grouping of employees who share the same payroll processing schedule",
+      "type": "entity"
+    },
+    {
+      "term": "Salary Component",
+      "definition": "An individual element of an employee's compensation (e.g., basic pay, HRA)",
+      "type": "entity"
+    },
+    {
+      "term": "PSA",
+      "definition": "Professional Services Automation - module for managing billable projects and resources",
+      "type": "module"
+    },
+    {
+      "term": "PMS",
+      "definition": "Performance Management System - module for goals, appraisals, and feedback",
+      "type": "module"
+    },
+    {
+      "term": "Hire",
+      "definition": "Recruitment module for managing job openings and candidates",
+      "type": "module"
+    },
+    {
+      "term": "BGV",
+      "definition": "Background Verification - module for employee background check integrations",
+      "type": "module"
+    },
+    {
+      "term": "Requisition",
+      "definition": "A formal request to fill a job position",
+      "type": "entity"
+    },
+    {
+      "term": "OAuth 2.0",
+      "definition": "Authorization protocol used for API authentication in Keka",
+      "type": "protocol"
+    },
+    {
+      "term": "Client Credentials",
+      "definition": "OAuth 2.0 grant type used for machine-to-machine API access",
+      "type": "concept"
+    },
+    {
+      "term": "Pagination",
+      "definition": "Keka APIs return paginated results with page number, page size, and navigation links",
+      "type": "pattern"
+    },
+    {
+      "term": "Rate Limit",
+      "definition": "API usage limits imposed per tenant to ensure platform stability",
+      "type": "concept"
+    },
+    {
+      "term": "Webhook",
+      "definition": "Event-driven HTTP callbacks triggered by actions in the Keka platform",
+      "type": "concept"
+    },
+    {
+      "term": "Expense",
+      "definition": "A business expense submitted by an employee for reimbursement",
+      "type": "entity"
+    },
+    {
+      "term": "Asset",
+      "definition": "A company-owned item assigned to an employee",
+      "type": "entity"
+    },
+    {
+      "term": "Shift Policy",
+      "definition": "Rules defining employee work shift timings and rotation patterns",
+      "type": "entity"
+    },
+    {
+      "term": "Weekly Off Policy",
+      "definition": "Rules defining which days of the week are non-working for employees",
+      "type": "entity"
+    },
+    {
+      "term": "Holiday Calendar",
+      "definition": "A list of company-defined holidays for a specific period and location",
+      "type": "entity"
+    },
+    {
+      "term": "Job Board",
+      "definition": "An external platform where job openings are published for recruitment",
+      "type": "entity"
+    },
+    {
+      "term": "Department",
+      "definition": "An organizational unit grouping employees by function",
+      "type": "entity"
+    },
+    {
+      "term": "Location",
+      "definition": "A physical or virtual work site associated with employees",
+      "type": "entity"
+    },
+    {
+      "term": "Group",
+      "definition": "A flexible grouping of employees used for policies and reporting",
+      "type": "entity"
+    },
+    {
+      "term": "Notice Period",
+      "definition": "The required period of notice before an employee leaves the organization",
+      "type": "concept"
+    },
+    {
+      "term": "Exit Reason",
+      "definition": "The categorized reason for an employee leaving the organization",
+      "type": "entity"
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/keka/main/json-schema/keka-hr-api.json",
+  "title": "Keka HR API",
+  "description": "JSON Schema for the Keka HR API covering employee records, attendance, leave, payroll, expense management, performance, and more.",
+  "type": "object",
+  "properties": {
+    "employee": {
+      "type": "object",
+      "description": "Employee record in the Keka HRMS",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Unique identifier for the employee"
+        },
+        "employeeNumber": {
+          "type": "string",
+          "description": "Employee number"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Employee first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Employee last name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Employee email address"
+        },
+        "department": {
+          "type": "string",
+          "description": "Department name"
+        },
+        "jobTitle": {
+          "type": "string",
+          "description": "Job title"
+        },
+        "location": {
+          "type": "string",
+          "description": "Work location"
+        },
+        "dateOfJoining": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of joining"
+        },
+        "employmentStatus": {
+          "type": "string",
+          "enum": [
+            "Active",
+            "Inactive",
+            "OnLeave",
+            "Terminated"
+          ],
+          "description": "Employment status"
+        },
+        "managerEmployeeNumber": {
+          "type": "string",
+          "description": "Manager employee number"
+        }
+      }
+    },
+    "leaveRequest": {
+      "type": "object",
+      "description": "Leave request in the Keka HRMS",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "employeeId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "leaveTypeId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "fromDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "toDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Pending",
+            "Approved",
+            "Rejected",
+            "Cancelled"
+          ]
+        }
+      }
+    },
+    "attendanceRecord": {
+      "type": "object",
+      "description": "Attendance record in the Keka HRMS",
+      "properties": {
+        "employeeId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "checkIn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "checkOut": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "hoursWorked": {
+          "type": "number",
+          "format": "float"
+        },
+        "attendanceStatus": {
+          "type": "string",
+          "enum": [
+            "Present",
+            "Absent",
+            "HalfDay",
+            "OnLeave",
+            "Holiday"
+          ]
+        }
+      }
+    },
+    "payrollRecord": {
+      "type": "object",
+      "description": "Payroll record in the Keka HRMS",
+      "properties": {
+        "employeeId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "payPeriod": {
+          "type": "string"
+        },
+        "grossSalary": {
+          "type": "number",
+          "format": "float"
+        },
+        "netSalary": {
+          "type": "number",
+          "format": "float"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "payDate": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "paginatedResponse": {
+      "type": "object",
+      "description": "Paginated API response",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {}
+        },
+        "pageNumber": {
+          "type": "integer"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "totalPages": {
+          "type": "integer"
+        },
+        "totalRecords": {
+          "type": "integer"
+        },
+        "nextPage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "previousPage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}
