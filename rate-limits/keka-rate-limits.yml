@@ -1,0 +1,29 @@
+name: Keka HR API Rate Limits
+description: Rate limiting policy for the Keka HR REST API. Limits are enforced per API key and reset automatically on a 60-second rolling window.
+url: https://developers.keka.com/reference/rate-limit
+limits:
+  - name: Standard Request Rate
+    description: Maximum number of API requests allowed per minute per API key across all endpoints.
+    requests: 50
+    window: 60 seconds
+    scope: per API key
+    enforcement: rolling 60-second interval
+
+errors:
+  - code: 429
+    reason: rateLimitExceeded
+    description: Returned when the 50 requests/minute threshold is exceeded. Callers should wait until the current 60-second window expires before retrying.
+    retry_after: 60 seconds
+
+pagination:
+  default_page_size: 100
+  description: Large result sets are paginated. Default page is 1 with a page size of 100 records. Use page and pageSize query parameters to navigate results.
+
+time_range:
+  max_window: 90 days
+  description: Time-based endpoints (attendance, payroll cycles, etc.) accept a maximum date range of 90 days per query.
+
+notes:
+  - Rate limits apply uniformly across all API endpoints and are not differentiated by endpoint type.
+  - The 429 error includes a rateLimitExceeded reason string that can be used to distinguish rate limit errors from other 4xx errors.
+  - Clients should implement exponential backoff after receiving a 429 response.

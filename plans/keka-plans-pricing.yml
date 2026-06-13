@@ -1,0 +1,62 @@
+name: Keka HR Plans and Pricing
+description: Pricing plans for the Keka HR and Payroll platform. All plans cover up to 100 employees with a minimum billing floor of 25 employees. API and Webhooks access is an add-on available with the Growth plan and above.
+url: https://www.keka.com/pricing
+plans:
+  - name: Foundation
+    description: For companies just getting started with HR automation. Covers basic org structure, employee profiles, leave management, payroll automation, and statutory compliance.
+    price:
+      monthly:
+        inr: 9999
+        usd: 9
+        per: employee/month
+    employees: up to 100 (25 minimum)
+    features:
+      - Employee profiles and org structure
+      - Leave management
+      - Payroll automation
+      - Statutory compliance
+      - Basic onboarding
+    api_access: false
+
+  - name: Strength
+    description: Adds advanced onboarding, e-signatures, selfie clock-in, geo-fencing, SSO, and employee pulse surveys on top of Foundation.
+    price:
+      monthly:
+        inr: 12999
+        usd: 16
+        per: employee/month
+    employees: up to 100 (25 minimum)
+    features:
+      - All Foundation features
+      - Advanced onboarding and e-signatures
+      - Selfie clock-in and geo-fencing
+      - SSO integration
+      - GPS attendance and asset tracking
+      - Custom reports
+      - Employee pulse surveys
+    api_access: false
+
+  - name: Growth
+    description: Adds workflow automation, OKR/goal management, 360-degree reviews, performance calibration, skill analytics, and API/Webhook access.
+    price:
+      monthly:
+        inr: 15999
+        usd: 22
+        per: employee/month
+    employees: up to 100 (25 minimum)
+    features:
+      - All Strength features
+      - Workflow automation
+      - Goal and OKR management
+      - 360-degree performance reviews
+      - Performance calibration
+      - Skill matrix and analytics
+      - Engagement tools
+      - API and Webhooks access
+    api_access: true
+
+notes:
+  - API and Webhooks is an add-on that can increase per-head cost by 35-55% above the sticker price for mid-market buyers.
+  - Pricing shown covers up to 100 employees; pricing scales with employee count above that threshold.
+  - INR prices reflect plans marketed to India; USD prices apply to international markets.
+  - Contact Keka sales for enterprise or custom pricing above 100 employees.

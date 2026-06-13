@@ -1,0 +1,72 @@
+aid: keka
+name: Keka HR
+description: Keka is an Indian HR and payroll management platform providing a REST API for managing employee data, attendance, leave, payroll processing, expense management, and performance management. The API uses OAuth 2.0 authentication and supports webhooks for event-driven integrations.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/keka/refs/heads/main/apis.yml
+created: 2026-06-13
+modified: 2026-06-13
+specificationVersion: "0.19"
+tags:
+  - HR
+  - Human Resources
+  - Payroll
+  - Attendance
+  - Leave Management
+  - Performance Management
+  - Employee Management
+  - India
+  - HRMS
+apis:
+  - name: Keka HR REST API
+    description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.keka.com/
+    baseURL: https://{tenant}.keka.com/api/v1
+    tags:
+      - HR
+      - Payroll
+      - Attendance
+      - Leave
+      - Performance
+      - Employee
+    properties:
+      - type: Documentation
+        url: https://developers.keka.com/docs/getting-started-with-keka-apis
+      - type: OpenAPI
+        url: https://apidocs.keka.com/
+      - type: Authentication
+        url: https://developers.keka.com/reference/authentication
+      - type: RateLimits
+        url: https://developers.keka.com/reference/rate-limit
+      - type: Webhooks
+        url: https://developers.keka.com/docs/getting-started-with-webhooks
+      - type: Sandbox
+        url: https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+      - type: LLMsTxt
+        url: https://developers.keka.com/llms.txt
+common:
+  - type: Website
+    url: https://www.keka.com/
+  - type: Documentation
+    url: https://developers.keka.com/
+  - type: GitHubOrg
+    url: https://github.com/topics/keka
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/keka-hr
+  - type: Blog
+    url: https://www.keka.com/blog
+  - type: Pricing
+    url: https://www.keka.com/pricing
+  - type: StatusPage
+    url: https://status.keka.com/
+  - type: X
+    url: https://twitter.com/kekahr_official
+  - type: Plans
+    url: plans/keka-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/keka-rate-limits.yml
+  - type: FinOps
+    url: finops/keka-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

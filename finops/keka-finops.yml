@@ -1,0 +1,50 @@
+name: Keka HR FinOps
+description: Financial operations considerations for teams using the Keka HR API. Covers cost drivers, optimization strategies, and budget planning for API-enabled Keka deployments.
+url: https://www.keka.com/pricing
+
+cost_drivers:
+  - name: Plan Tier for API Access
+    description: API and Webhook access is only available on the Growth plan (INR 15,999/month or $22/employee/month). Organizations on Foundation or Strength plans must upgrade to access the API.
+    impact: high
+
+  - name: Minimum Employee Billing Floor
+    description: Keka enforces a minimum billing floor of 25 employees on all plans. Small organizations with fewer than 25 employees are billed for 25 seats regardless of actual headcount.
+    impact: medium
+
+  - name: API Add-On Surcharge
+    description: The API and Webhooks capability is offered as an add-on that can increase real per-head cost by 35-55% above the base plan sticker price for mid-market buyers.
+    impact: high
+
+  - name: Employee Count Scaling
+    description: Published pricing covers up to 100 employees. Costs scale with headcount above 100, requiring custom enterprise pricing negotiation.
+    impact: medium
+
+optimization:
+  - name: Audit API Usage Before Upgrading
+    description: Before upgrading to Growth for API access, audit which integrations are truly required. Third-party aggregators (e.g., Apideck, Knit) may offer Keka data access at lower cost through their unified API layer.
+
+  - name: Batch Requests Within Rate Limits
+    description: With a 50 requests/minute cap, design integrations to batch and queue API calls. Leverage pagination (100 records/page) to maximize data retrieved per request and minimize total call volume.
+
+  - name: Cache Employee and Reference Data
+    description: Core HR reference data (departments, job titles, locations, pay bands) changes infrequently. Cache this data locally with a TTL of 24 hours to reduce redundant API calls.
+
+  - name: Use Webhooks Over Polling
+    description: Subscribe to Keka webhooks for event-driven updates (attendance, leave requests, payroll runs) instead of polling endpoints repeatedly. This reduces API call volume and stays within rate limits more easily.
+
+  - name: Negotiate Enterprise Contracts
+    description: For organizations exceeding 100 employees, negotiate a custom contract with Keka. Enterprise agreements may include favourable per-seat pricing and bundled API access rather than an add-on surcharge.
+
+budget_planning:
+  - name: Small Team (25-50 employees, Growth plan)
+    monthly_inr: "25 × 15,999 = INR 399,975 (minimum floor)"
+    monthly_usd: "25 × 22 = $550 (minimum floor)"
+    notes: Minimum billing floor applies; actual seat count does not reduce cost below 25.
+
+  - name: Mid-Market (100 employees, Growth plan)
+    monthly_inr: "100 × 15,999 = INR 1,599,900"
+    monthly_usd: "100 × 22 = $2,200"
+    notes: API add-on surcharge may increase effective cost by 35-55%.
+
+  - name: Enterprise (200+ employees)
+    notes: Custom pricing required. Contact Keka sales for volume discounts and bundled API access.
