@@ -42,7 +42,7 @@ apis:
         url: https://developers.keka.com/docs/getting-started-with-webhooks
       - type: Sandbox
         url: https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
-      - type: LLMsTxt
+      - type: LlmsText
         url: https://developers.keka.com/llms.txt
 common:
   - type: Website
