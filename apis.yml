@@ -45,6 +45,8 @@ apis:
       - type: LlmsText
         url: https://developers.keka.com/llms.txt
 common:
+  - type: OAuthScopes
+    url: scopes/keka-scopes.yml
   - type: Website
     url: https://www.keka.com/
   - type: Documentation
