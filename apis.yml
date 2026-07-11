@@ -45,6 +45,10 @@ apis:
       - type: LlmsText
         url: https://developers.keka.com/llms.txt
 common:
+  - type: DomainSecurity
+    url: security/keka-domain-security.yml
+  - type: Authentication
+    url: authentication/keka-authentication.yml
   - type: OAuthScopes
     url: scopes/keka-scopes.yml
   - type: Website

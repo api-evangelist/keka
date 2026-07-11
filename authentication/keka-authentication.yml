@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/keka-hr-api-openapi.yaml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.keka.com/connect/token
+    scopes: 1
+  description: OAuth 2.0 client credentials flow
+  sources:
+  - openapi/keka-hr-api-openapi.yaml
