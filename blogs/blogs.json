@@ -2,11 +2,10 @@
   "repo": "keka",
   "feeds": [
     {
-      "source": "https://www.keka.com/blog",
-      "saved": 0,
-      "error": "SSL certificate verification failed"
+      "source": "https://www.linkedin.com/company/keka-hr",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-27T12:49:12Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 4
 }
