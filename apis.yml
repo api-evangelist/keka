@@ -45,6 +45,8 @@ apis:
       - type: LlmsText
         url: https://developers.keka.com/llms.txt
 common:
+  - type: AgenticAccess
+    url: agentic-access/keka-agentic-access.yml
   - type: DomainSecurity
     url: security/keka-domain-security.yml
   - type: Authentication

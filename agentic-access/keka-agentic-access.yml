@@ -1,0 +1,1370 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/keka-hr-api-openapi.yaml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 99
+  by_action_class:
+    acting: 27
+    connected: 72
+  by_consequence:
+    write: 25
+    read: 72
+    physical: 1
+    safety-critical: 1
+  human_in_the_loop_required: 1
+operations:
+- path: /connect/token
+  method: post
+  operationId: fetch_access_token
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees
+  method: get
+  operationId: get_all_employees
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees
+  method: post
+  operationId: create_employee
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/personaldetails
+  method: put
+  operationId: update_employee_personal_details
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/jobdetails
+  method: put
+  operationId: update_employee_job_details
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/{id}
+  method: get
+  operationId: get_an_employee
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/updatefields
+  method: get
+  operationId: get_all_update_fields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/groups
+  method: get
+  operationId: get_all_groups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/grouptypes
+  method: get
+  operationId: get_all_group_types
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/departments
+  method: get
+  operationId: get_all_departments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/locations
+  method: get
+  operationId: get_all_locations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/jobtitles
+  method: get
+  operationId: get_all_job_titles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/currencies
+  method: get
+  operationId: get_all_currencies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/noticeperiods
+  method: get
+  operationId: get_all_noticeperiods
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/exitreasons
+  method: get
+  operationId: get_all_exitreasons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/exitrequest
+  method: post
+  operationId: create_an_exit_request
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/exitrequest
+  method: put
+  operationId: update_exit_request_for_employee
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/documents/types
+  method: get
+  operationId: get_the_document_types
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documenttypes/448b210d-7fad-4dba-9422-d9ae61048b6a/documents
+  method: get
+  operationId: get_employee_documents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documents/f33900ae-9175-4cbe-9d5e-37ef49cb5102/attachment/4f0f8e90-2c47-4dd8-8c20-d98e7e751e27
+  method: get
+  operationId: get_employee_document_attachment_download_url
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/leaverequests
+  method: get
+  operationId: get_all_leave_requests
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/leaverequests
+  method: post
+  operationId: create_leave_request
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/time/leavetypes
+  method: get
+  operationId: get_all_leave_types
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/leavebalance
+  method: get
+  operationId: get_all_leave_balance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/leaveplans
+  method: get
+  operationId: get_all_leave_plans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/attendance
+  method: get
+  operationId: get_all_attendance_records
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /v1/logs
+  method: post
+  operationId: push_attendance_punches
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/time/capturescheme
+  method: get
+  operationId: get_all_captureschemes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/shiftpolicies
+  method: get
+  operationId: get_all_shift_policies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/holidayscalendar
+  method: get
+  operationId: get_all_holiday_calendar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/penalisationpolicies
+  method: get
+  operationId: get_all_trackingpolicies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/time/weeklyoffpolicies
+  method: get
+  operationId: get_all_weeklyoff_policies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/salarycomponents
+  method: get
+  operationId: get_salary_components
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/paygroups
+  method: get
+  operationId: get_all_pay_groups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/paygroups/{payGroupId}/paycycles
+  method: get
+  operationId: get_all_pay_cycles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/payregister
+  method: get
+  operationId: get_pay_register
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches
+  method: get
+  operationId: get_all_pay_batches
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches/{payBatchId}/payments
+  method: get
+  operationId: get_all_batch_payments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches/{payBatchId}/payments
+  method: put
+  operationId: update_the_payment_status
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/time/payroll/paygrades
+  method: get
+  operationId: get_all_pay_grades
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/payband
+  method: get
+  operationId: get_all_pay_bands
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/salaries
+  method: get
+  operationId: get_all_employee_salaries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/payroll/employees/fnf
+  method: get
+  operationId: get_all_employee_fnf_details
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /get-all-bonus-types
+  method: get
+  operationId: get_all_bonus_types
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/clients
+  method: get
+  operationId: get_all_clients
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/clients
+  method: post
+  operationId: create_a_client
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/clients/{id}
+  method: get
+  operationId: get_a_client
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c
+  method: put
+  operationId: update_a_client
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c/billingroles
+  method: get
+  operationId: get_billingroles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/phases
+  method: get
+  operationId: get_project_phases
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/phases
+  method: post
+  operationId: create_project_phase
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects
+  method: post
+  operationId: create_a_project
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects
+  method: get
+  operationId: get_all_projects
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{id}
+  method: get
+  operationId: get_a_project
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}
+  method: put
+  operationId: update_project_details
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/allocations
+  method: get
+  operationId: get_project_allocations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/03355969-3efa-4550-bcbd-7c89bf8c5806/allocations
+  method: post
+  operationId: add_a_project_allocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{id}/timeentries
+  method: get
+  operationId: get_project_timesheet_enteries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/tasks
+  method: get
+  operationId: get_project_tasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/tasks
+  method: post
+  operationId: create_new_project_task
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/tasks/{taskId}
+  method: put
+  operationId: update_project_task
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/tasks/{taskId}
+  method: get
+  operationId: get_project_task_assignees
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/projects/{projectId}/tasks/{taskId}/timeentries
+  method: get
+  operationId: get_project_task_time_enteries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/psa/timeentries
+  method: get
+  operationId: get_timesheet_enteries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/timeframes
+  method: get
+  operationId: get_time_frame_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/goals
+  method: get
+  operationId: get_goal_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/goals/{goalId}/progress
+  method: put
+  operationId: update_goal_progress
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/pms/badges
+  method: get
+  operationId: get_badge_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/praise
+  method: get
+  operationId: get_praise_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/praise
+  method: post
+  operationId: create_praise
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/pms/reviewgroups
+  method: get
+  operationId: get_review_group_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/reviewcycles
+  method: get
+  operationId: get_review_group_cycle_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/pms/reviews
+  method: get
+  operationId: get_employee_review_list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /get-all-job-boards
+  method: get
+  operationId: get_all_job_boards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs
+  method: get
+  operationId: get_job_details
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs/{jobId}/applicationfields
+  method: get
+  operationId: get_job_application_fields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs/{jobId}/candidates
+  method: get
+  operationId: get_candidate_details
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415
+  method: put
+  operationId: update_a_candiate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415/notes
+  method: post
+  operationId: add_candidate_notes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/v1/hire/jobs/{jobId}/candidate
+  method: post
+  operationId: create_new_candidate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs/{jobId}/candidate/{candidateId}/interviews
+  method: get
+  operationId: fetch_candidate_interviews
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/jobs/{jobId}/candidate/{candidateId}/scorecards
+  method: get
+  operationId: get_candidate_scorecard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/preboarding/candiates
+  method: get
+  operationId: get_all_preboarding_candidates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hire/preboarding/candidates
+  method: post
+  operationId: post_a_preboarding_candidate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hire/preboarding/candidates/48dd58d2-e899-4182-92c1-7976bab37a64
+  method: put
+  operationId: update_a_preboarding_candidates
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/expense/categories
+  method: get
+  operationId: get_expense_categories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/expense/claims
+  method: get
+  operationId: get_expense_claim_details
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/expensepolicies
+  method: get
+  operationId: get_all_expensepolicies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/assets
+  method: get
+  operationId: get_all_assets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/assets/2cc03669-bc85-4383-b2cf-4bb5e1b112e7/allocation
+  method: put
+  operationId: update_asset_assignment
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/assets/types
+  method: get
+  operationId: get_all_assets_type
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/assets/categories
+  method: get
+  operationId: get_all_asset_categories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/assets/conditions
+  method: get
+  operationId: get_all_asset_conditions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/requisition/requests
+  method: get
+  operationId: get_all_requisition_requests
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /gets-all-skills
+  method: get
+  operationId: gets_all_skills
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/skills
+  method: get
+  operationId: get_employee_skills
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/skills
+  method: post
+  operationId: add_employee_skills
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+    scope:
+    - kekaapi
+- path: /api/v1/hris/bgv/792a7e86-3cdc-4561-94c0-ba124df90acb/requests
+  method: get
+  operationId: get_all_bgv_requests
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - kekaapi
+- path: /api/v1/hris/bgv/{variable}/requests/{variable}
+  method: put
+  operationId: add_bgv_request_report
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - kekaapi
