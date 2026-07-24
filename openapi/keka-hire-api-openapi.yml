@@ -1,0 +1,288 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Hire API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Hire
+paths:
+  /get-all-job-boards:
+    get:
+      operationId: get_all_job_boards
+      summary: Get all Job boards
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hire/jobs:
+    get:
+      operationId: get_job_details
+      summary: Get Job details
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of jobs and job details.</p>
+
+        '
+  /api/v1/hire/jobs/{jobId}/applicationfields:
+    get:
+      operationId: get_job_application_fields
+      summary: Get job application fields
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching application fields against a sepcific job.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/jobs/{jobId}/candidates:
+    get:
+      operationId: get_candidate_details
+      summary: Get candidate details
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of active candidates against a sepcific job.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415:
+    put:
+      operationId: update_a_candiate
+      summary: Update a candiate
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415/notes:
+    post:
+      operationId: add_candidate_notes
+      summary: Add Candidate Notes
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                tags:
+                - DND
+                - Have other offers
+                comments: The candidate is expecting hire package as he has offers in hand from competitors
+  /api/v1/v1/hire/jobs/{jobId}/candidate:
+    post:
+      operationId: create_new_candidate
+      summary: Create new candidate
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a new candidate against a job using job application fields.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                firstName: Shubham
+                lastName: Hire
+                mobilePhone:
+                  countryCode: '+91'
+                  number: '9998765432'
+                email: shubh@test.com
+                additionalFields:
+                  velit3a: lol
+                  gender: '1'
+  /api/v1/hire/jobs/{jobId}/candidate/{candidateId}/interviews:
+    get:
+      operationId: fetch_candidate_interviews
+      summary: Fetch candidate interviews
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching interview details against a sepcific job candidate.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: candidateId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/jobs/{jobId}/candidate/{candidateId}/scorecards:
+    get:
+      operationId: get_candidate_scorecard
+      summary: Get candidate scorecard
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching scorecard details against a sepcific job candidate.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: candidateId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/preboarding/candiates:
+    get:
+      operationId: get_all_preboarding_candidates
+      summary: Get all Preboarding candidates
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>PreboardingStage</strong></th>
+
+        <th><strong>PreboardingStatus</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Start  <br />1 = CollectInfo  <br />2 = VerifyInfo  <br />3 = ManageOffer  <br />4 = OfferAcceptance  <br />5 = Hired</td>
+
+        <td>0 - Initiated  <br />1 - Completed  <br />2 - Cancelled  <br />3 - Archived  <br />4 - CandidatureRevoked  <br />5 - MarkedAsNoShow</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Get all Preboarding Candidates</p>
+
+        '
+  /api/v1/hire/preboarding/candidates:
+    post:
+      operationId: post_a_preboarding_candidate
+      summary: Post a Preboarding Candidate
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Adds a preboarding candidate</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                firstName: Kevin
+                middleName: De
+                lastName: Bruyne
+                email: kevin.d@yopmail.co
+                countryCode: US
+                mobileNumber: '9545221353'
+                gender: 1
+                stage: 0
+                status: 2
+                jobTitle: 363ebfae-3e47-42a2-a34d-e6dde02daf10
+                department: 3a0a0177-ceaa-4ff5-91c5-a43de1220645
+                workLocation: cf80482f-ba0f-40e2-8c31-527a38e20c2d
+  /api/v1/hire/preboarding/candidates/48dd58d2-e899-4182-92c1-7976bab37a64:
+    put:
+      operationId: update_a_preboarding_candidates
+      summary: Update a Preboarding Candidates
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                expectedDateOfJoining: '2024-10-23T00:00:00'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

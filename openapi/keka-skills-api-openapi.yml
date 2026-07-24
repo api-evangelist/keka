@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Skills API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Skills
+paths:
+  /gets-all-skills:
+    get:
+      operationId: gets_all_skills
+      summary: Gets all skills
+      tags:
+      - Skills
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/skills:
+    get:
+      operationId: get_employee_skills
+      summary: Get Employee Skills
+      tags:
+      - Skills
+      responses:
+        '200':
+          description: Successful response
+    post:
+      operationId: add_employee_skills
+      summary: Add Employee Skills
+      tags:
+      - Skills
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              example:
+              - skillId: 04e2de7b-8ad0-4c11-8d16-f2c6e2e6f9ee
+                rating: 3
+              - skillId: bd3ac15d-4628-4397-b961-a80a10257e08
+                rating: 5
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

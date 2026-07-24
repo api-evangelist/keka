@@ -1,0 +1,153 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Attendance API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Attendance
+paths:
+  /api/v1/time/attendance:
+    get:
+      operationId: get_all_attendance_records
+      summary: Get all attendance records
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all attendance records between from and to date. If both from and to are not specified, last 30 days records are returned. From date should be before to date.The difference between from and to date cannot be more than 90 days.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>AttendanceDayType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = WorkingDay  <br />1 = Holiday  <br />2 = FullDayWeeklyOff  <br />3 = FirstHalfWeeklyOff  <br />4 = SecondHalfWeeklyOff</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /v1/logs:
+    post:
+      operationId: push_attendance_punches
+      summary: Push Attendance punches
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for pushing attendance raw punches to Keka.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              example:
+              - DeviceIdentifier: b66ca298-90e4-463c-b1f0-29b1e1ae7828
+                EmployeeAttendanceNumber: '1'
+                Timestamp: '2023-01-25T17:14:54'
+                Status: 0
+  /api/v1/time/capturescheme:
+    get:
+      operationId: get_all_captureschemes
+      summary: Get All Captureschemes
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API will give all the captures schemes.</p>
+
+        '
+  /api/v1/time/shiftpolicies:
+    get:
+      operationId: get_all_shift_policies
+      summary: Get All Shift Policies
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API will give all the shift policies</p>
+
+        '
+  /api/v1/time/holidayscalendar:
+    get:
+      operationId: get_all_holiday_calendar
+      summary: Get All Holiday Calendar
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all holidays Calendar</p>
+
+        '
+  /api/v1/time/penalisationpolicies:
+    get:
+      operationId: get_all_trackingpolicies
+      summary: Get All Trackingpolicies
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all trackingpolicies</p>
+
+        '
+  /api/v1/time/weeklyoffpolicies:
+    get:
+      operationId: get_all_weeklyoff_policies
+      summary: Get All Weeklyoff Policies
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all weekly off policies</p>
+
+        '
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

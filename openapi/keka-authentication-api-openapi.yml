@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Authentication API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Authentication
+paths:
+  /connect/token:
+    post:
+      operationId: fetch_access_token
+      summary: Fetch Access Token
+      tags:
+      - Authentication
+      responses:
+        '200':
+          description: Successful response
+      description: '<ul>
+
+        <li><p><code>client_id</code>: Your client identifier for authentication.</p>
+
+        </li>
+
+        <li><p><code>client_secret</code>: Your client secret for secure authentication.</p>
+
+        </li>
+
+        <li><p><code>api_key</code>: Your unique API key for accessing the system.</p>
+
+        </li>
+
+        <li><p><code>scope</code>: You will need to pass <strong>kekaapi</strong> for this key.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  description: ''
+                scope:
+                  type: string
+                  description: ''
+                client_id:
+                  type: string
+                  description: ''
+                client_secret:
+                  type: string
+                  description: ''
+                api_key:
+                  type: string
+                  description: ''
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

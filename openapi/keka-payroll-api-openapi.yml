@@ -1,0 +1,474 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Payroll API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Payroll
+paths:
+  /api/v1/payroll/salarycomponents:
+    get:
+      operationId: get_salary_components
+      summary: Get Salary components
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all salary components.</p>
+
+        '
+  /api/v1/payroll/paygroups:
+    get:
+      operationId: get_all_pay_groups
+      summary: Get all pay groups
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all pay groups.</p>
+
+        '
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles:
+    get:
+      operationId: get_all_pay_cycles
+      summary: Get all pay cycles
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all pay cycles in a pay group.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 = '
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/payregister:
+    get:
+      operationId: get_pay_register
+      summary: Get pay register
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching pay register for a given pay cycle.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 = Fin'
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches:
+    get:
+      operationId: get_all_pay_batches
+      summary: Get all pay batches
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all pay batches in a pay group.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 ='
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches/{payBatchId}/payments:
+    get:
+      operationId: get_all_batch_payments
+      summary: Get all batch payments
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching batch payments against against a batch ID,.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />'
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payBatchId
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: update_the_payment_status
+      summary: Update the payment status
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating payment status for a given batch ID. Only 100 bulk transactions will be allowed for a particular batch.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 '
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payBatchId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/time/payroll/paygrades:
+    get:
+      operationId: get_all_pay_grades
+      summary: Get all Pay Grades
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/payroll/payband:
+    get:
+      operationId: get_all_pay_bands
+      summary: Get All Pay Bands
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/payroll/salaries:
+    get:
+      operationId: get_all_employee_salaries
+      summary: Get all Employee Salaries
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/payroll/employees/fnf:
+    get:
+      operationId: get_all_employee_fnf_details
+      summary: Get all employee FnF details
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /get-all-bonus-types:
+    get:
+      operationId: get_all_bonus_types
+      summary: Get all Bonus Types
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all bonus types</p>
+
+        '
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

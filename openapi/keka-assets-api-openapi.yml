@@ -1,0 +1,88 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Assets
+paths:
+  /api/v1/assets:
+    get:
+      operationId: get_all_assets
+      summary: Get all assets
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets/2cc03669-bc85-4383-b2cf-4bb5e1b112e7/allocation:
+    put:
+      operationId: update_asset_assignment
+      summary: Update Asset Assignment
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                assetConditionId: 5cf533c1-4ed2-474d-a5b4-454d12f6f989
+                note: Asset requested by user for official purpose
+                assignedOn: '2024-10-06T00:00:00'
+                assignedTo: 2ea32ac9-5497-4095-adc3-6dde2b8fb639
+  /api/v1/assets/types:
+    get:
+      operationId: get_all_assets_type
+      summary: Get all Assets Type
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets/categories:
+    get:
+      operationId: get_all_asset_categories
+      summary: Get All Asset Categories
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets/conditions:
+    get:
+      operationId: get_all_asset_conditions
+      summary: Get All Asset Conditions
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

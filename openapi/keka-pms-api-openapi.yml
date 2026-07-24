@@ -1,0 +1,276 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets PMS API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: PMS
+paths:
+  /api/v1/pms/timeframes:
+    get:
+      operationId: get_time_frame_list
+      summary: Get time frame list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all time frames.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeFrameStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Active  <br />1 = Hidden</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/goals:
+    get:
+      operationId: get_goal_list
+      summary: Get Goal list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all goals.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Goal Status</th>
+
+        <th>GoalMetricType</th>
+
+        <th>Goal Type</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 = AtRisk  <br />4 = Closed</td>
+
+        <td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>
+
+        <td>0 = Individual  <br />1 = Company  <br />2 = Group</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/goals/{goalId}/progress:
+    put:
+      operationId: update_goal_progress
+      summary: Update goal progress
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating progress against a specific goal.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Goal Status</th>
+
+        <th>GoalMetricType</th>
+
+        <th>Goal Type</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 = AtRisk  <br />4 = Closed</td>
+
+        <td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>
+
+        <td>0 = Individual  <br />1 = Company  <br />2 = Group</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: goalId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                currentValue: '34'
+                status: '1'
+                updatedBy: d7fcfb1b-dec9-48a5-a0ab-247869d870bb
+                note: Test
+  /api/v1/pms/badges:
+    get:
+      operationId: get_badge_list
+      summary: Get badge list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all badges.</p>
+
+        <p>Enumerated Values</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Badge Status</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Enabled  <br />1 = Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/praise:
+    get:
+      operationId: get_praise_list
+      summary: Get praise list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all praises.</p>
+
+        '
+    post:
+      operationId: create_praise
+      summary: Create Praise
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a praise.</p>
+
+        '
+  /api/v1/pms/reviewgroups:
+    get:
+      operationId: get_review_group_list
+      summary: Get review group list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all review groups.</p>
+
+        '
+  /api/v1/pms/reviewcycles:
+    get:
+      operationId: get_review_group_cycle_list
+      summary: Get review group cycle list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all review cycles.</p>
+
+        '
+  /api/v1/pms/reviews:
+    get:
+      operationId: get_employee_review_list
+      summary: Get employee review list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all employee reviews.</p>
+
+        '
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

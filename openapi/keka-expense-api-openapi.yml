@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Expense API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Expense
+paths:
+  /api/v1/expense/categories:
+    get:
+      operationId: get_expense_categories
+      summary: Get expense categories
+      tags:
+      - Expense
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all expense categories.</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ExpenseCategoryType</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = General  <br />2 = Mileage  <br />3 = PerDiem  <br />4 = AirTravel  <br />5 = Accommodation  <br />6 = LocalConveyance  <br />7 = CashAdvance</td>
+
+        <td></td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/expense/claims:
+    get:
+      operationId: get_expense_claim_details
+      summary: Get expense claim details
+      tags:
+      - Expense
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all expense claims.</p>
+
+        '
+  /api/v1/expensepolicies:
+    get:
+      operationId: get_all_expensepolicies
+      summary: Get all expensepolicies
+      tags:
+      - Expense
+      responses:
+        '200':
+          description: Successful response
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

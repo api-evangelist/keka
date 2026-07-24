@@ -1,0 +1,657 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Core HR API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Core HR
+paths:
+  /api/v1/hris/employees:
+    get:
+      operationId: get_all_employees
+      summary: Get all employees
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching details of all employees.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeType</th>
+
+        <th>WorkerType</th>
+
+        <th>MaritalStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+
+        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+
+        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Gender</th>
+
+        <th>EmploymentStatus</th>
+
+        <th>AccountStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>
+
+        <td>0 - Working  <br />1- Relieved</td>
+
+        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        '
+    post:
+      operationId: create_employee
+      summary: Create employee
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a new Employee record.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeType</th>
+
+        <th>WorkerType</th>
+
+        <th>MaritalStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+
+        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+
+        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Gender</th>
+
+        <th>EmploymentStatus</th>
+
+        <th>AccountStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>
+
+        <td>0 - Working  <br />1- Relieved</td>
+
+        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <th'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                EmployeeNumber: '1234'
+                DisplayName: Shubham Test
+                FirstName: Shubham
+                LastName: Test
+                Email: shubhtest@test.com
+                Gender: Male
+                DateOfBirth: 09-08-1999
+                DateJoined: 01-09-2021
+                department: f5b7e125-d39c-4630-a332-6c97a265f953
+                BusinessUnit: db76d978-8722-4e9a-9415-94f5bb523810
+                JobTitle: f3f9425a-fdee-499d-8d1f-5966697e6125
+                Location: 9fe494f8-dbf8-447e-9af0-c71370f4e94e
+  /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/personaldetails:
+    put:
+      operationId: update_employee_personal_details
+      summary: Update Employee Personal Details
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Update Employee personal details</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                currentAddress:
+                  addressLine1: 404, Brut Residence
+                  addressLine2: Nr. Thomas Bakery
+                  countryCode: IN
+                  city: Manchester
+                  state: North London
+                  zip: M1 1AD
+                displayName: Erling Haaland
+                firstName: Erling
+                lastName: Haaland
+                gender: 0
+                dateOfBirth: '1998-01-03T00:00:00'
+                middleName: Brut
+                workPhone: '9822134561'
+                personalEmail: earling.haaland@yopmail.com
+                maritalStatus: 0
+                marriageDate: '2023-03-31T00:00:00'
+                relations:
+                - relationType: 2
+                  gender: 1
+                  firstName: Brut
+                  lastName: Haaland
+                  displayName: Brut Haaland
+                  email: brut@yopmail.com
+                  dateOfBirth: '1988-07-24T00:00:00'
+                  profession: Footballer
+                  mobile: '9999888864'
+                bloodGroup: 8
+  /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/jobdetails:
+    put:
+      operationId: update_employee_job_details
+      summary: Update Employee Job Details
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Update employee job details</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                location: d62a9b17-5973-4995-83fc-4952707b6d47
+                jobTitle: 4a896b29-1935-4046-a6e4-eaef2aa7dfe1
+                reportingManager: 7dd7e7ed-be39-47f3-beab-d498b940fd98
+                attendanceNumber: KEKATTD12
+                timeType: 0
+  /api/v1/hris/employees/{id}:
+    get:
+      operationId: get_an_employee
+      summary: Get an employee
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching data of a specific employee by passing the employee ID as a URI parameter.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeType</th>
+
+        <th>WorkerType</th>
+
+        <th>MaritalStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+
+        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+
+        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Gender</th>
+
+        <th>EmploymentStatus</th>
+
+        <th>AccountStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>
+
+        <td>0 - Working  <br />1- Relieved</td>
+
+        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="c'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hris/employees/updatefields:
+    get:
+      operationId: get_all_update_fields
+      summary: Get All Update Fields
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/groups:
+    get:
+      operationId: get_all_groups
+      summary: Get all groups
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all groups.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/grouptypes:
+    get:
+      operationId: get_all_group_types
+      summary: Get all group types
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all group types.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/departments:
+    get:
+      operationId: get_all_departments
+      summary: Get All Departments
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/locations:
+    get:
+      operationId: get_all_locations
+      summary: Get all locations
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all locations.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/jobtitles:
+    get:
+      operationId: get_all_job_titles
+      summary: Get all job titles
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all locations.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/currencies:
+    get:
+      operationId: get_all_currencies
+      summary: Get all currencies
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all currencies.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/noticeperiods:
+    get:
+      operationId: get_all_noticeperiods
+      summary: Get All Noticeperiods
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/exitreasons:
+    get:
+      operationId: get_all_exitreasons
+      summary: Get All Exitreasons
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/exitrequest:
+    post:
+      operationId: create_an_exit_request
+      summary: Create an Exit Request
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Create an exist request for an employee</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Exit Type</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - Employee Resignation  <br />2- Company Action</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                exitType: 1
+                exitReason: 4ce57402-db60-418e-a0b5-69c4a5fecfd0
+                resignationDate: '2024-10-01T00:00:00'
+                lastWorkingDate: '2024-12-01T00:00:00'
+                isOkToRehire: true
+                comments: Comments example 1234
+    put:
+      operationId: update_exit_request_for_employee
+      summary: Update Exit Request for Employee
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                exitType: 1
+                exitReason: 4ce57402-db60-418e-a0b5-69c4a5fecfd0
+                resignationDate: '2024-10-01T00:00:00'
+                lastWorkingDate: '2024-12-01T00:00:00'
+                isOkToRehire: true
+                comments: Comments example 1234
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

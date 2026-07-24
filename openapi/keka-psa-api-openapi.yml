@@ -1,0 +1,589 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets PSA API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: PSA
+paths:
+  /api/v1/psa/clients:
+    get:
+      operationId: get_all_clients
+      summary: Get all clients
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all clients.</p>
+
+        '
+    post:
+      operationId: create_a_client
+      summary: Create a client
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a client.</p>
+
+        '
+  /api/v1/psa/clients/{id}:
+    get:
+      operationId: get_a_client
+      summary: Get a client
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching a specific client.</p>
+
+        '
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c:
+    put:
+      operationId: update_a_client
+      summary: Update a Client
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                billingAddress:
+                  countryCode: US
+                  addressLine2: Manhatten
+                  addressLine1: Cosco Street, US
+                  state: NY
+                  zip: '543313'
+                name: United Health Group
+                description: This project is about developing patients management system
+                code: USBU0051
+  /api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c/billingroles:
+    get:
+      operationId: get_billingroles
+      summary: Get Billingroles
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/psa/projects/{projectId}/phases:
+    get:
+      operationId: get_project_phases
+      summary: Get project phases
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all project phases.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: create_project_phase
+      summary: Create project phase
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a project phase.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects:
+    post:
+      operationId: create_a_project
+      summary: Create a project
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a project.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ProjectStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+    get:
+      operationId: get_all_projects
+      summary: Get all projects
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all projects.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ProjectStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/psa/projects/{id}:
+    get:
+      operationId: get_a_project
+      summary: Get a project
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching a specific project.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ProjectStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/{projectId}:
+    put:
+      operationId: update_project_details
+      summary: Update Project details
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating details against a specific project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Project-KK
+                description: Sample project test-II
+                code: TAX
+                status: 0
+                startDate: '2023-07-01'
+                endDate: '2023-08-31'
+                isBillable: true
+  /api/v1/psa/projects/{projectId}/allocations:
+    get:
+      operationId: get_project_allocations
+      summary: Get project allocations
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching allocations against a specific project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/03355969-3efa-4550-bcbd-7c89bf8c5806/allocations:
+    post:
+      operationId: add_a_project_allocation
+      summary: Add a Project Allocation
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                employeeId: 8d04399f-8057-4b0d-ab0f-d9b9a5fb0376
+                allocationPercentage: 10
+                billingRoleId: 5f497651-5736-4386-8253-a0c7c2be99ab
+                billingRate: 120
+                startDate: '2024-10-08T06:36:23.750Z'
+                endDate: '2024-10-08T06:36:23.750Z'
+  /api/v1/psa/projects/{id}/timeentries:
+    get:
+      operationId: get_project_timesheet_enteries
+      summary: Get project timesheet enteries
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching the project time entries between selected from and to date range. If both from and to are not specified, last 30 days records are returned. From date should be before To date.The difference between from and to date cannot be more than 90 days.</p>
+
+        '
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/{projectId}/tasks:
+    get:
+      operationId: get_project_tasks
+      summary: Get project tasks
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of tasks against a specific project.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TaskType</th>
+
+        <th>TaskBillingType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = Phase  <br />2 = Milestone</td>
+
+        <td>0 = NonBillable  <br />1 = Billable  <br />2 = Any</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: create_new_project_task
+      summary: Create New Project Task
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a new task against a project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                projectId: 97fb2578-c000-4ad0-9757-d4b0dba65f4c
+                name: Task 5567
+                description: Project 555
+                assignedTo:
+                - ec1f540f-b355-413f-8a9b-9bd25ad22b70
+                - 22af8d5c-6bf3-46b6-8515-38284b99e144
+                - 17b28efc-ad5c-41ef-83fa-86142aa6f8dc
+                - 444d61be-76c5-4f82-9107-31aa32a2f5df
+                taskBillingType: 1
+                startDate: '2023-08-04'
+                endDate: '2023-08-30'
+                estimatedHours: 139.5
+                phaseId: null
+  /api/v1/psa/projects/{projectId}/tasks/{taskId}:
+    put:
+      operationId: update_project_task
+      summary: Update Project Task
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating task details against a project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Task 55
+                description: Project 555
+                assignedTo:
+                - ec1f540f-b355-413f-8a9b-9bd25ad22b70
+                - 22af8d5c-6bf3-46b6-8515-38284b99e144
+                - 17b28efc-ad5c-41ef-83fa-86142aa6f8dc
+                - 444d61be-76c5-4f82-9107-31aa32a2f5df
+                taskBillingType: 1
+                startDate: '2023-08-04'
+                endDate: '2023-08-30'
+                estimatedHours: 139.5
+                phaseId: null
+    get:
+      operationId: get_project_task_assignees
+      summary: Get project task assignees
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of task assignees against a project task.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/{projectId}/tasks/{taskId}/timeentries:
+    get:
+      operationId: get_project_task_time_enteries
+      summary: Get project task time enteries
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching the project task time entries between selected from and to date range. If both from and to are not specified, last 30 days records are returned. From date should be before To date.The difference between from and to date cannot be more than 90 days.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TaskType</th>
+
+        <th>TaskBillingType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = Phase  <br />2 = Milestone</td>
+
+        <td>0 = NonBillable  <br />1 = Billable  <br />2 = Any</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/timeentries:
+    get:
+      operationId: get_timesheet_enteries
+      summary: Get timesheet enteries
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching the time entries between selected from and to date range. If both from and to are not specified, last 30 days records are returned. From date should be before To date.The difference between from and to date cannot be more than 90 days.</p>
+
+        <h2 id></h2>
+
+        <p>Enumerated Values</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeEntryStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = UnSubmitted  <br />1 = Submitted  <br />2 = Approved  <br />3 = Rejected  <br />4 = InApprovalProcess  <br />5 = Invoiced</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API

@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: Keka HR Assets Documents API
+  description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+security:
+- oauth2:
+  - kekaapi
+tags:
+- name: Documents
+paths:
+  /api/v1/hris/documents/types:
+    get:
+      operationId: get_the_document_types
+      summary: Get the Document Types
+      tags:
+      - Documents
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get the document types</p>
+
+        '
+  /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documenttypes/448b210d-7fad-4dba-9422-d9ae61048b6a/documents:
+    get:
+      operationId: get_employee_documents
+      summary: Get Employee Documents
+      tags:
+      - Documents
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get documents for an employee</p>
+
+        '
+  ? /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documents/f33900ae-9175-4cbe-9d5e-37ef49cb5102/attachment/4f0f8e90-2c47-4dd8-8c20-d98e7e751e27
+  : get:
+      operationId: get_employee_document_attachment_download_url
+      summary: Get Employee Document Attachment Download Url
+      tags:
+      - Documents
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get Document Attachment Download URL</p>
+
+        '
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API
