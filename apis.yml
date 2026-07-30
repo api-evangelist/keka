@@ -1,7 +1,20 @@
 aid: keka
 name: Keka HR
 description: Keka is an Indian HR and payroll management platform providing a REST API for managing employee data, attendance, leave, payroll processing, expense management, and performance management. The API uses OAuth 2.0 authentication and supports webhooks for event-driven integrations.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/keka.png
 url: https://raw.githubusercontent.com/api-evangelist/keka/refs/heads/main/apis.yml
 created: 2026-06-13
 modified: 2026-06-13
@@ -17,33 +30,328 @@ tags:
   - India
   - HRMS
 apis:
-  - name: Keka HR REST API
-    description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developers.keka.com/
-    baseURL: https://{tenant}.keka.com/api/v1
-    tags:
-      - HR
-      - Payroll
-      - Attendance
-      - Leave
-      - Performance
-      - Employee
-    properties:
-      - type: Documentation
-        url: https://developers.keka.com/docs/getting-started-with-keka-apis
-      - type: OpenAPI
-        url: https://apidocs.keka.com/
-      - type: Authentication
-        url: https://developers.keka.com/reference/authentication
-      - type: RateLimits
-        url: https://developers.keka.com/reference/rate-limit
-      - type: Webhooks
-        url: https://developers.keka.com/docs/getting-started-with-webhooks
-      - type: Sandbox
-        url: https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
-      - type: LlmsText
-        url: https://developers.keka.com/llms.txt
+- aid: keka:keka-assets-api
+  name: Keka HR Assets API
+  description: The Assets API from Keka HR — 5 operation(s) for assets.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-assets-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-attendance-api
+  name: Keka HR Attendance API
+  description: The Attendance API from Keka HR — 7 operation(s) for attendance.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Attendance
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-attendance-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-authentication-api
+  name: Keka HR Authentication API
+  description: The Authentication API from Keka HR — 1 operation(s) for authentication.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-bgv-apis-api
+  name: Keka HR BGV APIs API
+  description: The BGV APIs API from Keka HR — 2 operation(s) for bgv apis.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - BGV APIs
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-bgv-apis-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-core-hr-api
+  name: Keka HR Core HR API
+  description: The Core HR API from Keka HR — 14 operation(s) for core hr.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Core HR
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-core-hr-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-documents-api
+  name: Keka HR Documents API
+  description: The Documents API from Keka HR — 3 operation(s) for documents.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-documents-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-expense-api
+  name: Keka HR Expense API
+  description: The Expense API from Keka HR — 3 operation(s) for expense.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Expense
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-expense-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-hire-api
+  name: Keka HR Hire API
+  description: The Hire API from Keka HR — 12 operation(s) for hire.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Hire
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-hire-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-leave-api
+  name: Keka HR Leave API
+  description: The Leave API from Keka HR — 4 operation(s) for leave.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Leave
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-leave-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-payroll-api
+  name: Keka HR Payroll API
+  description: The Payroll API from Keka HR — 11 operation(s) for payroll.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Payroll
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-payroll-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-pms-api
+  name: Keka HR PMS API
+  description: The PMS API from Keka HR — 8 operation(s) for pms.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - PMS
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-pms-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-psa-api
+  name: Keka HR PSA API
+  description: The PSA API from Keka HR — 15 operation(s) for psa.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - PSA
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-psa-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-requisitions-api
+  name: Keka HR Requisitions API
+  description: The Requisitions API from Keka HR — 1 operation(s) for requisitions.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Requisitions
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-requisitions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
+- aid: keka:keka-skills-api
+  name: Keka HR Skills API
+  description: The Skills API from Keka HR — 2 operation(s) for skills.
+  humanURL: https://developers.keka.com/
+  baseURL: https://{tenant}.keka.com/api/v1
+  tags:
+  - Skills
+  properties:
+  - type: OpenAPI
+    url: openapi/keka-skills-api-openapi.yml
+  - type: Documentation
+    url: https://developers.keka.com/docs/getting-started-with-keka-apis
+  - type: Authentication
+    url: https://developers.keka.com/reference/authentication
+  - type: RateLimits
+    url: https://developers.keka.com/reference/rate-limit
+  - type: Webhooks
+    url: https://developers.keka.com/docs/getting-started-with-webhooks
+  - type: Sandbox
+    url: >-
+      https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal
+  - type: LlmsText
+    url: https://developers.keka.com/llms.txt
 common:
   - type: AgenticAccess
     url: agentic-access/keka-agentic-access.yml
