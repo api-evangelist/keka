@@ -1,0 +1,2765 @@
+openapi: 3.0.0
+info:
+  title: Keka HR API
+  description: REST API for the Keka HR and payroll platform covering employee records,
+    attendance, leave, payroll, expense management, performance, recruitment, professional
+    services automation, helpdesk, background verification, and rewards.
+  version: v1
+  contact:
+    url: https://developers.keka.com/
+  license:
+    name: Keka Terms of Service
+    url: https://www.keka.com/terms-of-service
+servers:
+- url: https://{tenant}.keka.com/api/v1
+  description: Keka HR API
+  variables:
+    tenant:
+      default: your-company
+      description: Your Keka tenant subdomain
+tags:
+- name: Authentication
+- name: Core HR
+- name: Documents
+- name: Leave
+- name: Attendance
+- name: Payroll
+- name: PSA
+- name: PMS
+- name: Hire
+- name: Expense
+- name: Assets
+- name: Requisitions
+- name: Skills
+- name: BGV APIs
+paths:
+  /connect/token:
+    post:
+      operationId: fetch_access_token
+      summary: Fetch Access Token
+      tags:
+      - Authentication
+      responses:
+        '200':
+          description: Successful response
+      description: '<ul>
+
+        <li><p><code>client_id</code>: Your client identifier for authentication.</p>
+
+        </li>
+
+        <li><p><code>client_secret</code>: Your client secret for secure authentication.</p>
+
+        </li>
+
+        <li><p><code>api_key</code>: Your unique API key for accessing the system.</p>
+
+        </li>
+
+        <li><p><code>scope</code>: You will need to pass <strong>kekaapi</strong>
+        for this key.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  description: ''
+                scope:
+                  type: string
+                  description: ''
+                client_id:
+                  type: string
+                  description: ''
+                client_secret:
+                  type: string
+                  description: ''
+                api_key:
+                  type: string
+                  description: ''
+  /api/v1/hris/employees:
+    get:
+      operationId: get_all_employees
+      summary: Get all employees
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching details of all employees.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeType</th>
+
+        <th>WorkerType</th>
+
+        <th>MaritalStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+
+        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+
+        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4
+        - Separated</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Gender</th>
+
+        <th>EmploymentStatus</th>
+
+        <th>AccountStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br
+        />4 - PreferNotToRespond</td>
+
+        <td>0 - Working  <br />1- Relieved</td>
+
+        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        '
+    post:
+      operationId: create_employee
+      summary: Create employee
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a new Employee record.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeType</th>
+
+        <th>WorkerType</th>
+
+        <th>MaritalStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+
+        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+
+        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4
+        - Separated</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Gender</th>
+
+        <th>EmploymentStatus</th>
+
+        <th>AccountStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br
+        />4 - PreferNotToRespond</td>
+
+        <td>0 - Working  <br />1- Relieved</td>
+
+        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <th'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                EmployeeNumber: '1234'
+                DisplayName: Shubham Test
+                FirstName: Shubham
+                LastName: Test
+                Email: shubhtest@test.com
+                Gender: Male
+                DateOfBirth: 09-08-1999
+                DateJoined: 01-09-2021
+                department: f5b7e125-d39c-4630-a332-6c97a265f953
+                BusinessUnit: db76d978-8722-4e9a-9415-94f5bb523810
+                JobTitle: f3f9425a-fdee-499d-8d1f-5966697e6125
+                Location: 9fe494f8-dbf8-447e-9af0-c71370f4e94e
+  /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/personaldetails:
+    put:
+      operationId: update_employee_personal_details
+      summary: Update Employee Personal Details
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Update Employee personal details</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                currentAddress:
+                  addressLine1: 404, Brut Residence
+                  addressLine2: Nr. Thomas Bakery
+                  countryCode: IN
+                  city: Manchester
+                  state: North London
+                  zip: M1 1AD
+                displayName: Erling Haaland
+                firstName: Erling
+                lastName: Haaland
+                gender: 0
+                dateOfBirth: '1998-01-03T00:00:00'
+                middleName: Brut
+                workPhone: '9822134561'
+                personalEmail: earling.haaland@yopmail.com
+                maritalStatus: 0
+                marriageDate: '2023-03-31T00:00:00'
+                relations:
+                - relationType: 2
+                  gender: 1
+                  firstName: Brut
+                  lastName: Haaland
+                  displayName: Brut Haaland
+                  email: brut@yopmail.com
+                  dateOfBirth: '1988-07-24T00:00:00'
+                  profession: Footballer
+                  mobile: '9999888864'
+                bloodGroup: 8
+  /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/jobdetails:
+    put:
+      operationId: update_employee_job_details
+      summary: Update Employee Job Details
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Update employee job details</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                location: d62a9b17-5973-4995-83fc-4952707b6d47
+                jobTitle: 4a896b29-1935-4046-a6e4-eaef2aa7dfe1
+                reportingManager: 7dd7e7ed-be39-47f3-beab-d498b940fd98
+                attendanceNumber: KEKATTD12
+                timeType: 0
+  /api/v1/hris/employees/{id}:
+    get:
+      operationId: get_an_employee
+      summary: Get an employee
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching data of a specific employee by
+        passing the employee ID as a URI parameter.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeType</th>
+
+        <th>WorkerType</th>
+
+        <th>MaritalStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+
+        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+
+        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4
+        - Separated</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Gender</th>
+
+        <th>EmploymentStatus</th>
+
+        <th>AccountStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br
+        />4 - PreferNotToRespond</td>
+
+        <td>0 - Working  <br />1- Relieved</td>
+
+        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="c'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hris/employees/updatefields:
+    get:
+      operationId: get_all_update_fields
+      summary: Get All Update Fields
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/groups:
+    get:
+      operationId: get_all_groups
+      summary: Get all groups
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all groups.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br
+        />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br
+        />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/grouptypes:
+    get:
+      operationId: get_all_group_types
+      summary: Get all group types
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all group types.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br
+        />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br
+        />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/departments:
+    get:
+      operationId: get_all_departments
+      summary: Get All Departments
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/locations:
+    get:
+      operationId: get_all_locations
+      summary: Get all locations
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all locations.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br
+        />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br
+        />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/jobtitles:
+    get:
+      operationId: get_all_job_titles
+      summary: Get all job titles
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all locations.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br
+        />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br
+        />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/currencies:
+    get:
+      operationId: get_all_currencies
+      summary: Get all currencies
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all currencies.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SystemGroupType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br
+        />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br
+        />8 = ClientTeam  <br />9 = Segment</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/hris/noticeperiods:
+    get:
+      operationId: get_all_noticeperiods
+      summary: Get All Noticeperiods
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/exitreasons:
+    get:
+      operationId: get_all_exitreasons
+      summary: Get All Exitreasons
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/exitrequest:
+    post:
+      operationId: create_an_exit_request
+      summary: Create an Exit Request
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Create an exist request for an employee</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Exit Type</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 - None  <br />1 - Employee Resignation  <br />2- Company Action</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                exitType: 1
+                exitReason: 4ce57402-db60-418e-a0b5-69c4a5fecfd0
+                resignationDate: '2024-10-01T00:00:00'
+                lastWorkingDate: '2024-12-01T00:00:00'
+                isOkToRehire: true
+                comments: Comments example 1234
+    put:
+      operationId: update_exit_request_for_employee
+      summary: Update Exit Request for Employee
+      tags:
+      - Core HR
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                exitType: 1
+                exitReason: 4ce57402-db60-418e-a0b5-69c4a5fecfd0
+                resignationDate: '2024-10-01T00:00:00'
+                lastWorkingDate: '2024-12-01T00:00:00'
+                isOkToRehire: true
+                comments: Comments example 1234
+  /api/v1/hris/documents/types:
+    get:
+      operationId: get_the_document_types
+      summary: Get the Document Types
+      tags:
+      - Documents
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get the document types</p>
+
+        '
+  /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documenttypes/448b210d-7fad-4dba-9422-d9ae61048b6a/documents:
+    get:
+      operationId: get_employee_documents
+      summary: Get Employee Documents
+      tags:
+      - Documents
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get documents for an employee</p>
+
+        '
+  ? /api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documents/f33900ae-9175-4cbe-9d5e-37ef49cb5102/attachment/4f0f8e90-2c47-4dd8-8c20-d98e7e751e27
+  : get:
+      operationId: get_employee_document_attachment_download_url
+      summary: Get Employee Document Attachment Download Url
+      tags:
+      - Documents
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get Document Attachment Download URL</p>
+
+        '
+  /api/v1/time/leaverequests:
+    get:
+      operationId: get_all_leave_requests
+      summary: Get all leave requests
+      tags:
+      - Leave
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all leave requests in
+        the organization between from and to date. If both from and to are not specified,
+        last 30 days records are returned. From date should be before to date. The
+        difference between from and to date cannot be more than 90 days.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SessionType</th>
+
+        <th>LeaveRequestStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = FirstHalf  <br />1 = SecondHalf</td>
+
+        <td>0 = Pending  <br />1 = Approved  <br />2 = Rejected  <br />3 = Cancelled  <br
+        />4 = InApprovalProcess</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+    post:
+      operationId: create_leave_request
+      summary: Create leave request
+      tags:
+      - Leave
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating leave request against an employee.
+        Create an leave request and returns leave request identifier.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                employeeId: 444d61be-76c5-4f82-9107-31aa32a2f5df
+                requestedBy: 444d61be-76c5-4f82-9107-31aa32a2f5df
+                fromDate: '2023-11-03'
+                toDate: '2023-11-03'
+                fromSession: 0
+                toSession: 1
+                leaveTypeId: ABBE47B9-1AEF-4364-91E9-50EAD6C22E95
+                reason: Health Issue
+                note: casual Leave
+  /api/v1/time/leavetypes:
+    get:
+      operationId: get_all_leave_types
+      summary: Get all leave types
+      tags:
+      - Leave
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all leave types.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>SessionType</th>
+
+        <th>LeaveRequestStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = FirstHalf  <br />1 = SecondHalf</td>
+
+        <td>0 = Pending  <br />1 = Approved  <br />2 = Rejected  <br />3 = Cancelled  <br
+        />4 = InApprovalProcess</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/time/leavebalance:
+    get:
+      operationId: get_all_leave_balance
+      summary: Get All Leave Balance
+      tags:
+      - Leave
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/time/leaveplans:
+    get:
+      operationId: get_all_leave_plans
+      summary: Get All Leave Plans
+      tags:
+      - Leave
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/time/attendance:
+    get:
+      operationId: get_all_attendance_records
+      summary: Get all attendance records
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all attendance records
+        between from and to date. If both from and to are not specified, last 30 days
+        records are returned. From date should be before to date.The difference between
+        from and to date cannot be more than 90 days.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>AttendanceDayType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = WorkingDay  <br />1 = Holiday  <br />2 = FullDayWeeklyOff  <br />3
+        = FirstHalfWeeklyOff  <br />4 = SecondHalfWeeklyOff</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /v1/logs:
+    post:
+      operationId: push_attendance_punches
+      summary: Push Attendance punches
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for pushing attendance raw punches to Keka.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              example:
+              - DeviceIdentifier: b66ca298-90e4-463c-b1f0-29b1e1ae7828
+                EmployeeAttendanceNumber: '1'
+                Timestamp: '2023-01-25T17:14:54'
+                Status: 0
+  /api/v1/time/capturescheme:
+    get:
+      operationId: get_all_captureschemes
+      summary: Get All Captureschemes
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API will give all the captures schemes.</p>
+
+        '
+  /api/v1/time/shiftpolicies:
+    get:
+      operationId: get_all_shift_policies
+      summary: Get All Shift Policies
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API will give all the shift policies</p>
+
+        '
+  /api/v1/time/holidayscalendar:
+    get:
+      operationId: get_all_holiday_calendar
+      summary: Get All Holiday Calendar
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all holidays Calendar</p>
+
+        '
+  /api/v1/time/penalisationpolicies:
+    get:
+      operationId: get_all_trackingpolicies
+      summary: Get All Trackingpolicies
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all trackingpolicies</p>
+
+        '
+  /api/v1/time/weeklyoffpolicies:
+    get:
+      operationId: get_all_weeklyoff_policies
+      summary: Get All Weeklyoff Policies
+      tags:
+      - Attendance
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all weekly off policies</p>
+
+        '
+  /api/v1/payroll/salarycomponents:
+    get:
+      operationId: get_salary_components
+      summary: Get Salary components
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all salary components.</p>
+
+        '
+  /api/v1/payroll/paygroups:
+    get:
+      operationId: get_all_pay_groups
+      summary: Get all pay groups
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all pay groups.</p>
+
+        '
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles:
+    get:
+      operationId: get_all_pay_cycles
+      summary: Get all pay cycles
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all pay cycles in a pay
+        group.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br
+        />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9
+        = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br
+        />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br
+        />15 = FinalSettlementAlreadyPaid  <br />16 = '
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/payregister:
+    get:
+      operationId: get_pay_register
+      summary: Get pay register
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching pay register for a given pay
+        cycle.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br
+        />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9
+        = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br
+        />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br
+        />15 = FinalSettlementAlreadyPaid  <br />16 = Fin'
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches:
+    get:
+      operationId: get_all_pay_batches
+      summary: Get all pay batches
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all pay batches in a
+        pay group.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br
+        />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9
+        = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br
+        />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br
+        />15 = FinalSettlementAlreadyPaid  <br />16 ='
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/payroll/paygroups/{payGroupId}/paycycles/{payCycleId}/paybatches/{payBatchId}/payments:
+    get:
+      operationId: get_all_batch_payments
+      summary: Get all batch payments
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching batch payments against against
+        a batch ID,.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br
+        />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9
+        = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br
+        />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br
+        />15 = FinalSettlementAlreadyPaid  <br />'
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payBatchId
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      operationId: update_the_payment_status
+      summary: Update the payment status
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating payment status for a given batch
+        ID. Only 100 bulk transactions will be allowed for a particular batch.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>PayrollRunStatus</th>
+
+        <th>RemunerationType</th>
+
+        <th>PaymentStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+
+        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+
+        <td>0 = UnPaid  <br />1 = Paid</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>EmployeePayrollCycleRunStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br
+        />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9
+        = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br
+        />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 '
+      parameters:
+      - name: payGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payCycleId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: payBatchId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/time/payroll/paygrades:
+    get:
+      operationId: get_all_pay_grades
+      summary: Get all Pay Grades
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/payroll/payband:
+    get:
+      operationId: get_all_pay_bands
+      summary: Get All Pay Bands
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/payroll/salaries:
+    get:
+      operationId: get_all_employee_salaries
+      summary: Get all Employee Salaries
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/payroll/employees/fnf:
+    get:
+      operationId: get_all_employee_fnf_details
+      summary: Get all employee FnF details
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+  /get-all-bonus-types:
+    get:
+      operationId: get_all_bonus_types
+      summary: Get all Bonus Types
+      tags:
+      - Payroll
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Get all bonus types</p>
+
+        '
+  /api/v1/psa/clients:
+    get:
+      operationId: get_all_clients
+      summary: Get all clients
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all clients.</p>
+
+        '
+    post:
+      operationId: create_a_client
+      summary: Create a client
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a client.</p>
+
+        '
+  /api/v1/psa/clients/{id}:
+    get:
+      operationId: get_a_client
+      summary: Get a client
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching a specific client.</p>
+
+        '
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c:
+    put:
+      operationId: update_a_client
+      summary: Update a Client
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                billingAddress:
+                  countryCode: US
+                  addressLine2: Manhatten
+                  addressLine1: Cosco Street, US
+                  state: NY
+                  zip: '543313'
+                name: United Health Group
+                description: This project is about developing patients management
+                  system
+                code: USBU0051
+  /api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c/billingroles:
+    get:
+      operationId: get_billingroles
+      summary: Get Billingroles
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/psa/projects/{projectId}/phases:
+    get:
+      operationId: get_project_phases
+      summary: Get project phases
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all project phases.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: create_project_phase
+      summary: Create project phase
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a project phase.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects:
+    post:
+      operationId: create_a_project
+      summary: Create a project
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a project.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ProjectStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+    get:
+      operationId: get_all_projects
+      summary: Get all projects
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all projects.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ProjectStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/psa/projects/{id}:
+    get:
+      operationId: get_a_project
+      summary: Get a project
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching a specific project.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ProjectStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/{projectId}:
+    put:
+      operationId: update_project_details
+      summary: Update Project details
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating details against a specific project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Project-KK
+                description: Sample project test-II
+                code: TAX
+                status: 0
+                startDate: '2023-07-01'
+                endDate: '2023-08-31'
+                isBillable: true
+  /api/v1/psa/projects/{projectId}/allocations:
+    get:
+      operationId: get_project_allocations
+      summary: Get project allocations
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching allocations against a specific
+        project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/03355969-3efa-4550-bcbd-7c89bf8c5806/allocations:
+    post:
+      operationId: add_a_project_allocation
+      summary: Add a Project Allocation
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                employeeId: 8d04399f-8057-4b0d-ab0f-d9b9a5fb0376
+                allocationPercentage: 10
+                billingRoleId: 5f497651-5736-4386-8253-a0c7c2be99ab
+                billingRate: 120
+                startDate: '2024-10-08T06:36:23.750Z'
+                endDate: '2024-10-08T06:36:23.750Z'
+  /api/v1/psa/projects/{id}/timeentries:
+    get:
+      operationId: get_project_timesheet_enteries
+      summary: Get project timesheet enteries
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching the project time entries between
+        selected from and to date range. If both from and to are not specified, last
+        30 days records are returned. From date should be before To date.The difference
+        between from and to date cannot be more than 90 days.</p>
+
+        '
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/{projectId}/tasks:
+    get:
+      operationId: get_project_tasks
+      summary: Get project tasks
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of tasks against a specific
+        project.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TaskType</th>
+
+        <th>TaskBillingType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = Phase  <br />2 = Milestone</td>
+
+        <td>0 = NonBillable  <br />1 = Billable  <br />2 = Any</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      operationId: create_new_project_task
+      summary: Create New Project Task
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a new task against a project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                projectId: 97fb2578-c000-4ad0-9757-d4b0dba65f4c
+                name: Task 5567
+                description: Project 555
+                assignedTo:
+                - ec1f540f-b355-413f-8a9b-9bd25ad22b70
+                - 22af8d5c-6bf3-46b6-8515-38284b99e144
+                - 17b28efc-ad5c-41ef-83fa-86142aa6f8dc
+                - 444d61be-76c5-4f82-9107-31aa32a2f5df
+                taskBillingType: 1
+                startDate: '2023-08-04'
+                endDate: '2023-08-30'
+                estimatedHours: 139.5
+                phaseId: null
+  /api/v1/psa/projects/{projectId}/tasks/{taskId}:
+    put:
+      operationId: update_project_task
+      summary: Update Project Task
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating task details against a project.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Task 55
+                description: Project 555
+                assignedTo:
+                - ec1f540f-b355-413f-8a9b-9bd25ad22b70
+                - 22af8d5c-6bf3-46b6-8515-38284b99e144
+                - 17b28efc-ad5c-41ef-83fa-86142aa6f8dc
+                - 444d61be-76c5-4f82-9107-31aa32a2f5df
+                taskBillingType: 1
+                startDate: '2023-08-04'
+                endDate: '2023-08-30'
+                estimatedHours: 139.5
+                phaseId: null
+    get:
+      operationId: get_project_task_assignees
+      summary: Get project task assignees
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of task assignees against
+        a project task.</p>
+
+        '
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/projects/{projectId}/tasks/{taskId}/timeentries:
+    get:
+      operationId: get_project_task_time_enteries
+      summary: Get project task time enteries
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching the project task time entries
+        between selected from and to date range. If both from and to are not specified,
+        last 30 days records are returned. From date should be before To date.The
+        difference between from and to date cannot be more than 90 days.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TaskType</th>
+
+        <th>TaskBillingType</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = Phase  <br />2 = Milestone</td>
+
+        <td>0 = NonBillable  <br />1 = Billable  <br />2 = Any</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/psa/timeentries:
+    get:
+      operationId: get_timesheet_enteries
+      summary: Get timesheet enteries
+      tags:
+      - PSA
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching the time entries between selected
+        from and to date range. If both from and to are not specified, last 30 days
+        records are returned. From date should be before To date.The difference between
+        from and to date cannot be more than 90 days.</p>
+
+        <h2 id></h2>
+
+        <p>Enumerated Values</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeEntryStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = UnSubmitted  <br />1 = Submitted  <br />2 = Approved  <br />3 = Rejected  <br
+        />4 = InApprovalProcess  <br />5 = Invoiced</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/timeframes:
+    get:
+      operationId: get_time_frame_list
+      summary: Get time frame list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all time frames.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>TimeFrameStatus</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Active  <br />1 = Hidden</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/goals:
+    get:
+      operationId: get_goal_list
+      summary: Get Goal list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all goals.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Goal Status</th>
+
+        <th>GoalMetricType</th>
+
+        <th>Goal Type</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 =
+        AtRisk  <br />4 = Closed</td>
+
+        <td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>
+
+        <td>0 = Individual  <br />1 = Company  <br />2 = Group</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/goals/{goalId}/progress:
+    put:
+      operationId: update_goal_progress
+      summary: Update goal progress
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for updating progress against a specific goal.</p>
+
+        <h2 id="enumerated-values">Enumerated Values</h2>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Goal Status</th>
+
+        <th>GoalMetricType</th>
+
+        <th>Goal Type</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 =
+        AtRisk  <br />4 = Closed</td>
+
+        <td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>
+
+        <td>0 = Individual  <br />1 = Company  <br />2 = Group</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      parameters:
+      - name: goalId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                currentValue: '34'
+                status: '1'
+                updatedBy: d7fcfb1b-dec9-48a5-a0ab-247869d870bb
+                note: Test
+  /api/v1/pms/badges:
+    get:
+      operationId: get_badge_list
+      summary: Get badge list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all badges.</p>
+
+        <p>Enumerated Values</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Badge Status</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Enabled  <br />1 = Disabled</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/pms/praise:
+    get:
+      operationId: get_praise_list
+      summary: Get praise list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all praises.</p>
+
+        '
+    post:
+      operationId: create_praise
+      summary: Create Praise
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a praise.</p>
+
+        '
+  /api/v1/pms/reviewgroups:
+    get:
+      operationId: get_review_group_list
+      summary: Get review group list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all review groups.</p>
+
+        '
+  /api/v1/pms/reviewcycles:
+    get:
+      operationId: get_review_group_cycle_list
+      summary: Get review group cycle list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all review cycles.</p>
+
+        '
+  /api/v1/pms/reviews:
+    get:
+      operationId: get_employee_review_list
+      summary: Get employee review list
+      tags:
+      - PMS
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all employee reviews.</p>
+
+        '
+  /get-all-job-boards:
+    get:
+      operationId: get_all_job_boards
+      summary: Get all Job boards
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hire/jobs:
+    get:
+      operationId: get_job_details
+      summary: Get Job details
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of jobs and job details.</p>
+
+        '
+  /api/v1/hire/jobs/{jobId}/applicationfields:
+    get:
+      operationId: get_job_application_fields
+      summary: Get job application fields
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching application fields against a
+        sepcific job.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/jobs/{jobId}/candidates:
+    get:
+      operationId: get_candidate_details
+      summary: Get candidate details
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of active candidates against
+        a sepcific job.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415:
+    put:
+      operationId: update_a_candiate
+      summary: Update a candiate
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415/notes:
+    post:
+      operationId: add_candidate_notes
+      summary: Add Candidate Notes
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                tags:
+                - DND
+                - Have other offers
+                comments: The candidate is expecting hire package as he has offers
+                  in hand from competitors
+  /api/v1/v1/hire/jobs/{jobId}/candidate:
+    post:
+      operationId: create_new_candidate
+      summary: Create new candidate
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for creating a new candidate against a job
+        using job application fields.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                firstName: Shubham
+                lastName: Hire
+                mobilePhone:
+                  countryCode: '+91'
+                  number: '9998765432'
+                email: shubh@test.com
+                additionalFields:
+                  velit3a: lol
+                  gender: '1'
+  /api/v1/hire/jobs/{jobId}/candidate/{candidateId}/interviews:
+    get:
+      operationId: fetch_candidate_interviews
+      summary: Fetch candidate interviews
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching interview details against a sepcific
+        job candidate.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: candidateId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/jobs/{jobId}/candidate/{candidateId}/scorecards:
+    get:
+      operationId: get_candidate_scorecard
+      summary: Get candidate scorecard
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching scorecard details against a sepcific
+        job candidate.</p>
+
+        '
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: candidateId
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/hire/preboarding/candiates:
+    get:
+      operationId: get_all_preboarding_candidates
+      summary: Get all Preboarding candidates
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>PreboardingStage</strong></th>
+
+        <th><strong>PreboardingStatus</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = Start  <br />1 = CollectInfo  <br />2 = VerifyInfo  <br />3 = ManageOffer  <br
+        />4 = OfferAcceptance  <br />5 = Hired</td>
+
+        <td>0 - Initiated  <br />1 - Completed  <br />2 - Cancelled  <br />3 - Archived  <br
+        />4 - CandidatureRevoked  <br />5 - MarkedAsNoShow</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Get all Preboarding Candidates</p>
+
+        '
+  /api/v1/hire/preboarding/candidates:
+    post:
+      operationId: post_a_preboarding_candidate
+      summary: Post a Preboarding Candidate
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>Adds a preboarding candidate</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                firstName: Kevin
+                middleName: De
+                lastName: Bruyne
+                email: kevin.d@yopmail.co
+                countryCode: US
+                mobileNumber: '9545221353'
+                gender: 1
+                stage: 0
+                status: 2
+                jobTitle: 363ebfae-3e47-42a2-a34d-e6dde02daf10
+                department: 3a0a0177-ceaa-4ff5-91c5-a43de1220645
+                workLocation: cf80482f-ba0f-40e2-8c31-527a38e20c2d
+  /api/v1/hire/preboarding/candidates/48dd58d2-e899-4182-92c1-7976bab37a64:
+    put:
+      operationId: update_a_preboarding_candidates
+      summary: Update a Preboarding Candidates
+      tags:
+      - Hire
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                expectedDateOfJoining: '2024-10-23T00:00:00'
+  /api/v1/expense/categories:
+    get:
+      operationId: get_expense_categories
+      summary: Get expense categories
+      tags:
+      - Expense
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all expense categories.</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>ExpenseCategoryType</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>0 = None  <br />1 = General  <br />2 = Mileage  <br />3 = PerDiem  <br
+        />4 = AirTravel  <br />5 = Accommodation  <br />6 = LocalConveyance  <br />7
+        = CashAdvance</td>
+
+        <td></td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+  /api/v1/expense/claims:
+    get:
+      operationId: get_expense_claim_details
+      summary: Get expense claim details
+      tags:
+      - Expense
+      responses:
+        '200':
+          description: Successful response
+      description: '<p>This API is used for fetching list of all expense claims.</p>
+
+        '
+  /api/v1/expensepolicies:
+    get:
+      operationId: get_all_expensepolicies
+      summary: Get all expensepolicies
+      tags:
+      - Expense
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets:
+    get:
+      operationId: get_all_assets
+      summary: Get all assets
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets/2cc03669-bc85-4383-b2cf-4bb5e1b112e7/allocation:
+    put:
+      operationId: update_asset_assignment
+      summary: Update Asset Assignment
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                assetConditionId: 5cf533c1-4ed2-474d-a5b4-454d12f6f989
+                note: Asset requested by user for official purpose
+                assignedOn: '2024-10-06T00:00:00'
+                assignedTo: 2ea32ac9-5497-4095-adc3-6dde2b8fb639
+  /api/v1/assets/types:
+    get:
+      operationId: get_all_assets_type
+      summary: Get all Assets Type
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets/categories:
+    get:
+      operationId: get_all_asset_categories
+      summary: Get All Asset Categories
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/assets/conditions:
+    get:
+      operationId: get_all_asset_conditions
+      summary: Get All Asset Conditions
+      tags:
+      - Assets
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/requisition/requests:
+    get:
+      operationId: get_all_requisition_requests
+      summary: Get All Requisition Requests
+      tags:
+      - Requisitions
+      responses:
+        '200':
+          description: Successful response
+  /gets-all-skills:
+    get:
+      operationId: gets_all_skills
+      summary: Gets all skills
+      tags:
+      - Skills
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/skills:
+    get:
+      operationId: get_employee_skills
+      summary: Get Employee Skills
+      tags:
+      - Skills
+      responses:
+        '200':
+          description: Successful response
+    post:
+      operationId: add_employee_skills
+      summary: Add Employee Skills
+      tags:
+      - Skills
+      responses:
+        '200':
+          description: Successful response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              example:
+              - skillId: 04e2de7b-8ad0-4c11-8d16-f2c6e2e6f9ee
+                rating: 3
+              - skillId: bd3ac15d-4628-4397-b961-a80a10257e08
+                rating: 5
+  /api/v1/hris/bgv/792a7e86-3cdc-4561-94c0-ba124df90acb/requests:
+    get:
+      operationId: get_all_bgv_requests
+      summary: Get All BGV requests
+      tags:
+      - BGV APIs
+      responses:
+        '200':
+          description: Successful response
+  /api/v1/hris/bgv/{variable}/requests/{variable}:
+    put:
+      operationId: add_bgv_request_report
+      summary: Add BGV request report
+      tags:
+      - BGV APIs
+      responses:
+        '200':
+          description: Successful response
+      parameters:
+      - name: variable
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 client credentials flow
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.keka.com/connect/token
+          scopes:
+            kekaapi: Access to Keka HR API
+security:
+- oauth2:
+  - kekaapi

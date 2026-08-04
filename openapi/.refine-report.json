@@ -1,0 +1,40 @@
+{
+  "provider": "keka",
+  "sources": [
+    "keka-assets-api-openapi.yml",
+    "keka-attendance-api-openapi.yml",
+    "keka-authentication-api-openapi.yml",
+    "keka-bgv-apis-api-openapi.yml",
+    "keka-core-hr-api-openapi.yml",
+    "keka-documents-api-openapi.yml",
+    "keka-expense-api-openapi.yml",
+    "keka-hire-api-openapi.yml",
+    "keka-leave-api-openapi.yml",
+    "keka-payroll-api-openapi.yml",
+    "keka-pms-api-openapi.yml",
+    "keka-psa-api-openapi.yml",
+    "keka-requisitions-api-openapi.yml",
+    "keka-skills-api-openapi.yml"
+  ],
+  "outputs": [
+    "keka-assets-api-openapi.yml",
+    "keka-attendance-api-openapi.yml",
+    "keka-authentication-api-openapi.yml",
+    "keka-bgv-apis-api-openapi.yml",
+    "keka-core-hr-api-openapi.yml",
+    "keka-documents-api-openapi.yml",
+    "keka-expense-api-openapi.yml",
+    "keka-hire-api-openapi.yml",
+    "keka-leave-api-openapi.yml",
+    "keka-payroll-api-openapi.yml",
+    "keka-pms-api-openapi.yml",
+    "keka-psa-api-openapi.yml",
+    "keka-requisitions-api-openapi.yml",
+    "keka-skills-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
