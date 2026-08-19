@@ -1,0 +1,226 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Hire API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hire",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all Job boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/get-all-job-boards"
+          },
+          "docs": "Get all Job boards"
+        },
+        {
+          "info": {
+            "name": "Get Job details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs"
+          },
+          "docs": "<p>This API is used for fetching list of jobs and job details.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get job application fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs/:jobId/applicationfields",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching application fields against a sepcific job.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get candidate details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs/:jobId/candidates",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching list of active candidates against a sepcific job.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Update a candiate",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a candiate"
+        },
+        {
+          "info": {
+            "name": "Add Candidate Notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs/8b794fc7-3d9f-43b4-ace3-3fb7871b83d7/candidate/fe6ea7a0-0836-432a-8542-ce1762b11415/notes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Candidate Notes"
+        },
+        {
+          "info": {
+            "name": "Create new candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/v1/hire/jobs/:jobId/candidate",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for creating a new candidate against a job using job application fields.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Fetch candidate interviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs/:jobId/candidate/:candidateId/interviews",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "candidateId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching interview details against a sepcific job candidate.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get candidate scorecard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/jobs/:jobId/candidate/:candidateId/scorecards",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "candidateId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching scorecard details against a sepcific job candidate.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get all Preboarding candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/preboarding/candiates"
+          },
+          "docs": "<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>PreboardingStage</strong></th>\n<th><strong>PreboardingStatus</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Start  <br />1 = CollectInfo  <br />2 = VerifyInfo  <br />3 = ManageOffer  <br />4 = OfferAcceptance  <br />5 = Hired</td>\n<td>0 - Initiated  <br />1 - Completed  <br />2 - Cancelled  <br />3 - Archived  <br />4 - CandidatureRevoked  <br />5 - MarkedAsNoShow</td>\n</tr>\n</tbody>\n</table>\n</div><p>Get a"
+        },
+        {
+          "info": {
+            "name": "Post a Preboarding Candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/preboarding/candidates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Adds a preboarding candidate</p>\n"
+        },
+        {
+          "info": {
+            "name": "Update a Preboarding Candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hire/preboarding/candidates/48dd58d2-e899-4182-92c1-7976bab37a64",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Preboarding Candidates"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

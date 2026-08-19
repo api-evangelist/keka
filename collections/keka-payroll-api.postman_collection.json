@@ -1,0 +1,1298 @@
+{
+  "item": [
+    {
+      "id": "a3e40b33-4bd4-4efe-af46-f738c66fb5e4",
+      "name": "Payroll",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dec6c161-6ed9-4942-84cb-875fcce1bcdf",
+          "name": "Get Salary components",
+          "request": {
+            "name": "Get Salary components",
+            "description": {
+              "content": "<p>This API is used for fetching list of all salary components.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "salarycomponents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c40febf-6fdf-40e7-887f-ce8eb51b50b4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "salarycomponents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af71695c-c7ce-4da5-8fe4-56ddcabee459",
+          "name": "Get all pay groups",
+          "request": {
+            "name": "Get all pay groups",
+            "description": {
+              "content": "<p>This API is used for fetching list of all pay groups.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "paygroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "015d06bf-19fe-4182-b9a8-81ac102dbec2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "paygroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb2f5014-2322-471d-b733-b30fd873ef67",
+          "name": "Get all pay cycles",
+          "request": {
+            "name": "Get all pay cycles",
+            "description": {
+              "content": "<p>This API is used for fetching list of all pay cycles in a pay group.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>EmployeePayrollCycleRunStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 = ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "paygroups",
+                ":payGroupId",
+                "paycycles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f885cee-2f4a-415e-a31b-d244dd9783ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "paygroups",
+                    ":payGroupId",
+                    "paycycles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b48944be-403f-4e19-8f83-a42152688928",
+          "name": "Get pay register",
+          "request": {
+            "name": "Get pay register",
+            "description": {
+              "content": "<p>This API is used for fetching pay register for a given pay cycle.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>EmployeePayrollCycleRunStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 = Fin",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "paygroups",
+                ":payGroupId",
+                "paycycles",
+                ":payCycleId",
+                "payregister"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payCycleId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b82f3a9c-5852-4a43-b580-124e85833d7c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "paygroups",
+                    ":payGroupId",
+                    "paycycles",
+                    ":payCycleId",
+                    "payregister"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payCycleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce445adf-568c-4bfc-993e-dba5eeaa5906",
+          "name": "Get all pay batches",
+          "request": {
+            "name": "Get all pay batches",
+            "description": {
+              "content": "<p>This API is used for fetching list of all pay batches in a pay group.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>EmployeePayrollCycleRunStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 =",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "paygroups",
+                ":payGroupId",
+                "paycycles",
+                ":payCycleId",
+                "paybatches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payCycleId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b01b3af-4805-4afe-82ce-6bedb847f797",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "paygroups",
+                    ":payGroupId",
+                    "paycycles",
+                    ":payCycleId",
+                    "paybatches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payCycleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d96a43e-9062-4626-bac1-f880d61b264b",
+          "name": "Get all batch payments",
+          "request": {
+            "name": "Get all batch payments",
+            "description": {
+              "content": "<p>This API is used for fetching batch payments against against a batch ID,.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>EmployeePayrollCycleRunStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "paygroups",
+                ":payGroupId",
+                "paycycles",
+                ":payCycleId",
+                "paybatches",
+                ":payBatchId",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payCycleId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payBatchId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "afb7761f-be0f-4c41-9ab4-7d20fdd4d304",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "paygroups",
+                    ":payGroupId",
+                    "paycycles",
+                    ":payCycleId",
+                    "paybatches",
+                    ":payBatchId",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payCycleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payBatchId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab3c4123-ef80-4eb9-acd7-b768cdaa5ca9",
+          "name": "Update the payment status",
+          "request": {
+            "name": "Update the payment status",
+            "description": {
+              "content": "<p>This API is used for updating payment status for a given batch ID. Only 100 bulk transactions will be allowed for a particular batch.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>EmployeePayrollCycleRunStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "paygroups",
+                ":payGroupId",
+                "paycycles",
+                ":payCycleId",
+                "paybatches",
+                ":payBatchId",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payCycleId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "payBatchId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72365b62-1fe0-4b86-adca-a69a6d2cec90",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "paygroups",
+                    ":payGroupId",
+                    "paycycles",
+                    ":payCycleId",
+                    "paybatches",
+                    ":payBatchId",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payCycleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "payBatchId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb52292a-487f-46f3-8436-af8a9f7964d5",
+          "name": "Get all Pay Grades",
+          "request": {
+            "name": "Get all Pay Grades",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "time",
+                "payroll",
+                "paygrades"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfb6967e-141f-4762-b74b-4c7aa634664f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "time",
+                    "payroll",
+                    "paygrades"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50a35511-11bc-4a61-b7bb-c41abfc2e64f",
+          "name": "Get All Pay Bands",
+          "request": {
+            "name": "Get All Pay Bands",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "payband"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "907c0417-ae12-495f-b499-5a967836196a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "payband"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "506d187c-c83d-4e9e-bbcc-d47b6ca48269",
+          "name": "Get all Employee Salaries",
+          "request": {
+            "name": "Get all Employee Salaries",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "salaries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90ba982b-bd5c-47dc-9e64-67c9b33795aa",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "salaries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41fcf418-54f2-4880-82ce-945d4851658a",
+          "name": "Get all employee FnF details",
+          "request": {
+            "name": "Get all employee FnF details",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "payroll",
+                "employees",
+                "fnf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f74d8056-4372-4787-95e8-d2d23eafbe72",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "payroll",
+                    "employees",
+                    "fnf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01a5fc43-efcc-40ff-b28e-28a1e9f438dc",
+          "name": "Get all Bonus Types",
+          "request": {
+            "name": "Get all Bonus Types",
+            "description": {
+              "content": "<p>Get all bonus types</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "get-all-bonus-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0dff76ef-c831-48c2-823c-b04d878b11ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get-all-bonus-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Keka tenant subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "your-company",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://{{tenant}}.keka.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "kekaapi"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.keka.com/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7379dca5-235f-46e3-b450-39120280d831",
+    "name": "Keka HR Assets Payroll API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.",
+      "type": "text/plain"
+    }
+  }
+}

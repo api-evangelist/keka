@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/assets"
+          },
+          "docs": "Get all assets"
+        },
+        {
+          "info": {
+            "name": "Update Asset Assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/assets/2cc03669-bc85-4383-b2cf-4bb5e1b112e7/allocation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Asset Assignment"
+        },
+        {
+          "info": {
+            "name": "Get all Assets Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/assets/types"
+          },
+          "docs": "Get all Assets Type"
+        },
+        {
+          "info": {
+            "name": "Get All Asset Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/assets/categories"
+          },
+          "docs": "Get All Asset Categories"
+        },
+        {
+          "info": {
+            "name": "Get All Asset Conditions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/assets/conditions"
+          },
+          "docs": "Get All Asset Conditions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

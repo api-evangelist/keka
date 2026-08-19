@@ -1,0 +1,368 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets PSA API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PSA",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/clients"
+          },
+          "docs": "<p>This API is used for fetching list of all clients.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Create a client",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/clients"
+          },
+          "docs": "<p>This API is used for creating a client.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get a client",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/clients/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching a specific client.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Update a Client",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Client"
+        },
+        {
+          "info": {
+            "name": "Get Billingroles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/clients/1c4f9c58-2db6-49d0-8030-717b8227840c/billingroles"
+          },
+          "docs": "Get Billingroles"
+        },
+        {
+          "info": {
+            "name": "Get project phases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/phases",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching list of all project phases.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Create project phase",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/phases",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for creating a project phase.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get all projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects"
+          },
+          "docs": "<p>This API is used for fetching list of all projects.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>ProjectStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Create a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects"
+          },
+          "docs": "<p>This API is used for creating a project.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>ProjectStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get a project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching a specific project.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>ProjectStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = InProgress  <br />1 = Completed  <br />2 = Cancelled</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Update Project details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for updating details against a specific project.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get project allocations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/allocations",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching allocations against a specific project.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Add a Project Allocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/03355969-3efa-4550-bcbd-7c89bf8c5806/allocations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a Project Allocation"
+        },
+        {
+          "info": {
+            "name": "Get project timesheet enteries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:id/timeentries",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching the project time entries between selected from and to date range. If both from and to are not specified, last 30 days records are returned. From date should be before To date.The difference between from and to date cannot be more than 90 days.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get project tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/tasks",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching list of tasks against a specific project.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TaskType</th>\n<th>TaskBillingType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = Phase  <br />2 = Milestone</td>\n<td>0 = NonBillable  <br />1 = Billable  <br />2 = Any</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Create New Project Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/tasks",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for creating a new task against a project.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get project task assignees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/tasks/:taskId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching list of task assignees against a project task.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Update Project Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/tasks/:taskId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for updating task details against a project.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get project task time enteries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/projects/:projectId/tasks/:taskId/timeentries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching the project task time entries between selected from and to date range. If both from and to are not specified, last 30 days records are returned. From date should be before To date.The difference between from and to date cannot be more than 90 days.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TaskType</th>\n<th>TaskBillingType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br "
+        },
+        {
+          "info": {
+            "name": "Get timesheet enteries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/psa/timeentries"
+          },
+          "docs": "<p>This API is used for fetching the time entries between selected from and to date range. If both from and to are not specified, last 30 days records are returned. From date should be before To date.The difference between from and to date cannot be more than 90 days.</p>\n<h2 id></h2>\n<p>Enumerated Values</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeEntryStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = UnSubmitted  <br />1 = Submitted  <br />2 = Approved "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

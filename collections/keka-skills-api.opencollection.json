@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Skills API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Skills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets all skills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/gets-all-skills"
+          },
+          "docs": "Gets all skills"
+        },
+        {
+          "info": {
+            "name": "Get Employee Skills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/skills"
+          },
+          "docs": "Get Employee Skills"
+        },
+        {
+          "info": {
+            "name": "Add Employee Skills",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/skills",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Employee Skills"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

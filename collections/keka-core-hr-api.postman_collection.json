@@ -1,0 +1,1600 @@
+{
+  "item": [
+    {
+      "id": "fc08acb7-435c-4c8b-819f-2f0af8348ea6",
+      "name": "Core HR",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee1f5d89-8d9a-42e7-b440-8b3b6ec74e8d",
+          "name": "Get all employees",
+          "request": {
+            "name": "Get all employees",
+            "description": {
+              "content": "<p>This API is used for fetching details of all employees.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeType</th>\n<th>WorkerType</th>\n<th>MaritalStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>\n<td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>\n<td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Gender</th>\n<th>EmploymentStatus</th>\n<th>AccountStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>\n<td>0 - Working  <br />1- Relieved</td>\n<td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1113e577-48e1-4222-afce-45f0b44ad4a1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77d3d791-dfce-487b-b690-2a7f528f1be2",
+          "name": "Create employee",
+          "request": {
+            "name": "Create employee",
+            "description": {
+              "content": "<p>This API is used for creating a new Employee record.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeType</th>\n<th>WorkerType</th>\n<th>MaritalStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>\n<td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>\n<td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Gender</th>\n<th>EmploymentStatus</th>\n<th>AccountStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>\n<td>0 - Working  <br />1- Relieved</td>\n<td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<th",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7f85509c-0553-4d3f-8263-9db407e51307",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"EmployeeNumber\": \"1234\",\n  \"DisplayName\": \"Shubham Test\",\n  \"FirstName\": \"Shubham\",\n  \"LastName\": \"Test\",\n  \"Email\": \"shubhtest@test.com\",\n  \"Gender\": \"Male\",\n  \"DateOfBirth\": \"09-08-1999\",\n  \"DateJoined\": \"01-09-2021\",\n  \"department\": \"f5b7e125-d39c-4630-a332-6c97a265f953\",\n  \"BusinessUnit\": \"db76d978-8722-4e9a-9415-94f5bb523810\",\n  \"JobTitle\": \"f3f9425a-fdee-499d-8d1f-5966697e6125\",\n  \"Location\": \"9fe494f8-dbf8-447e-9af0-c71370f4e94e\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e3a26fb-dea0-4852-b39d-3ff20a58422e",
+          "name": "Update Employee Personal Details",
+          "request": {
+            "name": "Update Employee Personal Details",
+            "description": {
+              "content": "<p>Update Employee personal details</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees",
+                "8d04399f-8057-4b0d-ab0f-d9b9a5fb0376",
+                "personaldetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f85f77d9-2c98-4b15-91ac-802b9bbc5565",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees",
+                    "8d04399f-8057-4b0d-ab0f-d9b9a5fb0376",
+                    "personaldetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currentAddress\": {\n    \"addressLine1\": \"404, Brut Residence\",\n    \"addressLine2\": \"Nr. Thomas Bakery\",\n    \"countryCode\": \"IN\",\n    \"city\": \"Manchester\",\n    \"state\": \"North London\",\n    \"zip\": \"M1 1AD\"\n  },\n  \"displayName\": \"Erling Haaland\",\n  \"firstName\": \"Erling\",\n  \"lastName\": \"Haaland\",\n  \"gender\": 0,\n  \"dateOfBirth\": \"1998-01-03T00:00:00\",\n  \"middleName\": \"Brut\",\n  \"workPhone\": \"9822134561\",\n  \"personalEmail\": \"earling.haaland@yopmail.com\",\n  \"maritalStatus\": 0,\n  \"marriageDate\": \"2023-03-31T00:00:00\",\n  \"relations\": [\n    {\n      \"relationType\": 2,\n      \"gender\": 1,\n      \"firstName\": \"Brut\",\n      \"lastName\": \"Haaland\",\n      \"displayName\": \"Brut Haaland\",\n      \"email\": \"brut@yopmail.com\",\n      \"dateOfBirth\": \"1988-07-24T00:00:00\",\n      \"profession\": \"Footballer\",\n      \"mobile\": \"9999888864\"\n    }\n  ],\n  \"bloodGroup\": 8\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b73be281-761c-41a3-b86b-8c889a0f0689",
+          "name": "Update Employee Job Details",
+          "request": {
+            "name": "Update Employee Job Details",
+            "description": {
+              "content": "<p>Update employee job details</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees",
+                "8d04399f-8057-4b0d-ab0f-d9b9a5fb0376",
+                "jobdetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "61f339e9-3959-4212-b5db-e2e0fd5d4a6e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees",
+                    "8d04399f-8057-4b0d-ab0f-d9b9a5fb0376",
+                    "jobdetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"d62a9b17-5973-4995-83fc-4952707b6d47\",\n  \"jobTitle\": \"4a896b29-1935-4046-a6e4-eaef2aa7dfe1\",\n  \"reportingManager\": \"7dd7e7ed-be39-47f3-beab-d498b940fd98\",\n  \"attendanceNumber\": \"KEKATTD12\",\n  \"timeType\": 0\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3697eb5-f718-42a6-bbfc-41e67a85da9a",
+          "name": "Get an employee",
+          "request": {
+            "name": "Get an employee",
+            "description": {
+              "content": "<p>This API is used for fetching data of a specific employee by passing the employee ID as a URI parameter.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeType</th>\n<th>WorkerType</th>\n<th>MaritalStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>\n<td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>\n<td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Gender</th>\n<th>EmploymentStatus</th>\n<th>AccountStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>\n<td>0 - Working  <br />1- Relieved</td>\n<td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"c",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c63767aa-e19d-4fff-86e2-be40400b7d42",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b1beb80-54ff-4d13-b7e5-57970284f3bd",
+          "name": "Get All Update Fields",
+          "request": {
+            "name": "Get All Update Fields",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees",
+                "updatefields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "998bba50-8f15-4ce0-ace2-cbd203308f35",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees",
+                    "updatefields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1ba2f02-e02c-47c6-a3d0-728d84dd8c20",
+          "name": "Get all groups",
+          "request": {
+            "name": "Get all groups",
+            "description": {
+              "content": "<p>This API is used for fetching list of all groups.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ebf60ad-0ea1-4739-9949-242b7290d997",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "107a7215-c54e-46a6-9cd2-f28654f827b3",
+          "name": "Get all group types",
+          "request": {
+            "name": "Get all group types",
+            "description": {
+              "content": "<p>This API is used for fetching list of all group types.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "grouptypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b425c1e-731b-4adf-9e44-e9f48fd62b77",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "grouptypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7fe476d-7461-4e07-9235-7508db20587d",
+          "name": "Get All Departments",
+          "request": {
+            "name": "Get All Departments",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "departments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cec1093d-376f-4035-8a84-0d7e23a209b1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "departments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a78757a-98d3-4c8b-bd71-c9a80ae67f3e",
+          "name": "Get all locations",
+          "request": {
+            "name": "Get all locations",
+            "description": {
+              "content": "<p>This API is used for fetching list of all locations.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea9ea9d3-6ce2-45f0-a61b-28c1d3755b97",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ce29d0b-f521-4495-835c-f6936f98db1a",
+          "name": "Get all job titles",
+          "request": {
+            "name": "Get all job titles",
+            "description": {
+              "content": "<p>This API is used for fetching list of all locations.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "jobtitles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10d5ffa8-105a-42ba-9301-eed95387d6e7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "jobtitles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91d226d1-c4ca-4155-b36b-e5ea93d75639",
+          "name": "Get all currencies",
+          "request": {
+            "name": "Get all currencies",
+            "description": {
+              "content": "<p>This API is used for fetching list of all currencies.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "currencies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf17818f-5d8e-4381-87d8-82dd8acf0568",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "currencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0a43d4f-b59a-4599-bfef-ab8881fbe1d2",
+          "name": "Get All Noticeperiods",
+          "request": {
+            "name": "Get All Noticeperiods",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "noticeperiods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2dc3ca65-77cc-43b1-89f7-70984b00699d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "noticeperiods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b48deb7c-a57e-408e-861e-edf1be5680eb",
+          "name": "Get All Exitreasons",
+          "request": {
+            "name": "Get All Exitreasons",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "exitreasons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6461d518-0fcd-4b77-a0b0-4eee446254ad",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "exitreasons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "403c1132-0743-4ac0-b6be-b88e0f18d3f3",
+          "name": "Create an Exit Request",
+          "request": {
+            "name": "Create an Exit Request",
+            "description": {
+              "content": "<p>Create an exist request for an employee</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Exit Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - Employee Resignation  <br />2- Company Action</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees",
+                "bb3175e4-4cdb-425f-b034-b49069d53d6e",
+                "exitrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91ba93a5-5b6b-4ea6-814d-cfa59c6c426a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees",
+                    "bb3175e4-4cdb-425f-b034-b49069d53d6e",
+                    "exitrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exitType\": 1,\n  \"exitReason\": \"4ce57402-db60-418e-a0b5-69c4a5fecfd0\",\n  \"resignationDate\": \"2024-10-01T00:00:00\",\n  \"lastWorkingDate\": \"2024-12-01T00:00:00\",\n  \"isOkToRehire\": true,\n  \"comments\": \"Comments example 1234\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be77bf07-6873-4d33-be3b-ac24db99f755",
+          "name": "Update Exit Request for Employee",
+          "request": {
+            "name": "Update Exit Request for Employee",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "hris",
+                "employees",
+                "bb3175e4-4cdb-425f-b034-b49069d53d6e",
+                "exitrequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Keka tenant subdomain",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b9998a70-906b-41b1-bb28-dd670bdbe81a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "hris",
+                    "employees",
+                    "bb3175e4-4cdb-425f-b034-b49069d53d6e",
+                    "exitrequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Keka tenant subdomain",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exitType\": 1,\n  \"exitReason\": \"4ce57402-db60-418e-a0b5-69c4a5fecfd0\",\n  \"resignationDate\": \"2024-10-01T00:00:00\",\n  \"lastWorkingDate\": \"2024-12-01T00:00:00\",\n  \"isOkToRehire\": true,\n  \"comments\": \"Comments example 1234\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Keka tenant subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "your-company",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://{{tenant}}.keka.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "kekaapi"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.keka.com/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fb7d5ba7-7ffb-43d6-843b-87eb0224ca6e",
+    "name": "Keka HR Assets Core HR API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.",
+      "type": "text/plain"
+    }
+  }
+}

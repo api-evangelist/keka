@@ -1,0 +1,232 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Core HR API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Core HR",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees"
+          },
+          "docs": "<p>This API is used for fetching details of all employees.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeType</th>\n<th>WorkerType</th>\n<th>MaritalStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>\n<td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>\n<td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>\n</tr>\n</tb"
+        },
+        {
+          "info": {
+            "name": "Create employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for creating a new Employee record.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeType</th>\n<th>WorkerType</th>\n<th>MaritalStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>\n<td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>\n<td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>\n</tr>\n</tbody"
+        },
+        {
+          "info": {
+            "name": "Update Employee Personal Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/personaldetails",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Update Employee personal details</p>\n"
+        },
+        {
+          "info": {
+            "name": "Update Employee Job Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/8d04399f-8057-4b0d-ab0f-d9b9a5fb0376/jobdetails",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Update employee job details</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get an employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching data of a specific employee by passing the employee ID as a URI parameter.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeType</th>\n<th>WorkerType</th>\n<th>MaritalStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>\n<td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>\n<td>0 - None  <br />1- Single  <br />2 - Married  <br /"
+        },
+        {
+          "info": {
+            "name": "Get All Update Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/updatefields"
+          },
+          "docs": "Get All Update Fields"
+        },
+        {
+          "info": {
+            "name": "Get all groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/groups"
+          },
+          "docs": "<p>This API is used for fetching list of all groups.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get all group types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/grouptypes"
+          },
+          "docs": "<p>This API is used for fetching list of all group types.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get All Departments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/departments"
+          },
+          "docs": "Get All Departments"
+        },
+        {
+          "info": {
+            "name": "Get all locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/locations"
+          },
+          "docs": "<p>This API is used for fetching list of all locations.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get all job titles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/jobtitles"
+          },
+          "docs": "<p>This API is used for fetching list of all locations.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get all currencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/currencies"
+          },
+          "docs": "<p>This API is used for fetching list of all currencies.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SystemGroupType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get All Noticeperiods",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/noticeperiods"
+          },
+          "docs": "Get All Noticeperiods"
+        },
+        {
+          "info": {
+            "name": "Get All Exitreasons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/exitreasons"
+          },
+          "docs": "Get All Exitreasons"
+        },
+        {
+          "info": {
+            "name": "Create an Exit Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/exitrequest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Create an exist request for an employee</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Exit Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 - None  <br />1 - Employee Resignation  <br />2- Company Action</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Update Exit Request for Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/exitrequest",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Exit Request for Employee"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

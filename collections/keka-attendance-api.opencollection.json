@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Attendance API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attendance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all attendance records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/attendance"
+          },
+          "docs": "<p>This API is used for fetching list of all attendance records between from and to date. If both from and to are not specified, last 30 days records are returned. From date should be before to date.The difference between from and to date cannot be more than 90 days.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>AttendanceDayType</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = WorkingDay  <br />1 = Holiday  <br />2 ="
+        },
+        {
+          "info": {
+            "name": "Push Attendance punches",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/v1/logs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for pushing attendance raw punches to Keka.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Captureschemes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/capturescheme"
+          },
+          "docs": "<p>This API will give all the captures schemes.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Shift Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/shiftpolicies"
+          },
+          "docs": "<p>This API will give all the shift policies</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Holiday Calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/holidayscalendar"
+          },
+          "docs": "<p>Get all holidays Calendar</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Trackingpolicies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/penalisationpolicies"
+          },
+          "docs": "<p>Get all trackingpolicies</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Weeklyoff Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/weeklyoffpolicies"
+          },
+          "docs": "<p>Get all weekly off policies</p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Documents API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the Document Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/documents/types"
+          },
+          "docs": "<p>Get the document types</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get Employee Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documenttypes/448b210d-7fad-4dba-9422-d9ae61048b6a/documents"
+          },
+          "docs": "<p>Get documents for an employee</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get Employee Document Attachment Download Url",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/employees/bb3175e4-4cdb-425f-b034-b49069d53d6e/documents/f33900ae-9175-4cbe-9d5e-37ef49cb5102/attachment/4f0f8e90-2c47-4dd8-8c20-d98e7e751e27"
+          },
+          "docs": "<p>Get Document Attachment Download URL</p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

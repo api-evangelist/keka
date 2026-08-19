@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets PMS API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PMS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get time frame list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/timeframes"
+          },
+          "docs": "<p>This API is used for fetching list of all time frames.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>TimeFrameStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Active  <br />1 = Hidden</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get Goal list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/goals"
+          },
+          "docs": "<p>This API is used for fetching list of all goals.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Goal Status</th>\n<th>GoalMetricType</th>\n<th>Goal Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 = AtRisk  <br />4 = Closed</td>\n<td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>\n<td>0 = Individual  <br />1 = Company  <br />2 = Group</td>\n<"
+        },
+        {
+          "info": {
+            "name": "Update goal progress",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/goals/:goalId/progress",
+            "params": [
+              {
+                "name": "goalId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for updating progress against a specific goal.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Goal Status</th>\n<th>GoalMetricType</th>\n<th>Goal Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 = AtRisk  <br />4 = Closed</td>\n<td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>\n<td>0 = Individual  <br />1 = Company  <br />2"
+        },
+        {
+          "info": {
+            "name": "Get badge list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/badges"
+          },
+          "docs": "<p>This API is used for fetching list of all badges.</p>\n<p>Enumerated Values</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Badge Status</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Enabled  <br />1 = Disabled</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get praise list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/praise"
+          },
+          "docs": "<p>This API is used for fetching list of all praises.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Praise",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/praise"
+          },
+          "docs": "<p>This API is used for creating a praise.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get review group list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/reviewgroups"
+          },
+          "docs": "<p>This API is used for fetching list of all review groups.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get review group cycle list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/reviewcycles"
+          },
+          "docs": "<p>This API is used for fetching list of all review cycles.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get employee review list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/pms/reviews"
+          },
+          "docs": "<p>This API is used for fetching list of all employee reviews.</p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

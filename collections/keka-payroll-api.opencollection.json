@@ -1,0 +1,226 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Payroll API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payroll",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Salary components",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/salarycomponents"
+          },
+          "docs": "<p>This API is used for fetching list of all salary components.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get all pay groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/paygroups"
+          },
+          "docs": "<p>This API is used for fetching list of all pay groups.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get all pay cycles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/paygroups/:payGroupId/paycycles",
+            "params": [
+              {
+                "name": "payGroupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching list of all pay cycles in a pay group.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"c"
+        },
+        {
+          "info": {
+            "name": "Get pay register",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/paygroups/:payGroupId/paycycles/:payCycleId/payregister",
+            "params": [
+              {
+                "name": "payGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payCycleId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching pay register for a given pay cycle.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"clic"
+        },
+        {
+          "info": {
+            "name": "Get all pay batches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/paygroups/:payGroupId/paycycles/:payCycleId/paybatches",
+            "params": [
+              {
+                "name": "payGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payCycleId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching list of all pay batches in a pay group.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\""
+        },
+        {
+          "info": {
+            "name": "Get all batch payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/paygroups/:payGroupId/paycycles/:payCycleId/paybatches/:payBatchId/payments",
+            "params": [
+              {
+                "name": "payGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payCycleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payBatchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for fetching batch payments against against a batch ID,.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid  <br />1 = Paid</td>\n</tr>\n</tbody>\n</table>\n</div><div cla"
+        },
+        {
+          "info": {
+            "name": "Update the payment status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/paygroups/:payGroupId/paycycles/:payCycleId/paybatches/:payBatchId/payments",
+            "params": [
+              {
+                "name": "payGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payCycleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payBatchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "<p>This API is used for updating payment status for a given batch ID. Only 100 bulk transactions will be allowed for a particular batch.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>PayrollRunStatus</th>\n<th>RemunerationType</th>\n<th>PaymentStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>\n<td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>\n<td>0 = UnPaid"
+        },
+        {
+          "info": {
+            "name": "Get all Pay Grades",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/payroll/paygrades"
+          },
+          "docs": "Get all Pay Grades"
+        },
+        {
+          "info": {
+            "name": "Get All Pay Bands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/payband"
+          },
+          "docs": "Get All Pay Bands"
+        },
+        {
+          "info": {
+            "name": "Get all Employee Salaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/salaries"
+          },
+          "docs": "Get all Employee Salaries"
+        },
+        {
+          "info": {
+            "name": "Get all employee FnF details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/payroll/employees/fnf"
+          },
+          "docs": "Get all employee FnF details"
+        },
+        {
+          "info": {
+            "name": "Get all Bonus Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/get-all-bonus-types"
+          },
+          "docs": "<p>Get all bonus types</p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

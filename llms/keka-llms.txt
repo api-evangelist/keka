@@ -1,0 +1,278 @@
+# Keka API Documentation
+
+> Documentation for Keka API
+
+## Guides
+- [Getting started for customers](https://developers.keka.com/docs/getting-started-for-customers.md): How to use Keka APIs
+- [Keka Partner Integration Guide](https://developers.keka.com/docs/keka-partner-integration-guide.md): Leveraging Keka APIs for Smooth Workflows
+- [Creating a Service / Offerings/ Product Listing using Keka App Portal](https://developers.keka.com/docs/creating-a-service-listing-using-keka-app-portal.md): Approved partners can follow this documentation to publish their offer on the Keka Marketplace
+- [Activating your  Sandbox (App Portal Users only)](https://developers.keka.com/docs/activating-your-sandbox.md)
+- [How to Create Your First App or Service on Keka App Portal](https://developers.keka.com/docs/how-to-create-your-first-app-or-service-on-keka-app-portal.md): Follow these steps to create and manage your first app or service on the Keka App Portal
+- [Assessment Partners Guide](https://developers.keka.com/docs/assessment-partners-guide.md)
+- [Background Verification Partners Guide](https://developers.keka.com/docs/background-verification-partners-guide.md)
+- [eSign / Digital Signature Partners guide](https://developers.keka.com/docs/esign-partners-guide.md)
+- [Getting Started With Webhooks](https://developers.keka.com/docs/getting-started-with-webhooks.md): This guide will help you get started with receiving webhooks from the Keka platform.
+- [Getting started with Keka APIs](https://developers.keka.com/docs/getting-started-with-keka-apis.md)
+- [Configurable SSO for Microsoft Active Directory (OIDC)](https://developers.keka.com/docs/configurable-sso-for-microsoft-oidc.md)
+
+## API Reference
+- [Overview](https://developers.keka.com/reference/getting-started-with-your-api.md): To start using the Keka HRMS APIs, developers can refer to this comprehensive API documentation.
+- [Authentication](https://developers.keka.com/reference/authentication.md)
+- [Pagination](https://developers.keka.com/reference/pagination.md)
+- [Rate Limit](https://developers.keka.com/reference/rate-limit.md)
+- [Scope](https://developers.keka.com/reference/scope.md): Scope definition can be used for setting access restriction at API level
+- [Get webhook logs](https://developers.keka.com/reference/get_hris-webhooks-retrylogs.md): Fetch webhook retry logs (audit headers + latest attempt full).
+- [Generate Access Token using API Key](https://developers.keka.com/reference/token-1.md): Use this API to fetch access token by passing authentication parameters ( grant_type, scope, client_id, client_secret, api_key) as form-url encoded in the body.
+- [App Portal: Access Token Generation](https://developers.keka.com/reference/app-portal-access-token-generation.md)
+- [Generate Access Token using OAuth Code](https://developers.keka.com/reference/oauth-token.md): APP PORTAL ONLY: Use this API to fetch access token by passing OAuth Code received from App portal apps
+- [App portal app status](https://developers.keka.com/reference/app-portal-app-status.md): Mark an app portal app as installed after successful access token generation or mark it as error if something went wrong during the installation process
+- [Generate Access token using Refresh Token](https://developers.keka.com/reference/refresh-token-generate-access-token-using-refresh-token-endpoint.md)
+- [Read Installation parameters](https://developers.keka.com/reference/read-installation-parameters.md): If you created a configuration form during installation, you can send a request to this endpoint to get the responses to the installation form
+- [Keka SSO Integration (Keka as Identity Provider)](https://developers.keka.com/reference/keka-sso-integration-keka-as-identity-provider.md)
+- [Authorize endpoint](https://developers.keka.com/reference/authorize-endpoint.md)
+- [Exchange Authorization Code for Tokens](https://developers.keka.com/reference/exchange-authorization-code-for-tokens.md)
+- [Fetch User Details](https://developers.keka.com/reference/fetch-user-details.md)
+- [Employees](https://developers.keka.com/reference/employees.md)
+- [Get all Employees](https://developers.keka.com/reference/get_hris-employees.md): Gets all employees / the specified employees based on employee search parameters.
+- [Create an Employee](https://developers.keka.com/reference/post_hris-employees.md): Create an Employee and returns created employee identifier.
+- [Get all update fields](https://developers.keka.com/reference/get_hris-employees-updatefields.md)
+- [Search for an employee by work phone or email.](https://developers.keka.com/reference/post_hris-employees-search.md)
+- [Get an Employee](https://developers.keka.com/reference/get_hris-employees-employeeid.md): Get an employee with specified identifier.
+- [Update Employee personal details](https://developers.keka.com/reference/put_hris-employees-personaldetails.md): Update Employee personal details.
+- [Update employee job details](https://developers.keka.com/reference/put_hris-employees-jobdetails.md): Update employee job details.
+- [Groups](https://developers.keka.com/reference/groups.md)
+- [Get all Groups](https://developers.keka.com/reference/get_hris-groups.md): Get all Groups
+- [Get all Group Types](https://developers.keka.com/reference/get_hris-grouptypes.md): Gets all Group Types.
+- [Get all departments](https://developers.keka.com/reference/get_hris-departments.md): Get all departments
+- [Get all Locations](https://developers.keka.com/reference/get_hris-locations.md): Gets all Locations.
+- [Get all jobtitles](https://developers.keka.com/reference/get_hris-jobtitles.md): Get all jobtitles
+- [Get all currencies](https://developers.keka.com/reference/get_hris-currencies.md): Get all currencies
+- [Get all noticeperiods](https://developers.keka.com/reference/get_hris-noticeperiods.md): Get all noticeperiods
+- [Get all Contingent Types](https://developers.keka.com/reference/get_hris-contingenttypes.md): Gets all Contingent Types.
+- [EmployeeExit](https://developers.keka.com/reference/employeeexit.md)
+- [Deactivate Employee](https://developers.keka.com/reference/post_hris-employees-id-exitrequest.md): Deactivate Employee
+- [Update Deactivate Employee](https://developers.keka.com/reference/put_hris-employees-id-exitrequest.md): Update Deactivate Employee
+- [Get all exitreasons](https://developers.keka.com/reference/get_hris-exitreasons.md): Get all exitreasons
+- [DocumentTypes](https://developers.keka.com/reference/documenttypes.md)
+- [Gets the document types.](https://developers.keka.com/reference/get_hris-documents-types.md)
+- [Get Employee Documents](https://developers.keka.com/reference/get_hris-employees-documents.md): Get Employee Documents.
+- [Get Employee Document Attachment Download Url](https://developers.keka.com/reference/get_hris-employees-documents-attachment.md): Get Employee Document Attachment Download Url.
+- [Upload Employee Documents](https://developers.keka.com/reference/post_hris-employees-documents.md): Upload Employee Documents.
+- [Get all Leave Types](https://developers.keka.com/reference/get_time-leavetypes.md): Get all Leave Types
+- [Get all Leave balances](https://developers.keka.com/reference/get_time-leavebalance.md): Get all the leave balances
+- [LeaveRequests](https://developers.keka.com/reference/leaverequests.md)
+- [Get all Leave Requests](https://developers.keka.com/reference/get_time-leaverequests.md): Get all the leaves in the organization between `from` and `to` date.If both `from` and `to` are not specified, last 30 days records are returned.`from` date should be before `to` date.The difference between `from` and `to` date cannot be more than **90** days.
+- [Create Leave Request](https://developers.keka.com/reference/post_time-leaverequests.md): Create leave request in Keka.
+- [Get all Leave Plans](https://developers.keka.com/reference/get_time-leaveplans.md): Get all Leave Plans
+- [Attendance](https://developers.keka.com/reference/attendance-1.md)
+- [Get all Attendance Records](https://developers.keka.com/reference/get_time-attendance-1.md): Gets all Attendance records between date range `from` and `to`.If both `from` and `to` are not specified, last 30 days records are returned.From `date` should be before `to` date.The difference between `from` and `to` date cannot be more than **90** days.
+- [Get all captureschemes](https://developers.keka.com/reference/get_time-capturescheme.md): Get all captureschemes
+- [Get all shift policies](https://developers.keka.com/reference/get_time-shiftpolicies.md): Get all shift policies
+- [Get all trackingpolicies](https://developers.keka.com/reference/get_time-penalisationpolicies.md): Get all trackingpolicies
+- [Get all weeklyoff policies](https://developers.keka.com/reference/get_time-weeklyoffpolicies.md): Get all weeklyoff policies
+- [Get holidays List](https://developers.keka.com/reference/get_time-holidayscalendar-calendarid-holidays.md): Get holidays List
+- [Get all holidays Calendar](https://developers.keka.com/reference/get_time-holidayscalendar.md): Get all holidays Calendar
+- [EmployeeAttendanceTimeEntry](https://developers.keka.com/reference/employeeattendancetimeentry.md)
+- [Adds the time entry to the attendance summary](https://developers.keka.com/reference/post_attendance-employee-routeemployeeid-timeentry.md): Adds the time entry to the attendance summary.
+- [Adds the time entry to the attendance summary](https://developers.keka.com/reference/post_attendance-employee-timeentry.md): Adds the time entry to the attendance summary.
+- [OnDuty](https://developers.keka.com/reference/onduty.md)
+- [Adds an On Duty request](https://developers.keka.com/reference/post_time-od.md): Adds an On Duty request.
+- [Get all On Duty Requests](https://developers.keka.com/reference/get_time-od.md): Get all On Duty requests in the organization between `from` and `to` date. If both `from` and `to` are not specified, last 30 days records are returned. `from` date should be before `to` date. The difference between `from` and `to` date cannot be more than **90** days.
+- [WorkFromHome](https://developers.keka.com/reference/workfromhome.md)
+- [Adds a WFH request](https://developers.keka.com/reference/post_time-wfh.md): Adds a WFH request.
+- [Get all WFH Requests](https://developers.keka.com/reference/get_time-wfh.md): Get all the WFH/OnDuty requests in the organization between `from` and `to` date. If both `from` and `to` are not specified, last 30 days records are returned. `from` date should be before `to` date. The difference between `from` and `to` date cannot be more than **90** days.
+- [Update the app status](https://developers.keka.com/reference/put_app-status-1.md): Update the status of an app
+- [Get All Helpdesk Tickets](https://developers.keka.com/reference/get_helpdesk-tickets-2.md): Fetch all helpdesk tickets
+- [Add Helpdesk Ticket](https://developers.keka.com/reference/post_helpdesk-tickets-2.md): Add Helpdesk Ticket
+- [ To Update Ticket](https://developers.keka.com/reference/put_helpdesk-tickets-ticketid-2.md): To Update Helpdesk Ticket
+- [Get All Helpdesk Categories](https://developers.keka.com/reference/get_helpdesk-ticket-categories-2.md): Fetch all helpdesk categories
+- [Get All Helpdesk Closing Reasons](https://developers.keka.com/reference/get_helpdesk-ticket-closingreasons-2.md): Fetch all helpdesk closing reasons
+- [Get All Loans](https://developers.keka.com/reference/get_loans-1.md): Fetch all loan details of employees
+- [Updates the loan details for the specified loan identifier, with support for multi-file upload.](https://developers.keka.com/reference/put_loans-1.md)
+- [Get all Regularisation Requests](https://developers.keka.com/reference/get_time-regularisationrequests.md): Get all the regularisation requests in the organization between `from` and `to` date. If both `from` and `to` are not specified, last 30 days records are returned. `from` date should be before `to` date.
+- [Get all employee Salaries](https://developers.keka.com/reference/get_payroll-salaries.md): Get all employee Salaries.
+- [Get all Salary Components](https://developers.keka.com/reference/get_payroll-salarycomponents-1.md): Gets all the salary components.
+- [Get all Pay Groups](https://developers.keka.com/reference/get_payroll-paygroups-1.md): Gets all Pay Groups.
+- [PayCycles](https://developers.keka.com/reference/paycycles.md)
+- [Get all Pay Cycles](https://developers.keka.com/reference/get_payroll-paygroups-paycycles.md)
+- [Get Pay Register](https://developers.keka.com/reference/get_payroll-paygroups-paycycles-payregister.md)
+- [Get all Pay Cycles](https://developers.keka.com/reference/get_payroll-paygroups-paycycles-paybatches.md)
+- [Get all Batch Payments](https://developers.keka.com/reference/get_payroll-paygroups-paycycles-paybatches-payments.md): Gets all payments for the specified pay group Id and pay cycle Id and pay batch Id / specified pay group id and pay cycle Id and pay batch Id and payment status filter
+- [Update the Payments status](https://developers.keka.com/reference/put_payroll-paygroups-paycycles-paybatches-payments.md): Update the Payments status.It will allow only 100 bulk transactions from that particular batch.
+- [Get all Pay Cycles](https://developers.keka.com/reference/get_payroll-paygroups-routepaygroupid-paycycles.md)
+- [Get Pay Register](https://developers.keka.com/reference/get_payroll-paygroups-routepaygroupid-paycycles-routepaycycleid-payregister.md)
+- [Get all Pay Cycles](https://developers.keka.com/reference/get_payroll-paygroups-routepaygroupid-paycycles-routepaycycleid-paybatches.md)
+- [Get all Batch Payments](https://developers.keka.com/reference/get_payroll-paygroups-routepaygroupid-paycycles-routepaycycleid-paybatches-routepaybatchid-payments.md): Gets all payments for the specified pay group Id and pay cycle Id and pay batch Id / specified pay group id and pay cycle Id and pay batch Id and payment status filter
+- [Update the Payments status](https://developers.keka.com/reference/put_payroll-paygroups-routepaygroupid-paycycles-routepaycycleid-paybatches-routepaybatchid-payments.md): Update the Payments status.It will allow only 100 bulk transactions from that particular batch.
+- [Get all Pay Bands](https://developers.keka.com/reference/get_payroll-paybands.md): Gets all Pay Bands.
+- [Get all Pay Grades](https://developers.keka.com/reference/get_payroll-paygrades.md): Gets all Pay Grades.
+- [Get all Employee FnF Details.](https://developers.keka.com/reference/get_payroll-employees-fnf.md): Get all Employee FnF Details.
+- [Update the app status](https://developers.keka.com/reference/put_app-status-2.md): Update the status of an app
+- [Get All Helpdesk Tickets](https://developers.keka.com/reference/get_helpdesk-tickets-3.md): Fetch all helpdesk tickets
+- [Add Helpdesk Ticket](https://developers.keka.com/reference/post_helpdesk-tickets-3.md): Add Helpdesk Ticket
+- [ To Update Ticket](https://developers.keka.com/reference/put_helpdesk-tickets-ticketid-3.md): To Update Helpdesk Ticket
+- [Get All Helpdesk Categories](https://developers.keka.com/reference/get_helpdesk-ticket-categories-3.md): Fetch all helpdesk categories
+- [Get All Helpdesk Closing Reasons](https://developers.keka.com/reference/get_helpdesk-ticket-closingreasons-3.md): Fetch all helpdesk closing reasons
+- [Get employee tax declaration.](https://developers.keka.com/reference/get_payroll-employees-taxdeclarations.md): Get employee tax declaration.
+- [Get Attachment Download Url.](https://developers.keka.com/reference/get_payroll-declarations-attachments-downloadurl.md): Get Attachment Download Url.
+- [Update employee tax regime.](https://developers.keka.com/reference/put_payroll-employees-taxregime.md): Update employee tax regime selection.
+- [Update individual tax declaration component.](https://developers.keka.com/reference/put_payroll-taxdeclaration.md): Update a specific tax declaration component with amount and attachments. Use allowCutOffOverride for admin bypass of cut-off dates.
+- [Create or update rental residence.](https://developers.keka.com/reference/post_payroll-taxdeclaration-rentalresidence.md): POST to create or update rental residence (rent details). Send houseIdentifier in body for update. Form body and optional files: rentalDocuments, ownerDeclarationDocument.
+- [Update own residence](https://developers.keka.com/reference/post_payroll-taxdeclaration-ownresidence.md): Submit or update own residence (house property) for tax declaration. Form body: houseIdentifier (optional, for updates), occupancyType (0=Self, 1=Let out, 2=Both), address, houseLoanType (0=interest not paid, 1=paid), loanPurpose (0=Construction, 1=Repair), amounts and optional proof files.
+- [Update income from other sources](https://developers.keka.com/reference/post_payroll-taxdeclaration-incomefromothersources.md): Update income from other sources (interest, commission, agricultural, professional, gambling income, tax deducted/collected, attachments). Form body: IncomeFromOtherSourcesUpdateDto fields and optional file attachments. Status is always set to Submitted.
+- [Get all Bonus Types.](https://developers.keka.com/reference/get_payroll-bonustypes.md): Get all Bonus Types.
+- [EmployeeFinance](https://developers.keka.com/reference/employeefinance.md)
+- [Get a paged list of financial details for all employees.](https://developers.keka.com/reference/get_payroll-employees-financialdetails.md): Retrieve paged financial details for all employees in the system.
+- [update employee bank details.](https://developers.keka.com/reference/put_payroll-employees-financialdetails-banks.md): Add bank details fo employees in the system.
+- [update employee financial details.](https://developers.keka.com/reference/put_payroll-employees-financialdetails.md): Add financial details fo employees in the system.
+- [Get all Salary Structures.](https://developers.keka.com/reference/get_payroll-salarystructures.md): Get all Salary Structures.
+- [EmployeeSalary](https://developers.keka.com/reference/employeesalary.md)
+- [Add Employee Salary](https://developers.keka.com/reference/post_payroll-employees-routeemployeeid-salary.md): Add Employee Salary
+- [Revise Employee Salary](https://developers.keka.com/reference/put_payroll-employees-routeemployeeid-salary.md): Revise Employee Salary
+- [Add Employee Salary](https://developers.keka.com/reference/post_payroll-employees-salary.md): Add Employee Salary
+- [Revise Employee Salary](https://developers.keka.com/reference/put_payroll-employees-salary.md): Revise Employee Salary
+- [Get all Banks](https://developers.keka.com/reference/get_banks.md): Fetches all available banks with pagination.
+- [Get flexi benefits ](https://developers.keka.com/reference/get_payroll-employees-flexibenefits.md): flexi benefits
+- [Declare flexi benefits](https://developers.keka.com/reference/post_payroll-employees-flexibenefits.md): Declare flexi benefits for an employee
+- [Gets employee form 16](https://developers.keka.com/reference/get_payroll-employees-form16.md): Get an form 16 with specified employee identifier.
+- [Gets employee form 16](https://developers.keka.com/reference/get_payroll-employees-routeemployeeid-form16.md): Get an form 16 with specified employee identifier.
+- [Bulk Salary Component Override](https://developers.keka.com/reference/post_payroll-salarycomponentsoverride.md): Overrides salary components for one or more employees in a single request. Supports amounts including zero for eligible components.
+- [Add the adhoc transaction](https://developers.keka.com/reference/put_payroll-paygroups-paycycles-adhoctransactions.md): Add the adhoc transaction against employee.
+- [Add the adhoc transaction](https://developers.keka.com/reference/put_payroll-paygroups-routepaygroupid-paycycles-routepaycycleid-adhoctransactions.md): Add the adhoc transaction against employee.
+- [Get Employee Component Claims](https://developers.keka.com/reference/get_payroll-employees-componentclaims.md): Retrieves component claims for a specific employee with optional filtering by financial year, claim status, and last modified date. Supports pagination for large result sets.
+- [Add Employee Component Claim](https://developers.keka.com/reference/post_payroll-employees-componentclaims.md): Adds a new component claim for a specific employee.
+- [Get All Loans](https://developers.keka.com/reference/get_loans-2.md): Fetch all loan details of employees
+- [Updates the loan details for the specified loan identifier, with support for multi-file upload.](https://developers.keka.com/reference/put_loans-2.md)
+- [Get all clients](https://developers.keka.com/reference/get_psa-clients-1.md): Get all clients
+- [Create a Client](https://developers.keka.com/reference/post_psa-clients-1.md): Create a Client and returns created client identifier.
+- [Get a client](https://developers.keka.com/reference/get_psa-clients-id-1.md): Gets the specified client based on identifier.
+- [Update a Client](https://developers.keka.com/reference/put_psa-clients-id.md): Update Client Details.
+- [Get a BillingRoles](https://developers.keka.com/reference/get_psa-clients-id-billingroles.md): Gets the specified billing roles based on client.
+- [Post credit note](https://developers.keka.com/reference/post_clients-clientid-creditnote.md): Post credit note
+- [Get invoice billing details](https://developers.keka.com/reference/get_psa-clients-clientid-invoices.md): Get invoice billing details
+- [Post invoice payment](https://developers.keka.com/reference/post_psa-clients-clientid-invoices-invoiceid-receivepayment.md): Post invoice payment
+- [Gets Taxes](https://developers.keka.com/reference/get_psa-legalentity-legalentityid-taxes.md): Gets Taxes
+- [Get Tax groups and taxes](https://developers.keka.com/reference/get_psa-legalentity-legalentityid-taxgroups.md): Get Tax group and taxes against those tax groups
+- [Get project phases.](https://developers.keka.com/reference/get_psa-projects-projectid-phases-1.md): Get project phases.
+- [Create a Project Phase](https://developers.keka.com/reference/post_psa-projects-projectid-phases-1.md): Create a Project Phase and returns created phase identifier
+- [Projects](https://developers.keka.com/reference/projects.md)
+- [Get all projects.](https://developers.keka.com/reference/get_psa-projects-1.md): Get all projects.
+- [Create a Project](https://developers.keka.com/reference/post_psa-projects-1.md): Create an Project and returns created project identifier.
+- [Get a project](https://developers.keka.com/reference/get_psa-projects-id-1.md): Gets the specified project based on identifier.
+- [Update a Project](https://developers.keka.com/reference/put_psa-projects-id.md): Update Project Details.
+- [Get a project allocations](https://developers.keka.com/reference/get_psa-projects-id-allocations.md): Gets the specified project allocations based on identifier.
+- [Add a project allocation](https://developers.keka.com/reference/post_psa-projects-id-allocations.md): Add Project Allocation.
+- [Get project timesheet entries.](https://developers.keka.com/reference/get_psa-projects-id-timeentries.md): Gets the project time entries between selected from and to date range.If both `from` and `to` are not specified, last 30 days records are returned.From `date` should be before `to` date.The difference between `from` and `to` date cannot be more than **90** days.
+- [Update a project allocation](https://developers.keka.com/reference/put_psa-projects-id-allocations-resources-resourceid.md): Update Project Allocation.
+- [Get all project resources.](https://developers.keka.com/reference/get_psa-project-resources.md): Get all project resources.
+- [Tasks](https://developers.keka.com/reference/tasks.md)
+- [Get project tasks.](https://developers.keka.com/reference/get_psa-projects-projectid-tasks-1.md): Gets the project tasks.
+- [Create a task](https://developers.keka.com/reference/post_psa-projects-projectid-tasks-1.md): Create project task and returns created task identifier.
+- [Update a task](https://developers.keka.com/reference/put_psa-projects-projectid-tasks-taskid.md): Update project task.
+- [Get project task time entries.](https://developers.keka.com/reference/get_psa-projects-projectid-tasks-taskid-timeentries-1.md): Gets the project task time entries between selected from and to date range.If both `from` and `to` are not specified, last 30 days records are returned.From `date` should be before `to` date.The difference between `from` and `to` date cannot be more than **90** days.
+- [TimesheetEntries](https://developers.keka.com/reference/timesheetentries.md)
+- [Get project timesheet entries.](https://developers.keka.com/reference/get_psa-timeentries.md): Gets the time entries between selected from and to date range.If both `from` and `to` are not specified, last 30 days records are returned.From `date` should be before `to` date.The difference between `from` and `to` date cannot be more than **90** days.
+- [Add project task timesheet entries.](https://developers.keka.com/reference/post_psa-employees-employeeid-timeentries.md): Add project task timesheet entries.
+- [Submit timesheet entries.](https://developers.keka.com/reference/post_psa-employees-employeeid-timeentries-submit.md): Submits an existing timesheet for the given employee whose start date and end date exactly match the provided values.
+- [Get billing rates for a rate card](https://developers.keka.com/reference/get_psa-finances-ratecards.md): Gets all system-level billing role rates. Optionally filter by rateCardId (GUID).
+- [Get all Expenses](https://developers.keka.com/reference/get_expense-employees-employeeid-expenses.md): Get all Expenses
+- [Adds an Expense](https://developers.keka.com/reference/post_expense-employees-employeeid-expenses.md): Adds an Expense
+- [Updates an expense](https://developers.keka.com/reference/put_expense-employees-employeeid-expenses-expenseid.md): Updates an expense
+- [Get all Expenses](https://developers.keka.com/reference/get_expense-employees-expenses.md): Get all Expenses
+- [Adds an Expense](https://developers.keka.com/reference/post_expense-employees-expenses.md): Adds an Expense
+- [Updates an expense](https://developers.keka.com/reference/put_expense-employees-expenses.md): Updates an expense
+- [Get Expense Attachment Download Url](https://developers.keka.com/reference/get_expense-expenseid-attachment-attachmentid.md): Get Expense Attachment Download Url
+- [Get Expense Attachment Download Url](https://developers.keka.com/reference/get_expense-attachment.md): Get Expense Attachment Download Url
+- [ExpenseCategory](https://developers.keka.com/reference/expensecategory.md)
+- [Get all Expense Categories](https://developers.keka.com/reference/get_expense-categories.md): Get all Expense Categories
+- [Advances](https://developers.keka.com/reference/advances.md)
+- [To Fetch Advance Requests](https://developers.keka.com/reference/get_traveldesk-advancerequests.md): To Fetch Advance Requests
+- [To update Advance status](https://developers.keka.com/reference/put_traveldesk-advancerequests-advanceid.md): To update Advance status
+- [To update Advance status](https://developers.keka.com/reference/put_traveldesk-advancerequests.md): To update Advance status
+- [ExpenseClaims](https://developers.keka.com/reference/expenseclaims.md): ##Enumerated Types
+- [Get all Expense Claims](https://developers.keka.com/reference/get_expense-claims.md): Get all Expense Claims
+- [Adds an Expense claim.](https://developers.keka.com/reference/post_expense-claims.md): Adds an Expense claim.
+- [Update Expense Claim Payment Status](https://developers.keka.com/reference/put_expense-claims.md): Update Expense Claim Payment Status
+- [Update Expense Claim Payment Status](https://developers.keka.com/reference/put_expense-claims-expenseclaimid.md): Update Expense Claim Payment Status
+- [Get all expensepolicies](https://developers.keka.com/reference/get_expensepolicies.md): Get all expensepolicies
+- [TimeFrames](https://developers.keka.com/reference/timeframes.md)
+- [Gets time frame list.](https://developers.keka.com/reference/get_pms-timeframes.md): Gets all time frames.
+- [Goal](https://developers.keka.com/reference/goal.md)
+- [Gets goal list.](https://developers.keka.com/reference/get_pms-goals.md): Gets all goals along with parent goal and child goals
+- [Update goal progress](https://developers.keka.com/reference/put_pms-goals-goalid-progress.md): Update the goal progress
+- [Badge](https://developers.keka.com/reference/badge.md)
+- [Gets badge list.](https://developers.keka.com/reference/get_pms-badges.md): Gets all badge.
+- [Gets praise list.](https://developers.keka.com/reference/get_pms-praise.md): Gets all employees praises
+- [Add Praise](https://developers.keka.com/reference/post_pms-praise.md): Add an praise and returns created praise identifier.
+- [Gets review group list.](https://developers.keka.com/reference/get_pms-reviewgroups.md): Gets all review group
+- [Gets review cycle list.](https://developers.keka.com/reference/get_pms-reviewcycles.md): Gets all group cycle
+- [Review](https://developers.keka.com/reference/review.md)
+- [Gets employee review list.](https://developers.keka.com/reference/get_pms-reviews.md): Gets all employee review
+- [Update the app status](https://developers.keka.com/reference/put_app-status.md): Update the status of an app
+- [Get All Helpdesk Tickets](https://developers.keka.com/reference/get_helpdesk-tickets-1.md): Fetch all helpdesk tickets
+- [Add Helpdesk Ticket](https://developers.keka.com/reference/post_helpdesk-tickets-1.md): Add Helpdesk Ticket
+- [ To Update Ticket](https://developers.keka.com/reference/put_helpdesk-tickets-ticketid-1.md): To Update Helpdesk Ticket
+- [Get All Helpdesk Categories](https://developers.keka.com/reference/get_helpdesk-ticket-categories-1.md): Fetch all helpdesk categories
+- [Get All Helpdesk Closing Reasons](https://developers.keka.com/reference/get_helpdesk-ticket-closingreasons-1.md): Fetch all helpdesk closing reasons
+- [Get All Loans](https://developers.keka.com/reference/get_loans.md): Fetch all loan details of employees
+- [Updates the loan details for the specified loan identifier, with support for multi-file upload.](https://developers.keka.com/reference/put_loans.md)
+- [Get all Job Boards](https://developers.keka.com/reference/get_v1-hire-jobboards-1.md): Get the list of all job boards that are currently available
+- [Jobs](https://developers.keka.com/reference/jobs.md)
+- [Get all jobs](https://developers.keka.com/reference/get_v1-hire-jobs.md): Get all Published, Confidential and Archived jobs
+- [Get application fields](https://developers.keka.com/reference/get_v1-hire-jobs-jobid-applicationfields.md): Get job application fields
+- [Get candidate Resume](https://developers.keka.com/reference/get_v1-hire-jobs-candidate-candidateid-resume.md): Get candidate Resume
+- [Upload candidate resume](https://developers.keka.com/reference/post_v1-hire-jobs-candidate-candidateid-resume.md): Upload the candidate resume
+- [Candidates](https://developers.keka.com/reference/candidates.md)
+- [Get job candidates](https://developers.keka.com/reference/get_v1-hire-jobs-jobid-candidates.md): Get active or archived candidates in a specified job
+- [Updated a candidate](https://developers.keka.com/reference/put_v1-hire-jobs-jobid-candidate-candidateid.md): Updated the candidate
+- [Adds candidate note](https://developers.keka.com/reference/post_v1-hire-jobs-jobid-candidate-candidateid-notes.md): Updated the candidate
+- [Post a job candidate](https://developers.keka.com/reference/post_v1-hire-jobs-jobid-candidate.md): Post a candidate to a specified job
+- [Get interview scheduled and completed for a job candidate](https://developers.keka.com/reference/get_v1-hire-jobs-jobid-candidate-candidateid-interviews.md): Get interview scheduled and completed for a job and a candidate
+- [Get scorecard of a specified candidate for a job candidate](https://developers.keka.com/reference/get_v1-hire-jobs-jobid-candidate-candidateid-scorecards.md): Get the scorecards which are submitted for a specified job candidate
+- [PreboardingAPI](https://developers.keka.com/reference/preboardingapi.md)
+- [Get all Preboarding Candidates](https://developers.keka.com/reference/get_v1-hire-preboarding-candidates.md): Get all Preboarding Candidates
+- [Post a Preboarding Candidate](https://developers.keka.com/reference/post_v1-hire-preboarding-candidates.md): Adds a Preboarding Candidate
+- [update a Preboarding Candidate](https://developers.keka.com/reference/put_v1-hire-preboarding-candidates-id.md): update a Preboarding Candidate
+- [Gets all skills.](https://developers.keka.com/reference/get_hris-skills.md): Gets all skills.
+- [Get employee skills](https://developers.keka.com/reference/get_hris-employees-employeeid-skills.md): Get employee skills
+- [Add employee skills](https://developers.keka.com/reference/post_hris-employees-employeeid-skills.md): Add employee skills
+- [Asset](https://developers.keka.com/reference/asset.md)
+- [Get all Assets](https://developers.keka.com/reference/get_assets.md): Get all Assets
+- [To Update AssetAssignment](https://developers.keka.com/reference/put_assets-assetid-allocation.md): To Update AssetAssignment
+- [To Recover Asset](https://developers.keka.com/reference/put_assets-assetid-recover.md): To Recover Asset
+- [Get all Asset Types](https://developers.keka.com/reference/get_assets-types.md): Get all Asset Types
+- [Get all Asset Categories](https://developers.keka.com/reference/get_assets-categories.md): Get all Asset Categories
+- [Get all Asset Conditions](https://developers.keka.com/reference/get_assets-conditions.md): Get all Asset Conditions
+- [RequisitionRequest](https://developers.keka.com/reference/requisitionrequest.md)
+- [Get all Requisition Requests](https://developers.keka.com/reference/get_requisition-requests.md): Get all Requisition Requests
+- [Helpdesk](https://developers.keka.com/reference/helpdesk.md)
+- [Get All Helpdesk Tickets](https://developers.keka.com/reference/get_helpdesk-tickets.md): Fetch all helpdesk tickets
+- [Add Helpdesk Ticket](https://developers.keka.com/reference/post_helpdesk-tickets.md): Add Helpdesk Ticket
+- [To Update Ticket](https://developers.keka.com/reference/put_helpdesk-tickets-ticketid.md): To Update Helpdesk Ticket
+- [Get All Helpdesk Categories](https://developers.keka.com/reference/get_helpdesk-ticket-categories.md): Fetch all helpdesk categories
+- [Get All Helpdesk Closing Reasons](https://developers.keka.com/reference/get_helpdesk-ticket-closingreasons.md): Fetch all helpdesk closing reasons
+- [BGV Workflow APIs](https://developers.keka.com/reference/bgvrequest.md)
+- [Get all checks](https://developers.keka.com/reference/get_hris-bgv-vendors-bgvid-checks.md): Get all bgv checks of an bgv vendor
+- [Add bgv checks for a vendor](https://developers.keka.com/reference/post_hris-bgv-vendors-bgvid-checks.md): Add bgv checks for a vendor
+- [Delete bgv check for a vendor](https://developers.keka.com/reference/delete_hris-bgv-vendors-bgvid-checks-checkid.md): Delete bgv check for a vendor
+- [Get all bgvrequests](https://developers.keka.com/reference/get_hris-bgv-bgvid-requests.md): Get all bgvrequests
+- [Add bgvRequest Report](https://developers.keka.com/reference/put_hris-bgv-bgvid-requests-requestid.md): Add bgvRequest Report
+- [Get all vendor assessments](https://developers.keka.com/reference/get_v1-hire-vendorid-assessments.md): Get the list of all Vendor assessments
+- [Add Assessments](https://developers.keka.com/reference/post_v1-hire-vendorid-assessments.md): Add assessments
+- [Update Assessments](https://developers.keka.com/reference/put_v1-hire-vendorid-assessments-assessmentid.md): Update assessments
+- [Delete Assessments](https://developers.keka.com/reference/delete_v1-hire-vendorid-assessments-assessmentid.md): Delete assessments
+- [Get all vendor assessments requests](https://developers.keka.com/reference/get_v1-hire-vendorid-assessmentrequests.md): Get the list of all Vendor assessments requests
+- [Add AssessmentResult](https://developers.keka.com/reference/post_v1-hire-vendorid-assessmentrequests-assessmentrequestid.md): Add assessmentresult
+- [Gets the employee reward points.](https://developers.keka.com/reference/get_rnr-employee-employeeid-points.md)
+- [Updates the employee reward points.](https://developers.keka.com/reference/put_rnr-employee-employeeid-points.md)
+- [Get Digital signature workflow request details](https://developers.keka.com/reference/get_hris-e-sign-vendorid-letterrequests.md): Get Digital signature workflow request details
+- [Get Digital signature workflow document](https://developers.keka.com/reference/get_hris-e-sign-vendorid-letterrequests-letterrequestid-attachments.md): Get Digital signature workflow document
+- [Upload digitally signed document](https://developers.keka.com/reference/put_hris-e-sign-vendorid-letterrequests-letterrequestid.md): Upload digitally signed document
+- [Getting Started With Your API](https://developers.keka.com/reference/getting-started-with-your-api-1.md): This page will help you get started with Keka API Format.
+
+## Pages
+- [App portal to get your app listed on Keka Marketplace](https://developers.keka.com/page/apply-for-app-portal-to-get-your-app-listed-on-keka-marketplace.md)
+- [Apply for Keka partnership](https://developers.keka.com/page/apply-for-keka-partnership.md)
+- [How to Create Your First App or Service on Keka App Portal](https://developers.keka.com/page/how-to-create-your-first-app-or-service-on-keka-app-portal.md)
+- [Keka Customers](https://developers.keka.com/page/keka-customers.md)
+- [Keka Partners](https://developers.keka.com/page/keka-partners.md)

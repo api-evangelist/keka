@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Leave API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Leave",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all leave requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/leaverequests"
+          },
+          "docs": "<p>This API is used for fetching list of all leave requests in the organization between from and to date. If both from and to are not specified, last 30 days records are returned. From date should be before to date. The difference between from and to date cannot be more than 90 days.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SessionType</th>\n<th>LeaveRequestStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = F"
+        },
+        {
+          "info": {
+            "name": "Create leave request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/leaverequests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This API is used for creating leave request against an employee. Create an leave request and returns leave request identifier.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get all leave types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/leavetypes"
+          },
+          "docs": "<p>This API is used for fetching list of all leave types.</p>\n<h2 id=\"enumerated-values\">Enumerated Values</h2>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>SessionType</th>\n<th>LeaveRequestStatus</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = FirstHalf  <br />1 = SecondHalf</td>\n<td>0 = Pending  <br />1 = Approved  <br />2 = Rejected  <br />3 = Cancelled  <br />4 = InApprovalProcess</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get All Leave Balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/leavebalance"
+          },
+          "docs": "Get All Leave Balance"
+        },
+        {
+          "info": {
+            "name": "Get All Leave Plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/time/leaveplans"
+          },
+          "docs": "Get All Leave Plans"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

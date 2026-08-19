@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets BGV APIs API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BGV APIs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All BGV requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/bgv/792a7e86-3cdc-4561-94c0-ba124df90acb/requests"
+          },
+          "docs": "Get All BGV requests"
+        },
+        {
+          "info": {
+            "name": "Add BGV request report",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/hris/bgv/:variable/requests/:variable",
+            "params": [
+              {
+                "name": "variable",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add BGV request report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

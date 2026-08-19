@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Keka HR Assets Expense API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://login.keka.com/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Expense",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get expense categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/expense/categories"
+          },
+          "docs": "<p>This API is used for fetching list of all expense categories.</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>ExpenseCategoryType</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0 = None  <br />1 = General  <br />2 = Mileage  <br />3 = PerDiem  <br />4 = AirTravel  <br />5 = Accommodation  <br />6 = LocalConveyance  <br />7 = CashAdvance</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>"
+        },
+        {
+          "info": {
+            "name": "Get expense claim details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/expense/claims"
+          },
+          "docs": "<p>This API is used for fetching list of all expense claims.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get all expensepolicies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{tenant}.keka.com/api/v1/api/v1/expensepolicies"
+          },
+          "docs": "Get all expensepolicies"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
