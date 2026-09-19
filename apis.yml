@@ -32,6 +32,15 @@ created: 2026-06-13
 modified: 2026-06-13
 specificationVersion: '0.23'
 tags:
+  - Human Resources
+  - Payroll
+  - Attendance
+  - Leave Management
+  - Performance Management
+  - Employee Management
+  - India
+  - HRMS
+tags_raw:
   - HR
   - Human Resources
   - Payroll
@@ -186,6 +195,8 @@ apis:
   humanURL: https://developers.keka.com/
   baseURL: https://{tenant}.keka.com/api/v1
   tags:
+  - Expenses
+  tags_raw:
   - Expense
   properties:
   - type: OpenAPI
