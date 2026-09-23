@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets Authentication API
+  title: Keka HR Authentication API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -30,27 +30,16 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<ul>
+      description: 'client_id: Your client identifier for authentication.
 
-        <li><p><code>client_id</code>: Your client identifier for authentication.</p>
 
-        </li>
+        client_secret: Your client secret for secure authentication.
 
-        <li><p><code>client_secret</code>: Your client secret for secure authentication.</p>
 
-        </li>
+        api_key: Your unique API key for accessing the system.
 
-        <li><p><code>api_key</code>: Your unique API key for accessing the system.</p>
 
-        </li>
-
-        <li><p><code>scope</code>: You will need to pass <strong>kekaapi</strong> for this key.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        scope: You will need to pass kekaapi for this key.'
       requestBody:
         content:
           application/x-www-form-urlencoded:

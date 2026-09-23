@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets Payroll API
+  title: Keka HR Payroll API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -30,9 +30,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all salary components.</p>
-
-        '
+      description: This API is used for fetching list of all salary components.
   /api/v1/payroll/paygroups:
     get:
       operationId: get_all_pay_groups
@@ -42,9 +40,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all pay groups.</p>
-
-        '
+      description: This API is used for fetching list of all pay groups.
   /api/v1/payroll/paygroups/{payGroupId}/paycycles:
     get:
       operationId: get_all_pay_cycles
@@ -54,59 +50,66 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all pay cycles in a pay group.</p>
+      description: 'This API is used for fetching list of all pay cycles in a pay group.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        PayrollRunStatus
 
-        <th>PayrollRunStatus</th>
+        RemunerationType
 
-        <th>RemunerationType</th>
+        PaymentStatus
 
-        <th>PaymentStatus</th>
 
-        </tr>
+        0 = Pending
 
-        </thead>
+        1 = Finalized
 
-        <tbody>
+        3 = Partial
 
-        <tr>
+        0 = Monthly
 
-        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+        1 = Daily
 
-        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+        2 = Hourly
 
-        <td>0 = UnPaid  <br />1 = Paid</td>
+        0 = UnPaid
 
-        </tr>
+        1 = Paid
 
-        </tbody>
 
-        </table>
+        EmployeePayrollCycleRunStatus
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        0 = SalaryOnHold = 0
 
-        <tr>
+        1 = PaymentOnHold
 
-        <th>EmployeePayrollCycleRunStatus</th>
+        3 = Skipped
 
-        </tr>
+        6 = SalaryVoid
 
-        </thead>
+        7 = PaymentVoid
 
-        <tbody>
+        8 = ExecutedAsSalary
 
-        <tr>
+        9 = ExecutedAsArrear
 
-        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 = '
+        10 = FinalSettlement
+
+        11 = FinalSettlementVoid
+
+        12 = ReleasePayment
+
+        13 = FinalSettlementPaymentVoid
+
+        14 = AlreadyPaid
+
+        15 = FinalSettlementAlreadyPaid
+
+        16 ='
       parameters:
       - name: payGroupId
         in: path
@@ -122,59 +125,66 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching pay register for a given pay cycle.</p>
+      description: 'This API is used for fetching pay register for a given pay cycle.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        PayrollRunStatus
 
-        <th>PayrollRunStatus</th>
+        RemunerationType
 
-        <th>RemunerationType</th>
+        PaymentStatus
 
-        <th>PaymentStatus</th>
 
-        </tr>
+        0 = Pending
 
-        </thead>
+        1 = Finalized
 
-        <tbody>
+        3 = Partial
 
-        <tr>
+        0 = Monthly
 
-        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+        1 = Daily
 
-        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+        2 = Hourly
 
-        <td>0 = UnPaid  <br />1 = Paid</td>
+        0 = UnPaid
 
-        </tr>
+        1 = Paid
 
-        </tbody>
 
-        </table>
+        EmployeePayrollCycleRunStatus
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        0 = SalaryOnHold = 0
 
-        <tr>
+        1 = PaymentOnHold
 
-        <th>EmployeePayrollCycleRunStatus</th>
+        3 = Skipped
 
-        </tr>
+        6 = SalaryVoid
 
-        </thead>
+        7 = PaymentVoid
 
-        <tbody>
+        8 = ExecutedAsSalary
 
-        <tr>
+        9 = ExecutedAsArrear
 
-        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 = Fin'
+        10 = FinalSettlement
+
+        11 = FinalSettlementVoid
+
+        12 = ReleasePayment
+
+        13 = FinalSettlementPaymentVoid
+
+        14 = AlreadyPaid
+
+        15 = FinalSettlementAlreadyPaid
+
+        16 = Fin'
       parameters:
       - name: payGroupId
         in: path
@@ -195,59 +205,66 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all pay batches in a pay group.</p>
+      description: 'This API is used for fetching list of all pay batches in a pay group.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        PayrollRunStatus
 
-        <th>PayrollRunStatus</th>
+        RemunerationType
 
-        <th>RemunerationType</th>
+        PaymentStatus
 
-        <th>PaymentStatus</th>
 
-        </tr>
+        0 = Pending
 
-        </thead>
+        1 = Finalized
 
-        <tbody>
+        3 = Partial
 
-        <tr>
+        0 = Monthly
 
-        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+        1 = Daily
 
-        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+        2 = Hourly
 
-        <td>0 = UnPaid  <br />1 = Paid</td>
+        0 = UnPaid
 
-        </tr>
+        1 = Paid
 
-        </tbody>
 
-        </table>
+        EmployeePayrollCycleRunStatus
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        0 = SalaryOnHold = 0
 
-        <tr>
+        1 = PaymentOnHold
 
-        <th>EmployeePayrollCycleRunStatus</th>
+        3 = Skipped
 
-        </tr>
+        6 = SalaryVoid
 
-        </thead>
+        7 = PaymentVoid
 
-        <tbody>
+        8 = ExecutedAsSalary
 
-        <tr>
+        9 = ExecutedAsArrear
 
-        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />16 ='
+        10 = FinalSettlement
+
+        11 = FinalSettlementVoid
+
+        12 = ReleasePayment
+
+        13 = FinalSettlementPaymentVoid
+
+        14 = AlreadyPaid
+
+        15 = FinalSettlementAlreadyPaid
+
+        16 ='
       parameters:
       - name: payGroupId
         in: path
@@ -268,59 +285,64 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching batch payments against against a batch ID,.</p>
+      description: 'This API is used for fetching batch payments against against a batch ID,.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        PayrollRunStatus
 
-        <th>PayrollRunStatus</th>
+        RemunerationType
 
-        <th>RemunerationType</th>
+        PaymentStatus
 
-        <th>PaymentStatus</th>
 
-        </tr>
+        0 = Pending
 
-        </thead>
+        1 = Finalized
 
-        <tbody>
+        3 = Partial
 
-        <tr>
+        0 = Monthly
 
-        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+        1 = Daily
 
-        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+        2 = Hourly
 
-        <td>0 = UnPaid  <br />1 = Paid</td>
+        0 = UnPaid
 
-        </tr>
+        1 = Paid
 
-        </tbody>
 
-        </table>
+        EmployeePayrollCycleRunStatus
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        0 = SalaryOnHold = 0
 
-        <tr>
+        1 = PaymentOnHold
 
-        <th>EmployeePayrollCycleRunStatus</th>
+        3 = Skipped
 
-        </tr>
+        6 = SalaryVoid
 
-        </thead>
+        7 = PaymentVoid
 
-        <tbody>
+        8 = ExecutedAsSalary
 
-        <tr>
+        9 = ExecutedAsArrear
 
-        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 = AlreadyPaid  <br />15 = FinalSettlementAlreadyPaid  <br />'
+        10 = FinalSettlement
+
+        11 = FinalSettlementVoid
+
+        12 = ReleasePayment
+
+        13 = FinalSettlementPaymentVoid
+
+        14 = AlreadyPaid
+
+        15 = FinalSettlementAlreadyPaid'
       parameters:
       - name: payGroupId
         in: path
@@ -345,59 +367,62 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for updating payment status for a given batch ID. Only 100 bulk transactions will be allowed for a particular batch.</p>
+      description: 'This API is used for updating payment status for a given batch ID. Only 100 bulk transactions will be allowed for a particular batch.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        PayrollRunStatus
 
-        <th>PayrollRunStatus</th>
+        RemunerationType
 
-        <th>RemunerationType</th>
+        PaymentStatus
 
-        <th>PaymentStatus</th>
 
-        </tr>
+        0 = Pending
 
-        </thead>
+        1 = Finalized
 
-        <tbody>
+        3 = Partial
 
-        <tr>
+        0 = Monthly
 
-        <td>0 = Pending  <br />1 = Finalized  <br />3 = Partial</td>
+        1 = Daily
 
-        <td>0 = Monthly  <br />1 = Daily  <br />2 = Hourly</td>
+        2 = Hourly
 
-        <td>0 = UnPaid  <br />1 = Paid</td>
+        0 = UnPaid
 
-        </tr>
+        1 = Paid
 
-        </tbody>
 
-        </table>
+        EmployeePayrollCycleRunStatus
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        0 = SalaryOnHold = 0
 
-        <tr>
+        1 = PaymentOnHold
 
-        <th>EmployeePayrollCycleRunStatus</th>
+        3 = Skipped
 
-        </tr>
+        6 = SalaryVoid
 
-        </thead>
+        7 = PaymentVoid
 
-        <tbody>
+        8 = ExecutedAsSalary
 
-        <tr>
+        9 = ExecutedAsArrear
 
-        <td>0 = SalaryOnHold = 0  <br />1 = PaymentOnHold  <br />3 = Skipped  <br />6 = SalaryVoid  <br />7 = PaymentVoid  <br />8 = ExecutedAsSalary  <br />9 = ExecutedAsArrear  <br />10 = FinalSettlement  <br />11 = FinalSettlementVoid  <br />12 = ReleasePayment  <br />13 = FinalSettlementPaymentVoid  <br />14 '
+        10 = FinalSettlement
+
+        11 = FinalSettlementVoid
+
+        12 = ReleasePayment
+
+        13 = FinalSettlementPaymentVoid
+
+        14'
       parameters:
       - name: payGroupId
         in: path
@@ -459,9 +484,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>Get all bonus types</p>
-
-        '
+      description: Get all bonus types
 components:
   securitySchemes:
     oauth2:

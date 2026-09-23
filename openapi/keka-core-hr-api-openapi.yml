@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets Core HR API
+  title: Keka HR Core HR API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -30,77 +30,68 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching details of all employees.</p>
+      description: 'This API is used for fetching details of all employees.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        TimeType
 
-        <th>TimeType</th>
+        WorkerType
 
-        <th>WorkerType</th>
+        MaritalStatus
 
-        <th>MaritalStatus</th>
 
-        </tr>
+        0 - None
 
-        </thead>
+        1 - FullTime
 
-        <tbody>
+        2 - PartTime
 
-        <tr>
+        0 - None
 
-        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+        1 - Permanent
 
-        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+        2 - Contingent
 
-        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>
+        0 - None
 
-        </tr>
+        1- Single
 
-        </tbody>
+        2 - Married
 
-        </table>
+        3 - Widowed
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+        4 - Separated
 
-        <thead>
 
-        <tr>
+        Gender
 
-        <th>Gender</th>
+        EmploymentStatus
 
-        <th>EmploymentStatus</th>
+        AccountStatus
 
-        <th>AccountStatus</th>
 
-        </tr>
+        0 - NotSpecified
 
-        </thead>
+        1 - Male
 
-        <tbody>
+        2 - Female
 
-        <tr>
+        3 - Nonbinary
 
-        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>
+        4 - PreferNotToRespond
 
-        <td>0 - Working  <br />1- Relieved</td>
+        0 - Working
 
-        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+        1- Relieved
 
-        </tr>
+        0 - NotRegistered
 
-        </tbody>
+        1 - Registered
 
-        </table>
-
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
-
-        '
+        2 - Disabled'
     post:
       operationId: create_employee
       summary: Create employee
@@ -109,75 +100,69 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for creating a new Employee record.</p>
+      description: 'This API is used for creating a new Employee record.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        TimeType
 
-        <th>TimeType</th>
+        WorkerType
 
-        <th>WorkerType</th>
+        MaritalStatus
 
-        <th>MaritalStatus</th>
 
-        </tr>
+        0 - None
 
-        </thead>
+        1 - FullTime
 
-        <tbody>
+        2 - PartTime
 
-        <tr>
+        0 - None
 
-        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+        1 - Permanent
 
-        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+        2 - Contingent
 
-        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>
+        0 - None
 
-        </tr>
+        1- Single
 
-        </tbody>
+        2 - Married
 
-        </table>
+        3 - Widowed
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+        4 - Separated
 
-        <thead>
 
-        <tr>
+        Gender
 
-        <th>Gender</th>
+        EmploymentStatus
 
-        <th>EmploymentStatus</th>
+        AccountStatus
 
-        <th>AccountStatus</th>
 
-        </tr>
+        0 - NotSpecified
 
-        </thead>
+        1 - Male
 
-        <tbody>
+        2 - Female
 
-        <tr>
+        3 - Nonbinary
 
-        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>
+        4 - PreferNotToRespond
 
-        <td>0 - Working  <br />1- Relieved</td>
+        0 - Working
 
-        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+        1- Relieved
 
-        </tr>
+        0 - NotRegistered
 
-        </tbody>
+        1 - Registered
 
-        </table>
+        2 - Disabled
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
 
         <th'
       requestBody:
@@ -207,9 +192,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>Update Employee personal details</p>
-
-        '
+      description: Update Employee personal details
       requestBody:
         content:
           application/json:
@@ -253,9 +236,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>Update employee job details</p>
-
-        '
+      description: Update employee job details
       requestBody:
         content:
           application/json:
@@ -276,75 +257,71 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching data of a specific employee by passing the employee ID as a URI parameter.</p>
+      description: 'This API is used for fetching data of a specific employee by passing the employee ID as a URI parameter.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        TimeType
 
-        <th>TimeType</th>
+        WorkerType
 
-        <th>WorkerType</th>
+        MaritalStatus
 
-        <th>MaritalStatus</th>
 
-        </tr>
+        0 - None
 
-        </thead>
+        1 - FullTime
 
-        <tbody>
+        2 - PartTime
 
-        <tr>
+        0 - None
 
-        <td>0 - None  <br />1 - FullTime  <br />2 - PartTime</td>
+        1 - Permanent
 
-        <td>0 - None  <br />1 - Permanent  <br />2 - Contingent</td>
+        2 - Contingent
 
-        <td>0 - None  <br />1- Single  <br />2 - Married  <br />3 - Widowed  <br />4 - Separated</td>
+        0 - None
 
-        </tr>
+        1- Single
 
-        </tbody>
+        2 - Married
 
-        </table>
+        3 - Widowed
 
-        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+        4 - Separated
 
-        <thead>
 
-        <tr>
+        Gender
 
-        <th>Gender</th>
+        EmploymentStatus
 
-        <th>EmploymentStatus</th>
+        AccountStatus
 
-        <th>AccountStatus</th>
 
-        </tr>
+        0 - NotSpecified
 
-        </thead>
+        1 - Male
 
-        <tbody>
+        2 - Female
 
-        <tr>
+        3 - Nonbinary
 
-        <td>0 - NotSpecified  <br />1 - Male  <br />2 - Female  <br />3 - Nonbinary  <br />4 - PreferNotToRespond</td>
+        4 - PreferNotToRespond
 
-        <td>0 - Working  <br />1- Relieved</td>
+        0 - Working
 
-        <td>0 - NotRegistered  <br />1 - Registered  <br />2 - Disabled</td>
+        1- Relieved
 
-        </tr>
+        0 - NotRegistered
 
-        </tbody>
+        1 - Registered
 
-        </table>
+        2 - Disabled
 
-        </div><div class="c'
+
+        <div class="c'
       parameters:
       - name: id
         in: path
@@ -369,35 +346,34 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all groups.</p>
+      description: 'This API is used for fetching list of all groups.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SystemGroupType
 
-        <th>SystemGroupType</th>
 
-        </tr>
+        0 = None
 
-        </thead>
+        1 = BusinessUnit
 
-        <tbody>
+        2 = Department
 
-        <tr>
+        3 = OrgLocation
 
-        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+        4 = CostCenter
 
-        </tr>
+        5 = Paygroup
 
-        </tbody>
+        6 = ProjectTeam
 
-        </table>
+        7 = Team,
 
-        </div>'
+        8 = ClientTeam
+
+        9 = Segment'
   /api/v1/hris/grouptypes:
     get:
       operationId: get_all_group_types
@@ -407,35 +383,34 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all group types.</p>
+      description: 'This API is used for fetching list of all group types.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SystemGroupType
 
-        <th>SystemGroupType</th>
 
-        </tr>
+        0 = None
 
-        </thead>
+        1 = BusinessUnit
 
-        <tbody>
+        2 = Department
 
-        <tr>
+        3 = OrgLocation
 
-        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+        4 = CostCenter
 
-        </tr>
+        5 = Paygroup
 
-        </tbody>
+        6 = ProjectTeam
 
-        </table>
+        7 = Team,
 
-        </div>'
+        8 = ClientTeam
+
+        9 = Segment'
   /api/v1/hris/departments:
     get:
       operationId: get_all_departments
@@ -454,35 +429,34 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all locations.</p>
+      description: 'This API is used for fetching list of all locations.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SystemGroupType
 
-        <th>SystemGroupType</th>
 
-        </tr>
+        0 = None
 
-        </thead>
+        1 = BusinessUnit
 
-        <tbody>
+        2 = Department
 
-        <tr>
+        3 = OrgLocation
 
-        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+        4 = CostCenter
 
-        </tr>
+        5 = Paygroup
 
-        </tbody>
+        6 = ProjectTeam
 
-        </table>
+        7 = Team,
 
-        </div>'
+        8 = ClientTeam
+
+        9 = Segment'
   /api/v1/hris/jobtitles:
     get:
       operationId: get_all_job_titles
@@ -492,35 +466,34 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all locations.</p>
+      description: 'This API is used for fetching list of all locations.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SystemGroupType
 
-        <th>SystemGroupType</th>
 
-        </tr>
+        0 = None
 
-        </thead>
+        1 = BusinessUnit
 
-        <tbody>
+        2 = Department
 
-        <tr>
+        3 = OrgLocation
 
-        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+        4 = CostCenter
 
-        </tr>
+        5 = Paygroup
 
-        </tbody>
+        6 = ProjectTeam
 
-        </table>
+        7 = Team,
 
-        </div>'
+        8 = ClientTeam
+
+        9 = Segment'
   /api/v1/hris/currencies:
     get:
       operationId: get_all_currencies
@@ -530,35 +503,34 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all currencies.</p>
+      description: 'This API is used for fetching list of all currencies.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SystemGroupType
 
-        <th>SystemGroupType</th>
 
-        </tr>
+        0 = None
 
-        </thead>
+        1 = BusinessUnit
 
-        <tbody>
+        2 = Department
 
-        <tr>
+        3 = OrgLocation
 
-        <td>0 = None  <br />1 = BusinessUnit  <br />2 = Department  <br />3 = OrgLocation  <br />4 = CostCenter  <br />5 = Paygroup  <br />6 = ProjectTeam  <br />7 = Team,  <br />8 = ClientTeam  <br />9 = Segment</td>
+        4 = CostCenter
 
-        </tr>
+        5 = Paygroup
 
-        </tbody>
+        6 = ProjectTeam
 
-        </table>
+        7 = Team,
 
-        </div>'
+        8 = ClientTeam
+
+        9 = Segment'
   /api/v1/hris/noticeperiods:
     get:
       operationId: get_all_noticeperiods
@@ -586,33 +558,17 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>Create an exist request for an employee</p>
+      description: 'Create an exist request for an employee
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Exit Type
 
-        <tr>
 
-        <th>Exit Type</th>
+        0 - None
 
-        </tr>
+        1 - Employee Resignation
 
-        </thead>
-
-        <tbody>
-
-        <tr>
-
-        <td>0 - None  <br />1 - Employee Resignation  <br />2- Company Action</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        2- Company Action'
       requestBody:
         content:
           application/json:

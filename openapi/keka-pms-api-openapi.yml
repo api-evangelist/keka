@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets PMS API
+  title: Keka HR PMS API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -30,35 +30,18 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all time frames.</p>
+      description: 'This API is used for fetching list of all time frames.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        TimeFrameStatus
 
-        <th>TimeFrameStatus</th>
 
-        </tr>
+        0 = Active
 
-        </thead>
-
-        <tbody>
-
-        <tr>
-
-        <td>0 = Active  <br />1 = Hidden</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        1 = Hidden'
   /api/v1/pms/goals:
     get:
       operationId: get_goal_list
@@ -68,43 +51,40 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all goals.</p>
+      description: 'This API is used for fetching list of all goals.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        Goal Status
 
-        <th>Goal Status</th>
+        GoalMetricType
 
-        <th>GoalMetricType</th>
+        Goal Type
 
-        <th>Goal Type</th>
 
-        </tr>
+        0 = NotStarted
 
-        </thead>
+        1 = OnTrack
 
-        <tbody>
+        2 = NeedAttention
 
-        <tr>
+        3 = AtRisk
 
-        <td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 = AtRisk  <br />4 = Closed</td>
+        4 = Closed
 
-        <td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>
+        0 = Percentage
 
-        <td>0 = Individual  <br />1 = Company  <br />2 = Group</td>
+        1 = Checkbox
 
-        </tr>
+        3 = Number
 
-        </tbody>
+        0 = Individual
 
-        </table>
+        1 = Company
 
-        </div>'
+        2 = Group'
   /api/v1/pms/goals/{goalId}/progress:
     put:
       operationId: update_goal_progress
@@ -114,43 +94,40 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for updating progress against a specific goal.</p>
+      description: 'This API is used for updating progress against a specific goal.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        Goal Status
 
-        <th>Goal Status</th>
+        GoalMetricType
 
-        <th>GoalMetricType</th>
+        Goal Type
 
-        <th>Goal Type</th>
 
-        </tr>
+        0 = NotStarted
 
-        </thead>
+        1 = OnTrack
 
-        <tbody>
+        2 = NeedAttention
 
-        <tr>
+        3 = AtRisk
 
-        <td>0 = NotStarted  <br />1 = OnTrack  <br />2 = NeedAttention  <br />3 = AtRisk  <br />4 = Closed</td>
+        4 = Closed
 
-        <td>0 = Percentage  <br />1 = Checkbox  <br />3 = Number</td>
+        0 = Percentage
 
-        <td>0 = Individual  <br />1 = Company  <br />2 = Group</td>
+        1 = Checkbox
 
-        </tr>
+        3 = Number
 
-        </tbody>
+        0 = Individual
 
-        </table>
+        1 = Company
 
-        </div>'
+        2 = Group'
       parameters:
       - name: goalId
         in: path
@@ -176,35 +153,18 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all badges.</p>
+      description: 'This API is used for fetching list of all badges.
 
-        <p>Enumerated Values</p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        Badge Status
 
-        <th>Badge Status</th>
 
-        </tr>
+        0 = Enabled
 
-        </thead>
-
-        <tbody>
-
-        <tr>
-
-        <td>0 = Enabled  <br />1 = Disabled</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        1 = Disabled'
   /api/v1/pms/praise:
     get:
       operationId: get_praise_list
@@ -214,9 +174,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all praises.</p>
-
-        '
+      description: This API is used for fetching list of all praises.
     post:
       operationId: create_praise
       summary: Create Praise
@@ -225,9 +183,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for creating a praise.</p>
-
-        '
+      description: This API is used for creating a praise.
   /api/v1/pms/reviewgroups:
     get:
       operationId: get_review_group_list
@@ -237,9 +193,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all review groups.</p>
-
-        '
+      description: This API is used for fetching list of all review groups.
   /api/v1/pms/reviewcycles:
     get:
       operationId: get_review_group_cycle_list
@@ -249,9 +203,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all review cycles.</p>
-
-        '
+      description: This API is used for fetching list of all review cycles.
   /api/v1/pms/reviews:
     get:
       operationId: get_employee_review_list
@@ -261,9 +213,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all employee reviews.</p>
-
-        '
+      description: This API is used for fetching list of all employee reviews.
 components:
   securitySchemes:
     oauth2:

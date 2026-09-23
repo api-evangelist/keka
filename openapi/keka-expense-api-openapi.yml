@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets Expense API
+  title: Keka HR Expense API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -30,37 +30,27 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all expense categories.</p>
+      description: 'This API is used for fetching list of all expense categories.
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        ExpenseCategoryType
 
-        <tr>
 
-        <th>ExpenseCategoryType</th>
+        0 = None
 
-        <th></th>
+        1 = General
 
-        </tr>
+        2 = Mileage
 
-        </thead>
+        3 = PerDiem
 
-        <tbody>
+        4 = AirTravel
 
-        <tr>
+        5 = Accommodation
 
-        <td>0 = None  <br />1 = General  <br />2 = Mileage  <br />3 = PerDiem  <br />4 = AirTravel  <br />5 = Accommodation  <br />6 = LocalConveyance  <br />7 = CashAdvance</td>
+        6 = LocalConveyance
 
-        <td></td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        7 = CashAdvance'
   /api/v1/expense/claims:
     get:
       operationId: get_expense_claim_details
@@ -70,9 +60,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all expense claims.</p>
-
-        '
+      description: This API is used for fetching list of all expense claims.
   /api/v1/expensepolicies:
     get:
       operationId: get_all_expensepolicies

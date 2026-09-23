@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets Hire API
+  title: Keka HR Hire API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -39,9 +39,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of jobs and job details.</p>
-
-        '
+      description: This API is used for fetching list of jobs and job details.
   /api/v1/hire/jobs/{jobId}/applicationfields:
     get:
       operationId: get_job_application_fields
@@ -51,9 +49,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching application fields against a sepcific job.</p>
-
-        '
+      description: This API is used for fetching application fields against a sepcific job.
       parameters:
       - name: jobId
         in: path
@@ -69,9 +65,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of active candidates against a sepcific job.</p>
-
-        '
+      description: This API is used for fetching list of active candidates against a sepcific job.
       parameters:
       - name: jobId
         in: path
@@ -120,9 +114,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for creating a new candidate against a job using job application fields.</p>
-
-        '
+      description: This API is used for creating a new candidate against a job using job application fields.
       parameters:
       - name: jobId
         in: path
@@ -153,9 +145,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching interview details against a sepcific job candidate.</p>
-
-        '
+      description: This API is used for fetching interview details against a sepcific job candidate.
       parameters:
       - name: jobId
         in: path
@@ -176,9 +166,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching scorecard details against a sepcific job candidate.</p>
-
-        '
+      description: This API is used for fetching scorecard details against a sepcific job candidate.
       parameters:
       - name: jobId
         in: path
@@ -199,37 +187,37 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<div class="click-to-expand-wrapper is-table-wrapper"><table>
+      description: 'PreboardingStage
 
-        <thead>
+        PreboardingStatus
 
-        <tr>
 
-        <th><strong>PreboardingStage</strong></th>
+        0 = Start
 
-        <th><strong>PreboardingStatus</strong></th>
+        1 = CollectInfo
 
-        </tr>
+        2 = VerifyInfo
 
-        </thead>
+        3 = ManageOffer
 
-        <tbody>
+        4 = OfferAcceptance
 
-        <tr>
+        5 = Hired
 
-        <td>0 = Start  <br />1 = CollectInfo  <br />2 = VerifyInfo  <br />3 = ManageOffer  <br />4 = OfferAcceptance  <br />5 = Hired</td>
+        0 - Initiated
 
-        <td>0 - Initiated  <br />1 - Completed  <br />2 - Cancelled  <br />3 - Archived  <br />4 - CandidatureRevoked  <br />5 - MarkedAsNoShow</td>
+        1 - Completed
 
-        </tr>
+        2 - Cancelled
 
-        </tbody>
+        3 - Archived
 
-        </table>
+        4 - CandidatureRevoked
 
-        </div><p>Get all Preboarding Candidates</p>
+        5 - MarkedAsNoShow
 
-        '
+
+        Get all Preboarding Candidates'
   /api/v1/hire/preboarding/candidates:
     post:
       operationId: post_a_preboarding_candidate
@@ -239,9 +227,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>Adds a preboarding candidate</p>
-
-        '
+      description: Adds a preboarding candidate
       requestBody:
         content:
           application/json:

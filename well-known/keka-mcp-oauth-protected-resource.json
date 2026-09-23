@@ -1,0 +1,1 @@
+{"resource":"https://mcp.keka.com/mcp","bearer_methods_supported":["header"],"tls_client_certificate_bound_access_tokens":true,"resource_name":"Keka MCP Server","authorization_servers":["https://mcp.keka.com"],"scopes_supported":["kekahr.api","openid","profile","offline_access","keka.mcp","hiro.api"],"resource_owner":"Keka","resource_owner_url":"www.keka.com"}

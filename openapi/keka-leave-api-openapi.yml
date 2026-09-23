@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Keka HR Assets Leave API
+  title: Keka HR Leave API
   description: REST API for the Keka HR and payroll platform covering employee records, attendance, leave, payroll, expense management, performance, recruitment, professional services automation, helpdesk, background verification, and rewards.
   version: v1
   contact:
@@ -30,39 +30,30 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all leave requests in the organization between from and to date. If both from and to are not specified, last 30 days records are returned. From date should be before to date. The difference between from and to date cannot be more than 90 days.</p>
+      description: 'This API is used for fetching list of all leave requests in the organization between from and to date. If both from and to are not specified, last 30 days records are returned. From date should be before to date. The difference between from and to date cannot be more than 90 days.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SessionType
 
-        <th>SessionType</th>
+        LeaveRequestStatus
 
-        <th>LeaveRequestStatus</th>
 
-        </tr>
+        0 = FirstHalf
 
-        </thead>
+        1 = SecondHalf
 
-        <tbody>
+        0 = Pending
 
-        <tr>
+        1 = Approved
 
-        <td>0 = FirstHalf  <br />1 = SecondHalf</td>
+        2 = Rejected
 
-        <td>0 = Pending  <br />1 = Approved  <br />2 = Rejected  <br />3 = Cancelled  <br />4 = InApprovalProcess</td>
+        3 = Cancelled
 
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        4 = InApprovalProcess'
     post:
       operationId: create_leave_request
       summary: Create leave request
@@ -71,9 +62,7 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for creating leave request against an employee. Create an leave request and returns leave request identifier.</p>
-
-        '
+      description: This API is used for creating leave request against an employee. Create an leave request and returns leave request identifier.
       requestBody:
         content:
           application/json:
@@ -98,39 +87,30 @@ paths:
       responses:
         '200':
           description: Successful response
-      description: '<p>This API is used for fetching list of all leave types.</p>
+      description: 'This API is used for fetching list of all leave types.
 
-        <h2 id="enumerated-values">Enumerated Values</h2>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Enumerated Values
 
-        <thead>
 
-        <tr>
+        SessionType
 
-        <th>SessionType</th>
+        LeaveRequestStatus
 
-        <th>LeaveRequestStatus</th>
 
-        </tr>
+        0 = FirstHalf
 
-        </thead>
+        1 = SecondHalf
 
-        <tbody>
+        0 = Pending
 
-        <tr>
+        1 = Approved
 
-        <td>0 = FirstHalf  <br />1 = SecondHalf</td>
+        2 = Rejected
 
-        <td>0 = Pending  <br />1 = Approved  <br />2 = Rejected  <br />3 = Cancelled  <br />4 = InApprovalProcess</td>
+        3 = Cancelled
 
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        4 = InApprovalProcess'
   /api/v1/time/leavebalance:
     get:
       operationId: get_all_leave_balance

@@ -1,20 +1,7 @@
 {
   "provider": "keka",
   "sources": [
-    "keka-assets-api-openapi.yml",
-    "keka-attendance-api-openapi.yml",
-    "keka-authentication-api-openapi.yml",
-    "keka-bgv-apis-api-openapi.yml",
-    "keka-core-hr-api-openapi.yml",
-    "keka-documents-api-openapi.yml",
-    "keka-expense-api-openapi.yml",
-    "keka-hire-api-openapi.yml",
-    "keka-leave-api-openapi.yml",
-    "keka-payroll-api-openapi.yml",
-    "keka-pms-api-openapi.yml",
-    "keka-psa-api-openapi.yml",
-    "keka-requisitions-api-openapi.yml",
-    "keka-skills-api-openapi.yml"
+    "_original/keka-hr-api-openapi.yaml"
   ],
   "outputs": [
     "keka-assets-api-openapi.yml",
@@ -26,15 +13,34 @@
     "keka-expense-api-openapi.yml",
     "keka-hire-api-openapi.yml",
     "keka-leave-api-openapi.yml",
-    "keka-payroll-api-openapi.yml",
     "keka-pms-api-openapi.yml",
     "keka-psa-api-openapi.yml",
+    "keka-payroll-api-openapi.yml",
     "keka-requisitions-api-openapi.yml",
     "keka-skills-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "keka-hr-api-openapi.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "keka-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-attendance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-bgv-apis-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-core-hr-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-expense-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-hire-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-leave-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-payroll-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-pms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-psa-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-requisitions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "keka-skills-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
