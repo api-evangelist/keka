@@ -3,10 +3,13 @@
   "feeds": [
     {
       "source": "https://www.linkedin.com/company/keka-hr",
-      "error": "HTTPError"
+      "feed_url": "https://www.linkedin.com/company/keka-hr",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-09-19T20:17:39Z",
+  "fetched": "2026-10-03T12:30:02Z",
   "post_count": 4,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,

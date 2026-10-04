@@ -31,6 +31,9 @@ url: https://raw.githubusercontent.com/api-evangelist/keka/refs/heads/main/apis.
 created: 2026-06-13
 modified: 2026-06-13
 specificationVersion: '0.23'
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
   - Human Resources
   - Payroll
@@ -376,6 +379,9 @@ apis:
   - type: LlmsText
     url: https://developers.keka.com/llms.txt
 common:
+  - type: CapabilityMap
+    url: capabilities/keka-capability-edges.yml
+    name: Keka HR Business Capability Map
   - type: AgenticAccess
     url: agentic-access/keka-agentic-access.yml
   - type: DomainSecurity
