@@ -1,0 +1,100 @@
+slug: keka
+provider: Keka HR
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 9
+edges:
+- tag: Hire
+  spec_file: keka-hire-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.95
+  evidence: GET /api/v1/hire/jobs/{jobId}/candidates  get_candidate_details; POST .../preboarding/candidates
+  reason: Jobs, job boards, candidates, interviews, scorecards and preboarding are plainly recruiting
+    and onboarding — Talent Acquisition Management.
+- tag: Core HR
+  spec_file: keka-core-hr-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.9
+  evidence: GET /api/v1/hris/employees Get all employees; PUT .../personaldetails Update Employee Personal
+    Details; GET /api/v1/hris/departments Get All Departments
+  reason: Employee master record CRUD plus organisational reference data (departments, locations, job
+    titles) in an HRIS is employee records management under HR Operations.
+- tag: PMS
+  spec_file: keka-pms-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.9
+  evidence: GET /api/v1/pms/reviews  get_employee_review_list; GET /api/v1/pms/goals  get_goal_list
+  reason: 'Performance management system: goals, review cycles, employee reviews, praise and badges —
+    Talent Management (performance and development).'
+- tag: Leave
+  spec_file: keka-leave-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: GET /api/v1/time/leaverequests  get_all_leave_requests; GET /api/v1/time/leavebalance
+  reason: Leave requests, types, balances and plans are absence administration, an HR operations/service
+    delivery function.
+- tag: Payroll
+  spec_file: keka-payroll-api-openapi.yml
+  capability_id: BC-300.30
+  capability_id_l1: BC-300
+  capability_name: Compensation & Benefits Management
+  confidence: 0.85
+  evidence: GET /api/v1/payroll/salarycomponents  Get Salary components; GET /api/v1/payroll/salaries  Get
+    all Employee Salaries; GET /get-all-bonus-types
+  reason: Salary components, pay grades, pay bands, bonuses and employee salaries are compensation structures;
+    payroll runs also sit under HR operations, but compensation evidence is strongest.
+- tag: Attendance
+  spec_file: keka-attendance-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.8
+  evidence: GET /api/v1/time/attendance Get all attendance records; POST /v1/logs Push Attendance punches;
+    GET /api/v1/time/shiftpolicies
+  reason: Time and attendance capture, shift, weekly-off and holiday policy administration is core HR
+    service delivery/operations within Human Capital Management.
+- tag: Documents
+  spec_file: keka-documents-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.8
+  evidence: GET /api/v1/hris/employees/.../documents  get_employee_documents  Get Employee Documents
+  reason: Operations retrieve employee document types and attachments within the HRIS, i.e. employee records
+    administration — HR Operations Management.
+- tag: PSA
+  spec_file: keka-psa-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.75
+  evidence: POST /api/v1/psa/projects  create_a_project; GET /api/v1/psa/projects/{projectId}/allocations  get_project_allocations
+  reason: Professional services automation surface manages clients, projects, phases and resource allocations
+    — project execution and tracking. Some overlap with resource/capacity management, hence not maximal
+    confidence.
+- tag: Skills
+  spec_file: keka-skills-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.7
+  evidence: GET /api/v1/hris/employees/.../skills  get_employee_skills; POST ... add_employee_skills
+  reason: Employee skill inventory within the HRIS supports capability/career development (Talent Management);
+    could also be read as workforce planning data, so moderate confidence.
