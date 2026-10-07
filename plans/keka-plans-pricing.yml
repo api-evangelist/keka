@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Keka HR Plans and Pricing
 description: Pricing plans for the Keka HR and Payroll platform. All plans cover up to 100 employees with a minimum billing floor of 25 employees. API and Webhooks access is an add-on available with the Growth plan and above.
 url: https://www.keka.com/pricing
