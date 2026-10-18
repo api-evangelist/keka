@@ -2,6 +2,8 @@ generated: '2026-10-13'
 method: searched
 checked:
 - https://azuremarketplace.microsoft.com/
+- https://connectors.airbyte.com/files/registries/v0/cloud_registry.json
+- https://connectors.airbyte.com/files/registries/v0/oss_registry.json
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -19,3 +21,36 @@ edges:
   seller_name: KEKA TECHNOLOGIES PRIVATE LIMITED
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Airbyte
+  partner: airbyte
+  partner_match: aggregator
+  type: marketplace
+  marketplace: airbyte-registry
+  channel: elt-connector
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://docs.airbyte.com/integrations/sources/keka
+  category: null
+  contract_reference:
+    register: Airbyte connector registry (connectors.airbyte.com cloud_registry.json + oss_registry.json)
+    spec_file: null
+    role: elt-connector:airbyte-community
+    registered_name: Keka
+    matched_domain: keka.com
+    matched_by: domain
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connectors:
+    - airbyte/source-keka
+    support_level:
+    - community
+    release_stage:
+    - alpha
+    in_cloud: true
+    builder: unknown (community connector; contributor not in the record)
+  detected_by: sweep-data-integration.py
+  first_seen: '2026-10-18'
+source:
+- https://connectors.airbyte.com/files/registries/v0/cloud_registry.json
+- https://connectors.airbyte.com/files/registries/v0/oss_registry.json
