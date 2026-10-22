@@ -22,6 +22,23 @@ edges:
   seller_name: KEKA TECHNOLOGIES PRIVATE LIMITED
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/d4bmBbPlTN61qlwi_u0K_w
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - Keka
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 - partner_name: Airbyte
   partner: airbyte
   partner_match: aggregator
@@ -52,23 +69,6 @@ edges:
     builder: unknown (community connector; contributor not in the record)
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
-- partner_name: Zoom (own)
-  partner: zoom
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.zoom.us/apps/d4bmBbPlTN61qlwi_u0K_w
-  mirror_of: zoom/integrations/zoom-integration-edges.yml
-  apps:
-  - Keka
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Zoom app
 source:
 - https://connectors.airbyte.com/files/registries/v0/cloud_registry.json
 - https://connectors.airbyte.com/files/registries/v0/oss_registry.json
