@@ -64,13 +64,176 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Keka is an Indian HR and payroll management platform providing a REST API for managing employee data, attendance, leave, payroll processing, expense management, and performance management.
+Keka is an Indian HR and payroll management platform providing a REST API for managing employee data, attendance, leave, payroll processing, expense management, and performance management. The API uses OAuth 2.0 authentication and supports webhooks for event-driven integrations.
 
-**Developer Portal:** https://developers.keka.com/  
-**API Reference:** https://apidocs.keka.com/  
-**Status Page:** https://status.keka.com/  
-**Pricing:** https://www.keka.com/pricing  
+**Areas:** Human Resources · Payroll · Attendance · Leave Management · Performance Management · Employee Management · India · HRMS
 
-## APIs.json
+## Keka HR on APIs.io
 
-This repository contains an [APIs.json 0.19](https://apisjson.org/) profile for the Keka HR API, maintained by [API Evangelist](https://apievangelist.com/).
+Everything profiled for Keka HR is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/keka/](https://apis.io/providers/keka/)** — or go straight to one of the APIs or properties below.
+
+### APIs (14)
+
+- [Keka HR Assets API](https://apis.io/apis/keka/keka-assets-api/) — The Assets API from Keka HR — 5 operation(s) for assets.
+- [Keka HR Attendance API](https://apis.io/apis/keka/keka-attendance-api/) — The Attendance API from Keka HR — 7 operation(s) for attendance.
+- [Keka HR Authentication API](https://apis.io/apis/keka/keka-authentication-api/) — The Authentication API from Keka HR — 1 operation(s) for authentication.
+- [Keka HR BGV APIs API](https://apis.io/apis/keka/keka-bgv-apis-api/) — The BGV APIs API from Keka HR — 2 operation(s) for bgv apis.
+- [Keka HR Core HR API](https://apis.io/apis/keka/keka-core-hr-api/) — The Core HR API from Keka HR — 14 operation(s) for core hr.
+- [Keka HR Documents API](https://apis.io/apis/keka/keka-documents-api/) — The Documents API from Keka HR — 3 operation(s) for documents.
+- [Keka HR Expense API](https://apis.io/apis/keka/keka-expense-api/) — The Expense API from Keka HR — 3 operation(s) for expense.
+- [Keka HR Hire API](https://apis.io/apis/keka/keka-hire-api/) — The Hire API from Keka HR — 12 operation(s) for hire.
+- [Keka HR Leave API](https://apis.io/apis/keka/keka-leave-api/) — The Leave API from Keka HR — 4 operation(s) for leave.
+- [Keka HR Payroll API](https://apis.io/apis/keka/keka-payroll-api/) — The Payroll API from Keka HR — 11 operation(s) for payroll.
+- [Keka HR PMS API](https://apis.io/apis/keka/keka-pms-api/) — The PMS API from Keka HR — 8 operation(s) for pms.
+- [Keka HR PSA API](https://apis.io/apis/keka/keka-psa-api/) — The PSA API from Keka HR — 15 operation(s) for psa.
+- [Keka HR Requisitions API](https://apis.io/apis/keka/keka-requisitions-api/) — The Requisitions API from Keka HR — 1 operation(s) for requisitions.
+- [Keka HR Skills API](https://apis.io/apis/keka/keka-skills-api/) — The Skills API from Keka HR — 2 operation(s) for skills.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [keka](https://apis.io/servers/keka/keka/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Keka Agentic Access](https://apis.io/agentic-access/keka/keka-agentic-access/)
+
+#### JSON Schema (1)
+
+The data models the API reads and writes.
+
+- [Keka HR API](https://apis.io/schemas/keka/keka-hr-api/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Keka Hr Api Examples](https://apis.io/examples/keka/keka-hr-api-examples/)
+
+#### Collections (14)
+
+Postman and Open Collection request collections.
+
+- [Keka HR Assets API](https://apis.io/collections/keka/open-keka-assets-api/)
+- [Keka HR Assets Attendance API](https://apis.io/collections/keka/open-keka-attendance-api/)
+- [Keka HR Assets Authentication API](https://apis.io/collections/keka/open-keka-authentication-api/)
+- [Keka HR Assets BGV APIs API](https://apis.io/collections/keka/open-keka-bgv-apis-api/)
+- [Keka HR Assets Core HR API](https://apis.io/collections/keka/open-keka-core-hr-api/)
+- [Keka HR Assets Documents API](https://apis.io/collections/keka/open-keka-documents-api/)
+- [Keka HR Assets Expense API](https://apis.io/collections/keka/open-keka-expense-api/)
+- [Keka HR Assets Hire API](https://apis.io/collections/keka/open-keka-hire-api/)
+- [Keka HR Assets Leave API](https://apis.io/collections/keka/open-keka-leave-api/)
+- [Keka HR Assets Payroll API](https://apis.io/collections/keka/open-keka-payroll-api/)
+- [Keka HR Assets PMS API](https://apis.io/collections/keka/open-keka-pms-api/)
+- [Keka HR Assets PSA API](https://apis.io/collections/keka/open-keka-psa-api/)
+- [Keka HR Assets Requisitions API](https://apis.io/collections/keka/open-keka-requisitions-api/)
+- [Keka HR Assets Skills API](https://apis.io/collections/keka/open-keka-skills-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Keka HR — jsonschema rules](https://apis.io/rules/keka/keka-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Keka Authentication](https://apis.io/security/keka/keka-authentication/)
+- [Keka Domain Security](https://apis.io/security/keka/keka-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Keka Scopes](https://apis.io/scopes/keka/keka-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Keka Plans Pricing](https://apis.io/plans/keka/keka-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Keka Rate Limits](https://apis.io/rate-limits/keka/keka-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Keka Finops](https://apis.io/finops/keka/keka-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.keka.com/)
+- [Documentation](https://developers.keka.com/)
+- [Pricing](https://www.keka.com/pricing)
+- [Blog](https://www.keka.com/blog)
+- [Status](https://status.keka.com/)
+
+## API Evangelist rating
+
+**Kin Score 29.0** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 45.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 22.4 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 13.2 |
+
+**Agent readiness 47.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 21.6** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/keka/](https://apis.io/providers/keka/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Keka HR: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/keka/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
